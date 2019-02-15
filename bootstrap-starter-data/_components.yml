@@ -1,0 +1,151 @@
+_components:
+  # meta components
+  meta-title:
+    instances:
+      new:
+        title: ''
+      new-author:
+        title: ''
+      homepage:
+        title: ''
+  meta-url:
+    instances:
+      new:
+        url: ''
+      new-author:
+        url: ''
+      homepage:
+        url: ''
+  meta-description:
+    instances:
+      new:
+        description: ''
+      new-author:
+        description: ''
+      homepage:
+        description: ''
+  meta-icons:
+    instances:
+      claydemo:
+        siteName: 'Clay Demo'
+        favicon: https://localhost/media/sites/claydemo/favicon.ico
+  meta-image:
+    instances:
+      new:
+        imageUrl: ''
+      new-author:
+        imageUrl: ''
+      tag:
+        imageUrl: ''
+      homepage:
+        imageUrl: ''
+  meta-authors:
+    instances:
+      new:
+        authors: []
+      new-author:
+        authors: []
+      homepage:
+        authors: []
+  meta-keywords:
+    instances:
+      new:
+        tags: []
+      new-author:
+        tags: []
+      homepage:
+        tags: []
+  meta-site:
+    instances:
+      article:
+        twitter: '@claydemo'
+        facebook: 'claydemo'
+        facebookID: 'claydemo'
+        vertical: ''
+        siteName: Clay Demo
+        ogType: website
+        pageType: Article
+      author:
+        twitter: '@claydemo'
+        facebook: 'claydemo'
+        facebookID: 'claydemo'
+        vertical: ''
+        siteName: Clay Demo
+        ogType: website
+        pageType: Author
+      tag:
+        twitter: '@claydemo'
+        facebook: 'claydemo'
+        facebookID: 'claydemo'
+        vertical: ''
+        siteName: Clay Demo
+        ogType: website
+        pageType: Tag Page
+      homepage:
+        twitter: '@claydemo'
+        facebook: 'claydemo'
+        facebookID: 'claydemo'
+        vertical: ''
+        siteName: Clay Demo
+        ogType: website
+        pageType: Home Page
+
+  # layout components
+  header:
+    instances:
+      claydemo:
+        componentVariation: header
+        mobileCTA: Support Us
+        mobileCTALink: 'https://www.google.com'
+  footer:
+    instances:
+      claydemo:
+        componentVariation: footer
+        footerLinks: []
+
+  paragraph:
+    instances:
+      new:
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel suscipit quam. Phasellus sagittis nibh a purus euismod ultricies. Pellentesque tempus nec lacus in rhoncus. Sed ullamcorper augue ac augue ornare dictum. Nam nec imperdiet nisi, at dapibus magna. Aliquam id semper mi, et blandit ex. Quisque erat mi, commodo in ante vitae, efficitur pretium ligula. In consectetur diam vel sem dapibus, at mollis erat viverra. Cras dolor nisi, dignissim non semper eu, porta et turpis. Nam malesuada est justo, ac molestie ex auctor vitae. Nullam eget lectus vitae mauris cursus semper id eget sapien.'
+  tags:
+    instances:
+      new:
+        items: []
+      sample:
+        items:
+          -
+            text: clay
+          -
+            text: cute puppy
+  article:
+    instances:
+      new-standard:
+        headline: ''
+        feedImgUrl: ''
+        ledeUrl: ''
+        byline:
+          -
+            text: Clay
+        ledeCaption: ''
+        ledeCredit: ''
+        slug: ''
+        content:
+          -
+            _ref: /_components/paragraph/instances/new
+        tags:
+          _ref: /_components/tags/instances/new
+      sample:
+        headline: 'Clay Starter Article'
+        feedImgUrl: 'https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg'
+        ledeUrl: 'https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg'
+        byline:
+          -
+            text: Clay
+        ledeCaption: 'A cute puppy'
+        ledeCredit: ''
+        slug: ''
+        content:
+          -
+            _ref: /_components/paragraph/instances/new
+        tags:
+          _ref: /_components/tags/instances/sample

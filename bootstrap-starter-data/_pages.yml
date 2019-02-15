@@ -1,0 +1,28 @@
+_pages:
+  sample-article:
+    layout: /_layouts/layout/instances/article
+    main:
+      - /_components/article/instances/sample
+    head: []
+  new-standard:
+    layout: /_layouts/layout/instances/article
+    main:
+      - /_components/article/instances/new-standard
+    head:
+      - /_components/meta-title/instances/new
+      - /_components/meta-url/instances/new
+      - /_components/meta-description/instances/new
+      - /_components/meta-image/instances/new
+      - /_components/meta-keywords/instances/new
+      - /_components/meta-authors/instances/new
+  homepage:
+    url: /
+    layout: /_layouts/layout-simple/instances/homepage
+    head:
+      - /_components/meta-title/instances/homepage
+      - /_components/meta-url/instances/homepage
+      - /_components/meta-description/instances/homepage
+      - /_components/meta-image/instances/homepage
+      - /_components/meta-keywords/instances/homepage
+      - /_components/meta-authors/instances/homepage
+    main: []

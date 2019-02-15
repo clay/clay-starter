@@ -1,0 +1,134 @@
+@import '_default/common/_vars.css';
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+::selection {
+  background-color: #e7e7e7;
+}
+
+.layout a:focus,
+.layout button:focus,
+.layout input:focus,
+.layout select:focus,
+.layout textarea:focus {
+  outline: dotted 1px;
+}
+
+.layout .kiln-field button:focus,
+.layout .kiln-field input:focus,
+.layout .kiln-field select:focus,
+.layout .kiln-field textarea:focus,
+.layout .kiln-wrapper button:focus,
+.layout .kiln-wrapper input:focus,
+.layout .kiln-wrapper select:focus,
+.layout .kiln-wrapper textarea:focus {
+  outline: 0;
+}
+
+.layout {
+  background-color: $background-primary-color;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  & > .page-header,
+  & > .wrapper,
+  & > .primary,
+  & > .secondary,
+  & > .bottom {
+    margin: auto;
+  }
+
+  & > .page-header,
+  & > .top {
+    width: 100%;
+  }
+
+  & > .primary,
+  & > .secondary,
+  & > .bottom,
+  & > .wrapper {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
+  .layout {
+    & > .primary,
+    & > .secondary,
+    & > .bottom,
+    & > .wrapper {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1179.9px) {
+  .layout > .wrapper,
+  .layout > .primary,
+  .layout > .bottom {
+    padding: 0 7vw;
+  }
+
+  .layout > .secondary > *:not(.ad) {
+    margin: 0 7vw;
+  }
+
+  .layout > .wrapper {
+    min-width: 660px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .layout {
+    & > .primary,
+    & > .secondary,
+    & > .bottom {
+      width: 1180px;
+    }
+
+    & > .bottom,
+    & > .page-header,
+    & > .top,
+    & > .wrapper,
+    & > .primary,
+    & > .secondary {
+      margin: 0 auto;
+    }
+
+    & > .top {
+      width: 1100px;
+    }
+
+    & > .wrapper {
+      display: flex;
+      justify-content: flex-end;
+      width: 1100px;
+    }
+
+    & > .wrapper > .main {
+      margin: 0 100px 0 0;
+      width: 600px;
+      z-index: 1;
+    }
+
+    &.kiln-edit-mode .wrapper > .main {
+      width: 700px;
+    }
+  }
+}

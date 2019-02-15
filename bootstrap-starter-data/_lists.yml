@@ -1,0 +1,9 @@
+_lists:
+  new-pages:
+    - id: articles
+      title: '1. Articles'
+      children:
+        - id: new-standard
+          title: Article
+  tags: []
+  authors: []

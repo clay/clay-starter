@@ -1,0 +1,57 @@
+version: '3'
+services:
+
+  ################################################
+  ## Local Sites Setup:                         ##
+  ## Nginx, Elastic Search, Redis               ##
+  ################################################
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    logging:
+      driver: json-file
+    ports:
+      - 80:80
+
+  # Event Bus, Postgres Cache and Session Store
+  redis:
+    image: redis
+    logging:
+      driver: none
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./redis/data:/data
+
+  # You know, for search
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
+    command: elasticsearch
+    logging:
+      driver: none
+    ports:
+      - 9200:9200
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/config/logging.yml:/usr/share/elasticsearch/config/logging.yml
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
+
+  # Primary data store
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=example
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  # Simple GUI for Postgres if you want
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

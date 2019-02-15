@@ -1,0 +1,13 @@
+_description: |
+  Adds `article:tag` (schema.org) tags to the head.
+
+tags:
+  _label: Tags
+  _display: settings
+  _subscribe: keywords
+  _has:
+    - simple-list
+    - label
+    -
+      fn: description
+      value: Array of tags. These will become comma-separated in the template.

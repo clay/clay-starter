@@ -1,0 +1,25 @@
+_description: |
+  Adds `<link rel="canonical">` and `article:published_time` tags to the head.
+
+url:
+  _label: Canonical URL
+  _display: settings
+  _has:
+    -
+      fn: text
+      type: url
+    - label
+    -
+      fn: description
+      value: URL of the current page. For articles, this is generated from the canonical url.
+
+date:
+  _label: Published Date
+  _display: settings
+  _subscribe: publishDate
+  _has:
+    - text
+    - label
+    -
+      fn: description
+      value: Published timestamp. For articles, this is set automatically.

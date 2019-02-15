@@ -1,0 +1,19 @@
+{
+  "ext": "css js yaml yml handlebars hbs vue",
+  "ignore": [
+    "*.test.js"
+  ],
+  "max-old-space-size": 256,
+  "max-semi-space-size": 2,
+  "restartable": "rs",
+  "watch": [
+    "app.js",
+    "components",
+    "layouts",
+    "global",
+    "search",
+    "services",
+    "styleguides",
+    "sites"
+  ]
+}

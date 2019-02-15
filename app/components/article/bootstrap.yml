@@ -1,0 +1,9 @@
+_components:
+  article:
+    authors: []
+    byline: []
+    dateUpdated: false
+    content: []
+    tags:
+      _ref: /_components/tags
+    normalizedTags: []

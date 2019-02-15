@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-uri="{{ default _ref _self }}" data-layout-uri="{{ default _ref _layoutRef }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    {{#unless (includes (default _ref _self) "@published") }}
+      <meta name="robots" content="noindex">
+    {{/unless}}
+
+    {{! head components }}
+    <!-- data-editable="head" -->
+    {{> component-list head }}
+    <!-- data-editable-end -->
+    <!-- data-editable="headLayout" -->
+    {{> component-list headLayout }}
+    <!-- data-editable-end -->
+  </head>
+  <body class="layout">
+    <section class="top" data-editable="top" data-track-zone="top">{{> component-list top }}</section>
+    <section class="wrapper">
+      <section class="main" data-editable="main" data-track-zone="main">{{> component-list main }}</section>
+    </section>
+    <footer class="bottom" data-editable="bottom" data-track-zone="bottom">{{> component-list bottom }}</footer>
+    {{! invisible foot component list }}
+    <div class="kiln-internals" data-editable="kilnInternals">{{> component-list kilnInternals }}</div>
+  </body>
+</html>

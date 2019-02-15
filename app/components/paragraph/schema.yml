@@ -1,0 +1,30 @@
+_description: |
+  A simple paragraph component.
+
+text:
+  _placeholder:
+    height: 50px
+    text: New Paragraph
+    required: true
+  _has:
+    input: inline
+    type: multi-component
+    pseudoBullet: true
+    buttons:
+      - bold
+      - italic
+      - strike
+      - link
+    paste:
+        -
+          match: <h[1-9]>(.*?)</h[1-9]>
+          component: subheader
+          field: text
+        -
+          match: '[~\-_]{1,10}\s?([\w\s]+?)\s?[~\-_]{1,10}'
+          component: divider
+          field: title
+        -
+          match: (.*)
+          component: paragraph
+          field: text

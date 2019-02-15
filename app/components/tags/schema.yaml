@@ -1,0 +1,28 @@
+_version: 1.0
+
+_description: |
+  A component that handles tagging.
+
+  * Tags function as a simple-list that displays on the article.
+  * This component also informs the clay-meta-keywords.
+  * A user can add and remove tags.
+  * Suggested tags will populate based on alphabetical order and popularity.
+  * Users can create new tags when populating this component.
+  * A user can select a Feature Rubric (which displays at the top of the article) by double-clicking the intended tag. Changes will be visible if you refresh the page.
+
+items:
+  _publish: keywords
+  _placeholder:
+    text: Tags
+    height: 40px
+  _has:
+    input: simple-list
+    autocomplete:
+      list: tags
+      allowRemove: true
+      allowCreate: true
+
+normalizedTags:
+  _publish: normalizedTags
+  _has:
+    help: List of tags with no alphanumeric characters

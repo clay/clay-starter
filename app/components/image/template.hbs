@@ -1,0 +1,30 @@
+<div data-uri="{{ default _ref _self }}" class="image-cmpt" data-editable="settings">
+  {{#if imageUrl}}
+    <div class="image-container {{ if imageBorderToggle 'bordered' }}">
+      <div class="img-figure">
+        {{#if clickUrl}}
+          <a class="image-link" href="{{clickUrl}}">
+        {{/if}}
+          <div class="image-wrapper">
+            <img src="{{ imageUrl }}" class="img-data" data-src="{{ imageUrl }}" alt="{{ imageAlt }}"/>
+          </div>
+        {{#if clickUrl}}
+          </a>
+        {{/if}}
+      </div>
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          {{#if ./imageCredit}}"author": "{{ toPlainText ./imageCredit }}",{{/if}}
+          {{#if ./imageCaption}}"caption": "{{ toPlainText ./imageCaption }}",{{/if}}
+          "contentUrl": "{{ ./imageUrl }}"
+        }
+      </script>
+    </div>
+    <div itemprop="caption" class="image-cmpt-figcaption attribution">
+      {{#if imageCaption}}{{{ imageCaption }}}{{/if}}
+      {{#if imageCredit}}<span class="credit">{{ capitalizeAll (if imageType imageType else='Photo') }}: {{{ imageCredit }}}</span>{{/if}}
+    </div>
+  {{/if}}
+</div>

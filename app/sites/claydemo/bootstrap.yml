@@ -1,0 +1,6 @@
+_components:
+  # Required to have a Kiln instance for edit mode
+  clay-kiln:
+    instances:
+      general:
+        enabled: true

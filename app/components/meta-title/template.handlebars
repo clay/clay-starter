@@ -1,0 +1,8 @@
+<!-- data-uri="{{{ default _ref _self }}}" -->
+{{#if @root.locals.edit}}
+  <title>Editing: {{ default title 'New Page' }}</title>
+{{ else }}
+  <title>{{ title }}</title>
+{{/if}}
+<meta property="og:title" content="{{ default ogTitle title }}">
+<meta name="twitter:title" content="{{ default twitterTitle title }}">

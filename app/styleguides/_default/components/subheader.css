@@ -1,0 +1,9 @@
+$black: #000;
+$grotesk-stack: Grotesk, sans-serif;
+
+.subheader {
+  color: $black;
+  display: inline-block;
+  font: 500 15px/26px $grotesk-stack;
+  margin: 0 0 1em;
+}

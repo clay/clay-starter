@@ -1,0 +1,10 @@
+_description: |
+  A simple divider component.
+
+title:
+  _label: Divider Title
+  _placeholder:
+    height: 20px
+    text: Divider Title
+  _has:
+    input: inline
