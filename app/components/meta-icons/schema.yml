@@ -1,0 +1,24 @@
+_description: |
+  A component that adds a favicon to the head.
+
+siteName:
+  _label: Site Name
+  _has:
+    input: text
+    validate:
+      required: true
+    help: Name of the current site (for Apple Mobile Web App)
+
+favicon:
+  _label: Favicon
+  _has:
+    input: text
+    type: url
+    validate:
+      required: true
+    help: Old-school favicon (.ico file)
+
+_groups:
+  settings:
+    fields:
+      - favicon (Web Standard Icons)

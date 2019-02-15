@@ -1,0 +1,27 @@
+_description: |
+  Adds `<title>` tags to the head.
+
+title:
+  _label: Title
+  _display: settings
+  _subscribe: pageTitle
+  _has:
+    - text
+    - label
+    - required
+    -
+      fn: description
+      value: Page title, used to populate all tags. For articles, this is generated from the primary headline.
+
+kilnTitle:
+  _label: Kiln Title
+  _display: settings
+  _subscribe: pageListTitle
+  _publish: kilnTitle
+  _has:
+    - text
+    - label
+    - required
+    -
+      fn: description
+      value: Value is pulled from ogTitle but can be set manually or published too.

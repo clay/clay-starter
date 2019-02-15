@@ -1,0 +1,44 @@
+_description: |
+  A simple layout.
+
+head:
+  _componentList:
+    page: true
+    include:
+      - meta-site
+      - meta-title
+      - meta-url
+      - meta-description
+      - meta-keywords
+      - meta-authors
+      - meta-image
+
+headLayout:
+  _componentList:
+    include:
+      - meta-site
+      - meta-icons
+top:
+  _componentList:
+    include:
+      - header
+
+main:
+  _placeholder:
+    text: Main Section
+    height: 1000px
+  _componentList:
+    page: true
+    fuzzy: true
+    include: []
+
+bottom:
+  _componentList:
+    include:
+      - footer
+
+kilnInternals:
+  _componentList:
+    internals: true
+    include:
+      - clay-kiln

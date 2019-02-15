@@ -1,0 +1,33 @@
+description: |
+  In Article Single Image
+
+imageUrl:
+  _label: URL
+  _has:
+    input: text
+    type: url
+    validate:
+      required: true
+    help: Must be an image URL
+clickUrl:
+  _label: Click URL
+  _has:
+    input: text
+    type: url
+    help: If the image should be hyperlinked, add that URL here
+imageAlt:
+  _label: Alt Text
+  _has:
+    input: text
+    help: Alternative text for screen readers
+
+_groups:
+  settings:
+    fields:
+      - imageUrl (Image)
+      - imageAlt (Image)
+      - clickUrl (Click Through URL)
+    _placeholder:
+      text: New Image
+      height: 250px
+      ifEmpty: imageUrl

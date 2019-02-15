@@ -1,0 +1,5 @@
+<!-- data-uri="{{ default _ref _self }}" -->
+{{#if imageUrl}}
+  <meta content="{{#if imageUrl}}{{ imageUrl }}{{/if}}" name="twitter:image">
+  <meta property="og:image" content="{{#if imageUrl}}{{ imageUrl }}{{/if}}">
+{{/if}}

@@ -1,0 +1,186 @@
+@define-mixin imager $name, $imageWidth, $imageHeight, $inverseAspectRatio, $captionOffset: 0 {
+  &.$(name) {
+    padding-bottom: calc(($imageHeight/$imageWidth) * (100% - $(captionOffset)px));
+    width: calc(100% - $(captionOffset)px);
+  }
+
+  &.$(name).inset {
+    padding-bottom: calc(($imageHeight/$imageWidth) * 100%);
+    width: 100%;
+  }
+
+  &.$(name) .img-figure {
+    width: calc(100% - $(captionOffset)px);
+
+    &:before {
+      padding-top: calc(($inverseAspectRatio) * 100%);
+    }
+  }
+
+  &.$(name).inset .img-figure {
+    width: 100%;
+  }
+}
+
+/*
+  Explicitly using a class name which does not match the component name as a class name just called `image`
+  could have dangerous cascading issues.  This will give some safety around accidentally influencing
+  incorrect styles.
+ */
+.image-cmpt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  position: relative;
+  z-index: 2;
+
+  .image-link {
+    color: #000;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &.inset {
+    float: left;
+    margin: 0 40px 0 -100px;
+    width: 330px;
+  }
+
+  &.break-out {
+    width: 900px;
+  }
+
+  &.square.inline,
+  &.square.break-out,
+  &.deep-vertical.inline,
+  &.deep-vertical.break-out,
+  &.vertical.inline,
+  &.vertical.break-out {
+    .image-cmpt-figcaption {
+      align-self: flex-end;
+      margin-left: 20px;
+      max-width: 120px;
+      word-break: break-word;
+    }
+  }
+
+  &.horizontal {
+    margin: 0 0 40px -100px;
+
+    &.inset {
+      margin: 0 40px 0 -100px;
+    }
+  }
+
+  @media screen and (max-width: 1179.9px) {
+    &.inset {
+      margin: 0 40px 0 -60px;
+    }
+
+    &.horizontal {
+      margin: 40px 0 40px -60px;
+    }
+
+    &.horizontal.inset {
+      margin: 0 40px 0 -60px;
+    }
+
+    &.flex.break-out {
+      margin: 0 0 40px -60px;
+    }
+
+    &.break-out {
+      width: 700px;
+    }
+  }
+
+  @media screen and (max-width: 767.9px) {
+    margin: 24px 0;
+
+    &.inset {
+      float: none;
+      margin: 24px 0; /* this is twice defined so that the precedence works with the table definition of this class */
+      width: 100%;
+    }
+
+    &.horizontal {
+      margin: 24px 0;
+    }
+
+    &.horizontal.inset {
+      margin: 24px 0;
+    }
+
+    &.flex.break-out {
+      margin: 0;
+    }
+
+    &.break-out {
+      width: 100%;
+    }
+
+    &.square.inline .image-cmpt-figcaption,
+    &.square.break-out .image-cmpt-figcaption,
+    &.deep-vertical.inline .image-cmpt-figcaption,
+    &.deep-vertical.break-out .image-cmpt-figcaption,
+    &.vertical.inline .image-cmpt-figcaption,
+    &.vertical.break-out .image-cmpt-figcaption {
+      margin: 6px 0 0;
+      max-width: 100%;
+    }
+  }
+}
+
+.image-cmpt .image-container {
+  .img-figure,
+  .image-wrapper {
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .img-figure:before {
+    content: '';
+    display: block;
+  }
+
+  .img-data {
+    display: block;
+    width: 100%;
+  }
+
+  &.bordered .img-data {
+    border: 1px solid #bdbdbd;
+  }
+
+  &.flex {
+    width: 100%;
+
+    .img-figure {
+      position: unset;
+    }
+
+    .image-wrapper {
+      position: unset;
+    }
+  }
+
+  @mixin imager horizontal, 700, 467, (4/6);
+  @mixin imager square, 460, 460, (1/1), 140;
+  @mixin imager vertical, 460, 575, (5/4), 140;
+  @mixin imager deep-vertical, 460, 690, (6/4), 140;
+
+  @media screen and (max-width: 767.9px) {
+    @mixin imager horizontal, 335, 223, (4/6);
+    @mixin imager square, 335, 335, (1/1);
+    @mixin imager vertical, 335, 419, (5/4);
+    @mixin imager deep-vertical, 335, 502, (6/4);
+  }
+}

@@ -59,3 +59,37 @@ typings/
 
 # next.js build output
 .next
+
+.DS_Store
+.idea
+.vscode/
+
+elasticsearch/data
+postgres/data
+redis/data
+
+app/browserify-cache.json
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.iml
+
+# client-side env variables
+client-env.json
+
+.eslintcache
+
+# public folder (compiled assets)
+app/public
+
+# client-side env variables (list compiled at compile-time, injected at runtime)
+app/client-env.json
+app/client-env.js
+
+package-lock.json

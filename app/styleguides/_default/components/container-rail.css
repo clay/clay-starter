@@ -1,0 +1,101 @@
+$rail-width: 290px;   /* desktop rail width, sized to fit 300x250/300x600 ad */
+$gap: 39px;
+$black: #111;
+
+.container-rail,
+.container-rail > .container-main,
+.container-rail > .container-secondary {
+  position: relative;
+}
+
+.container-rail > .container-secondary > .rail-inner-wrap {
+  height: 100%;
+}
+
+.container-rail.top-border {
+  border-top: 3px solid $black;
+}
+
+/* stacked up until desktop */
+@media screen and (min-width:1180px) {
+  .container-rail {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .container-rail > .container-main {
+    flex: 1 1 auto;
+  }
+
+  .container-rail > .container-secondary {
+    flex: 0 0 $rail-width;
+    margin-left: $gap;
+    max-width: $rail-width;
+  }
+
+  .container-rail.lefty > .container-secondary {
+    margin-left: 0;
+    margin-right: $gap;
+  }
+
+  .container-rail > .container-secondary > .rail-inner-wrap {
+    align-content: flex-start;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  /* if we support grid and we want a partial rail, switch to grid view */
+  /* default is rail on the right hand side */
+  @supports (display:grid) and (display:contents) {
+    .container-rail.partial {
+      column-gap: $gap;
+      display: grid;
+      grid-column-gap: $gap;
+      grid-template-columns: 1fr $rail-width;
+
+      & > .container-main {
+        display: contents;
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      & > .container-secondary {
+        display: contents;
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: 0;
+      }
+
+      /* set contents to full width - items are individually overriden in template */
+      & > .container-main > * {
+        grid-column: 1/span 2;
+      }
+
+      & > .container-secondary > .rail-inner-wrap {
+        grid-column: 2;
+      }
+    }
+
+    /* version with rail on left hand side */
+    .container-rail.lefty.partial {
+      grid-template-columns: $rail-width 1fr;
+
+      & > .container-main {
+        grid-column: 2;
+      }
+
+      & > .container-secondary {
+        grid-column: 1;
+        margin-right: 0;
+      }
+
+      & > .container-main > * {
+        grid-column: 1/span 2;
+      }
+
+      & > .container-secondary > .rail-inner-wrap {
+        grid-column: 1;
+      }
+    }
+  }
+}

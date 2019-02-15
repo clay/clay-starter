@@ -1,0 +1,15 @@
+_description: |
+  Receives an image and renders it in the head
+
+imageUrl:
+  _label: Image Url
+  _display: settings
+  _subscribe: pageMetaImage
+  _has:
+    -
+      fn: text
+      type: url
+    - label
+    -
+      fn: description
+      value: URL of an image to show in the feeds. Usually the first image in an article.

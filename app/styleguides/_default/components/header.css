@@ -1,0 +1,79 @@
+@import '_default/common/_vars.css';
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 9px 0 0 8px;
+
+  .menu-wrapper {
+    height: 46px;
+    margin: 20px 0 0;
+    width: 46px;
+
+    /* put in a pretend menu placeholder for now */
+    .menu {
+      border: 2px solid black;
+      border-radius: 50%;
+      display: block;
+      height: 38px;
+      margin: auto;
+      width: 38px;
+    }
+  }
+
+  .heading-wrapper {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    margin: 0 38px 0 16px;
+    text-align: center;
+
+    .logo {
+      height: max-content;
+    }
+
+    .title-logo {
+      margin: 0;
+    }
+
+    .title-logo svg {
+      width: max-content;
+    }
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .header {
+    justify-content: flex-start;
+    margin: 27px auto 20px;
+    max-width: 1100px;
+
+    .menu-wrapper {
+      height: 43px;
+      width: 43px;
+
+      /* put in a pretend menu placeholder for now */
+      .menu {
+        border: 2px solid black;
+        border-radius: 50%;
+        display: block;
+        height: 43px;
+        margin: auto;
+        width: 43px;
+      }
+    }
+
+    .heading-wrapper {
+      flex-grow: unset;
+      margin: 0 0 0 258px;
+      position: relative;
+      text-align: left;
+      width: unset;
+
+      .title-logo {
+        margin: 0;
+      }
+    }
+  }
+}

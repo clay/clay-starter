@@ -1,0 +1,39 @@
+_layouts:
+  layout:
+    instances:
+      article:
+        head: head
+        headLayout:
+          -
+            _ref: /_components/meta-site/instances/article
+          -
+            _ref: /_components/meta-icons/instances/claydemo
+        top:
+          -
+            _ref: /_components/header/instances/claydemo
+        main: main
+        bottom:
+          -
+            _ref: /_components/footer/instances/claydemo
+        kilnInternals:
+          -
+            _ref: /_components/clay-kiln/instances/general
+  layout-simple:
+    instances:
+      homepage:
+        head: head
+        headLayout:
+          -
+            _ref: /_components/meta-site/instances/homepage
+          -
+            _ref: /_components/meta-icons/instances/claydemo
+        top:
+          -
+            _ref: /_components/header/instances/claydemo
+        main: main
+        bottom:
+          -
+            _ref: /_components/footer/instances/claydemo
+        kilnInternals:
+          -
+            _ref: /_components/clay-kiln/instances/general

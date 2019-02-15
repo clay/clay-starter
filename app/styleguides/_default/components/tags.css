@@ -1,0 +1,36 @@
+.tags {
+  .title {
+    display: inline;
+    font: 12px / 16px Courier;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .tags-list {
+    display: inline;
+    font: 12px / 16px Courier;
+    letter-spacing: 3px;
+    padding: 0;
+    text-transform: uppercase;
+
+    .tags-list-item {
+      display: inline;
+    }
+
+    .tags-list-item.hidden,
+    .tags-list-item.invisible {
+      display: none;
+    }
+
+    .tags-list-item a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .tags-list-item a:active,
+    .tags-list-item a:hover,
+    .tags-list-item a:focus {
+      box-shadow: 0 1px 0 #0c71fa;
+    }
+  }
+}

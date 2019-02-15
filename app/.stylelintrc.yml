@@ -1,0 +1,7 @@
+plugins:
+  - stylelint-order
+rules:
+  declaration-no-important: [true, {severity: warning}]
+  max-nesting-depth: 2
+  order/order: [dollar-variables, at-variables, declarations, rules, at-rules]
+  order/properties-alphabetical-order: true

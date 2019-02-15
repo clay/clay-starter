@@ -1,0 +1,56 @@
+_description: |
+  A two column layout with special styling for our articles. Used for:
+
+head:
+  _componentList:
+    page: true
+    include:
+      - meta-site
+      - meta-title
+      - meta-url
+      - meta-description
+      - meta-keywords
+      - meta-authors
+      - meta-image
+
+headLayout:
+  _componentList:
+    include:
+      - meta-site
+      - meta-icons
+top:
+  _componentList:
+    include: []
+pageHeader:
+  _componentList:
+    include: []
+secondaryHeader:
+  _componentList:
+    include: []
+
+main:
+  _componentList:
+    page: true
+    include:
+      - article
+primary:
+  _componentList:
+    include: []
+secondary:
+  _componentList:
+    include: []
+bottom:
+  _componentList:
+    include:
+      - footer
+foot:
+  _componentList:
+    invisible: true
+    include:
+      - paragraph
+
+kilnInternals:
+  _componentList:
+    internals: true
+    include:
+      - clay-kiln

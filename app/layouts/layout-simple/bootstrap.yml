@@ -1,0 +1,11 @@
+_layouts:
+  layout-simple:
+    head: head
+    headLayout: []
+    top: top
+    header: header
+    main: main
+    bottom: []
+    kilnInternals:
+      -
+        _ref: /_components/clay-kiln

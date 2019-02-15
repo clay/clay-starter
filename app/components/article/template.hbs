@@ -1,0 +1,72 @@
+<article data-uri="{{ default _ref _self }}" class="{{ componentVariation }}{{ if @root.locals.edit ' editing' }}" role="main">
+  <header class="article-header">
+    <div class="lede-wrapper">
+      <div class="primary-area">
+        <div class="article-header-section">
+          {{! date and time }}
+          <time class="article-timestamp" datetime="{{ date }}" itemprop="datePublished" data-editable="publishedDate">
+            {{#if date}}
+              {{#if dateUpdated}}
+                <span class="article-update">Updated </span>
+              {{/if}}
+              <span class="article-date">{{ articleTimestamp date }}</span>
+            {{/if}}
+          </time>
+        </div>
+        <div class="article-header-section">
+          {{! title }}
+          <h1 class="headline-primary" data-editable="headline" itemprop="headline">{{{ headline }}}</h1>
+          {{#ifAny showBylines @root.locals.edit}}
+          <div class="bylines">
+            {{! authors }}
+            <span data-editable="bylines" class="primary-bylines">
+              {{{ byline bylines=byline }}}
+            </span>
+          </div>
+          {{/ifAny}}
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="body">
+    {{#if @root.locals.edit}}
+      <div class="lede-image-wrapper" data-editable="lede">
+        {{#if ledeUrl}}
+          <img src="{{ ledeUrl }}" class="lede-image" data-src="{{ ledeUrl }}" alt="{{ ledeAlt }}"/>
+          {{#if ledeCaption}}
+            <div class="lede-image-data">
+              <div class="attribution">
+                {{{ ledeCaption }}}
+              </div>
+            </div>
+          {{/if}}
+        {{/if}}
+      </div>
+    {{/if}}
+    <div class="article-content" data-editable="content" itemprop="articleBody">
+      {{#unless @root.locals.edit}}
+      <div class="lede-image-wrapper">
+        {{#if ledeUrl}}
+          <img src="{{ ledeUrl }}" class="lede-image" data-src="{{ ledeUrl }}" alt="{{ ledeAlt }}"/>
+          {{#if ledeCaption}}
+            <div class="lede-image-data">
+              <div class="attribution">
+                {{{ ledeCaption }}}
+              </div>
+            </div>
+          {{/if}}
+        {{/if}}
+      </div>
+      {{/unless}}
+      {{! don't display generated annotatedTextAria in edit mode. }}
+      {{#if @root.locals.edit}}
+        {{> component-list content }}
+      {{else}}
+        {{> component-list (addAnnotatedTextAria content) }}
+      {{/if}}
+    </div>
+
+    {{! Tags }}
+    {{> tags tags}}
+  </section>
+</article>

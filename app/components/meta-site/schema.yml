@@ -1,0 +1,17 @@
+_description: |
+  Adds site-specific tags to the head:
+
+  * `og:site_name`
+  * `og:type`
+  * `article:publisher` (for facebook)
+
+siteName:
+  _display: settings
+  _label: Site Name
+  _has:
+    - text
+    - label
+    - required
+    -
+      fn: description
+      value: should be a human-readable site name, which will appear in Google search results and Facebook posts

@@ -1,0 +1,9 @@
+name: ${CLAY_SITE_NAME}
+host: ${CLAY_SITE_HOST}
+path: ''
+assetDir: public
+assetPath: ''
+port: 80
+protocol: http
+shortKey: ${CLAY_SITE_SHORTKEY}
+styleguide: claydemo

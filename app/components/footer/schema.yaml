@@ -1,0 +1,31 @@
+_description: |
+  footer
+
+footerLinks:
+  _label: Footer Links
+  _has:
+    input: complex-list
+    props:
+      -
+        prop: url
+        _label: Url
+        _has:
+          input: text
+          type: url
+          validate:
+            required: true
+      -
+        prop: text
+        _label: Link Text
+        _has:
+          input: text
+          enforceMaxlength: true
+          validate:
+            required: true
+            max: 40
+            maxMessage: This field must be 40 or fewer characters long
+
+_groups:
+  settings:
+    fields:
+      - footerLinks

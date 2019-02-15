@@ -1,0 +1,135 @@
+@import '_default/common/_vars.css';
+
+$white: #fff;
+
+body,
+html {
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  font-feature-settings: 'lnum';
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+  text-rendering: optimizelegibility;
+}
+
+.layout-simple {
+  background-color: $background-primary-color;
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  &.hidden {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.layout-simple a:focus,
+.layout-simple button:focus,
+.layout-simple input:focus,
+.layout-simple select:focus,
+.layout-simple textarea:focus {
+  outline: dotted 1px;
+}
+
+.layout-simple .kiln-field button:focus,
+.layout-simple .kiln-field input:focus,
+.layout-simple .kiln-field select:focus,
+.layout-simple .kiln-field textarea:focus,
+.layout-simple .kiln-wrapper button:focus,
+.layout-simple .kiln-wrapper input:focus,
+.layout-simple .kiln-wrapper select:focus,
+.layout-simple .kiln-wrapper textarea:focus {
+  outline: 0;
+}
+
+.layout-simple > .footer,
+.layout-simple > .main,
+.layout-simple > .page-header {
+  clear: both;
+  overflow-x: visible;
+}
+
+.layout-simple > .main {
+  margin: 0 10px;
+  position: relative;
+}
+
+.layout-simple > .page-header,
+.layout-simple > .top {
+  margin: auto;
+  position: relative;
+}
+
+@media screen and (min-width: 375px) {
+  .layout-simple > .main {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .layout-simple > .main {
+    margin: 0 34px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  /* Overflow cannot be hidden at desktop because it prevents use of position:sticky on right rail ad */
+  /* This is needed on mobile because homepage elements overflow the container and otherwise cause horizontal scroll */
+  .layout-simple {
+    overflow-x: visible;
+  }
+
+  .layout-simple > .top,
+  .layout-simple > .page-header,
+  .layout-simple > .main {
+    clear: both;
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+
+  .layout-simple > .main {
+    padding-top: 30px;
+  }
+
+  .layout-simple .top.takeover-active {
+    background-color: $white;
+    max-width: 1140px;
+
+    ~ .page-header {
+      background-color: $white;
+      max-width: 1140px;
+      padding: 23px 0 0;
+    }
+
+    ~ .main {
+      background-color: $white;
+      max-width: 1140px;
+      z-index: 1;
+    }
+  }
+
+  .layout-simple > .global-nav-inner {
+    margin: auto;
+    width: 940px;
+  }
+}

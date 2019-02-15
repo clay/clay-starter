@@ -1,0 +1,16 @@
+_description: |
+  Adds `<meta name="description">` tags to the head.
+
+description:
+  _label: Description
+  _publish: pageDescription
+  _has:
+    input: text
+    help: Description of the content on this page, used by search engines.
+    validate:
+      required: true
+
+_groups:
+  settings:
+    fields:
+      - description
