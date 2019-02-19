@@ -119,16 +119,18 @@ html {
       display: flex;
       justify-content: flex-end;
       width: 1100px;
+      align-items: center;
+      justify-content: center;
     }
 
     & > .wrapper > .main {
-      margin: 0 100px 0 0;
-      width: 600px;
+      /* margin: 0 100px 0 0;
+      width: 600px; */
       z-index: 1;
     }
 
     &.kiln-edit-mode .wrapper > .main {
-      width: 700px;
+      /* width: 700px; */
     }
   }
 }
