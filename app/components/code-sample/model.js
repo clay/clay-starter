@@ -6,15 +6,9 @@ module.exports.save = (uri, data) => {
     console.log('this is the data ', JSON.stringify(data, null, 4));
 
     var Prism = require('prismjs');
-
-    // The code snippet you want to highlight, as a string
-    var code = "var data = 1;";
-    
+  
     // Returns a highlighted HTML string
-    //use data.language
-    var html = Prism.highlight(data.code, Prism.languages.css, 'javascript');
-
-    data.html = html 
+    data.html = Prism.highlight(data.code, Prism.languages[data.language], data.language); 
 
     return data;
 }

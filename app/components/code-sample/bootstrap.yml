@@ -1,6 +1,5 @@
 _components:
   code-sample:
     code: ''
-    language: 'css'
+    language: 'javascript'
     html: ''
-    cssClass: 'language-'
