@@ -65,7 +65,7 @@
  :not(pre) > code[class*="language-"] {
    padding: .1em;
    border-radius: .3em;
-   white-space: normal;
+   white-space: pre;
  }
  
  .token.comment,
@@ -139,4 +139,12 @@
  .token.entity {
    cursor: help;
  }
- 
+
+ .code-sample{
+  margin: 20px 0;
+}
+
+.code-element{
+  background: #f5f2f0;
+  padding: 10px;
+}

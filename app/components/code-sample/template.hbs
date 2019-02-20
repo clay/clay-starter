@@ -1,11 +1,8 @@
 <div class="code-sample" data-uri="{{ default _ref self }}" >
-    <div data-editable="code">
+    <div data-editable="code" class="code-element">
         {{#if html}}
-            <pre class="language-{{language}}">
-                <code class="language-{{language}}">
-                    {{{html}}}
-                </code>
-            </pre>
+           {{!-- code tag should be in the same line as pre tab, i will break the style if not --}}
+           <code id="code-cp"class="language-{{language}}">{{{html}}}</code>
         {{/if}}
     </div>
 </div>
