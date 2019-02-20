@@ -1,0 +1,24 @@
+_description: |
+  A component for showing a code example.
+code:
+  _label: Insert Code Snippet
+  _placeholder:
+    height: 10px
+    text: Insert Code Snippet
+  _has:
+    input: codemirror
+    mode: text/x-yaml
+
+language:
+  _has:
+    input: select
+    options:
+      - javascript
+      -
+        name: css
+        value: css
+
+_groups:
+  settings:
+    fields:
+      - language

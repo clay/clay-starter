@@ -1,0 +1,6 @@
+_components:
+  code-sample:
+    code: ''
+    language: 'css'
+    html: ''
+    cssClass: 'language-'

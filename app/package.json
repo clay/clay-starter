@@ -44,6 +44,7 @@
     "jsonp-client": "^1.1.1",
     "lodash": "^4.17.5",
     "moment": "^2.24.0",
+    "prismjs": "^1.15.0",
     "speakingurl": "^14.0.1",
     "striptags": "^3.1.1",
     "typogr": "^0.6.7",
