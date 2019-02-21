@@ -14,12 +14,8 @@ language:
     input: select
     options:
       - javascript
-      -
-        name: css
-        value: css
-      -
-        name: yaml
-        value: yaml
+      - css
+      - yaml
 
 _groups:
   settings:
