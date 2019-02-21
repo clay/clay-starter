@@ -19,7 +19,7 @@
     "@nymdev/health-check": "^0.1.3",
     "amphora": "7.2.0",
     "amphora-event-bus-redis": "0.0.1",
-    "amphora-html": "4.0.2",
+    "amphora-html": "4.1.0",
     "amphora-schedule": "1.0.2",
     "amphora-search": "7.3.0",
     "amphora-storage-postgres": "1.2.0",
