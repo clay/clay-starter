@@ -28,9 +28,12 @@ build:
 	cd app && clay compile --inlined --linked --reporter pretty && cd ..
 
 bootstrap:
-	cat ./bootstrap-starter-data/* | clay import -k claydemo-local -y localhost
+	cat ./bootstrap-starter-data/* | clay import -k starter -y localhost
 
 bootstrap-user:
-	cat sample_users.yml | clay import -k claydemo-local -y localhost
+	cat sample_users.yml | clay import -k starter -y localhost
+
+add-access-key:
+	clay config --key starter accesskey
 
 default: start
