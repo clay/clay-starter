@@ -17,6 +17,9 @@ language:
       -
         name: css
         value: css
+      -
+        name: yaml
+        value: yaml
 
 _groups:
   settings:
