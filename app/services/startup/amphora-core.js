@@ -3,13 +3,14 @@
 const amphora = require('amphora'),
   renderers = require('./amphora-renderers'),
   healthCheck = require('@nymdev/health-check'),
-  searchExists = () => require('amphora-search').getInstance().ping();
+  searchExists = () => require('amphora-search').getInstance().ping(),
+  providers = ['apikey', process.env.CLAY_PROVIDER || 'local'];
 
 function initAmphora(app, search, sessionStore) {
   return amphora({
     app,
     renderers,
-    providers: ['apikey', 'google'],
+    providers,
     sessionStore,
     plugins: [
       search,
