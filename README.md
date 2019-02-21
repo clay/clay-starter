@@ -19,6 +19,7 @@
 Clone the repo and run the following commands:
 
 - `make` (This will download the containers, run an `npm install` and start the app)
+- `make add-access-key` ([Please read this doc for more information about your Clay access key](docs/clay-access-key.md))
 - `make bootstrap` (This command seeds some starting data)
 - `make bootstrap-user` (This command seeds a user from `sample_users.yml` file at the root of this project)
 
