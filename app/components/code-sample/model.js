@@ -4,7 +4,7 @@ const Prism = require('prismjs');
 require('prismjs/components/prism-yaml');
 
 module.exports.save = (uri, data) => {
-  // Adds manual spaces, klin codemirror doesn't recognizes tab spaces
+  // Adds manual spaces, Kiln codemirror doesn't recognizes tab spaces
   data.code = data.code.replace(/\t/g, '  ');
 
   // Returns a highlighted HTML string
