@@ -54,19 +54,19 @@ html {
 
   & > .page-header,
   & > .top {
+    margin: 0 auto;
     width: $wrapperMaxWidth;
-    margin:0 auto;
   }
 
   & > .bottom{
     width: 100vw;
   }
   & > .wrapper{
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
     margin-right: auto;
     margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
   }
 }
 
@@ -108,12 +108,10 @@ html {
     }
 
     & > .wrapper {
-      display: flex;
-      justify-content: flex-end;
-      max-width: $wrapperMaxWidth;
       align-items: center;
+      display: flex;
       justify-content: center;
-
+      max-width: $wrapperMaxWidth;
     }
 
     &.kiln-edit-mode .wrapper > .main {
@@ -121,4 +119,3 @@ html {
     }
   }
 }
-
