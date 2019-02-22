@@ -56,7 +56,7 @@ html {
 
   & > .page-header,
   & > .top {
-    width: 100%;
+    width: $wrapperMaxWidth;
   }
 
   & > .primary,
@@ -90,8 +90,9 @@ html {
   }
 
   .layout > .wrapper {
-    min-width: 660px;
+    max-width: 720px;
   }
+
 }
 
 @media screen and (min-width: 1180px) {
@@ -123,30 +124,6 @@ html {
       width: 100%;
     }
   }
-}
-
-@media (min-width: 1200px){
-  .wrapper {
-    max-width: 1220px;
-}
-}
-
-@media (min-width: 992px){
-  .wrapper {
-    max-width: 960px;
-}
-}
-
-@media (min-width: 768px){
-  .wrapper {
-    max-width: 720px;
-}
-}
-
-@media (min-width: 576px){
-  .wrapper {
-    max-width: 540px;
-}
 }
 
 .wrapper {
