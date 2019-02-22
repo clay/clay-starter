@@ -125,11 +125,6 @@ $body-stack: Helvetica, serif;
       margin: 0 0 26px;
     }
 
-    .article-header {
-      margin: 0 0 20px -100px;
-      width: 1100px;
-    }
-
     .article-header .article-timestamp {
       font: 12px / 1.2 $grotesk-stack;
       letter-spacing: 2.56px;
