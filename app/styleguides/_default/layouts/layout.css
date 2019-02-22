@@ -57,6 +57,7 @@ html {
   & > .page-header,
   & > .top {
     width: $wrapperMaxWidth;
+    margin:0 auto;
   }
 
   & > .primary,
@@ -92,7 +93,6 @@ html {
   .layout > .wrapper {
     max-width: 720px;
   }
-
 }
 
 @media screen and (min-width: 1180px) {
