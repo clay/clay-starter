@@ -51,9 +51,14 @@ $body-stack: Georgia, serif;
   }
 
   .lede-image-wrapper {
+    margin-bottom: 20px
+  }
+
+  .lede-image-wrapper {
     img {
       display: block;
       width: 100%;
+      margin-bottom: 7px;
     }
 
     .lede-image-data {
@@ -196,4 +201,20 @@ $body-stack: Georgia, serif;
       margin: 40px 0 0 100px;
     }
   }
+}
+
+.article .attribution {
+  width: 600px;
+  height: 14px;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+}
+.This-is-an-example-o .text-style-1 {
+  color: #767676;
 }
