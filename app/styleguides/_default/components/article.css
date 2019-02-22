@@ -1,10 +1,16 @@
 $black: #000;
 $accent-color: #0c71fa;
-$fallback-stack: Georgia, serif;
-$headline-stack: 'GroteskNarrow', $fallback-stack;
+/* $fallback-stack: Georgia, serif;
+$headline-stack: 'Georgia', $fallback-stack;
 $grotesk-stack: Grotesk, $fallback-stack;
+$sans-serif-stack: Georgia, Arial, sans-serif;
+$body-stack: Georgia, serif; */
+
+$fallback-stack: Helvetica, serif;
+$headline-stack: 'Helvetica', $fallback-stack;
+$grotesk-stack: Helvetica, $fallback-stack;
 $sans-serif-stack: Helvetica, Arial, sans-serif;
-$body-stack: Georgia, serif;
+$body-stack: Helvetica, serif;
 
 .article {
   counter-reset: annotated;
@@ -26,9 +32,9 @@ $body-stack: Georgia, serif;
     }
 
     .headline-primary {
-      font: 600 46px/44px $headline-stack;
+      font-size: 48px;
+      font-weight: bold;
       margin: 0 0 8px;
-      position: relative;
     }
 
     .headline-primary:last-child {
@@ -36,8 +42,8 @@ $body-stack: Georgia, serif;
     }
 
     .bylines {
-      color: #808080;
-      letter-spacing: 1px;
+        font-size: 14px;
+        letter-spacing: normal;
     }
 
     .bylines a {
@@ -142,8 +148,7 @@ $body-stack: Georgia, serif;
     }
 
     .article-header .headline-primary {
-      font: 500 85px/86px $headline-stack;
-      letter-spacing: 0;
+      font-family: Helvetica;
     }
 
     .article-header .bylines .primary-bylines {
@@ -191,7 +196,7 @@ $body-stack: Georgia, serif;
     }
 
     .body {
-      margin: 40px 0 0 100px;
+      /* margin: 40px 0 0 100px; */
     }
   }
 }

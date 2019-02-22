@@ -118,19 +118,46 @@ html {
     & > .wrapper {
       display: flex;
       justify-content: flex-end;
-      width: 1100px;
+      /* width: 1100px; */
+      max-width: 960px;
       align-items: center;
       justify-content: center;
     }
 
-    & > .wrapper > .main {
-      /* margin: 0 100px 0 0;
-      width: 600px; */
-      z-index: 1;
-    }
-
     &.kiln-edit-mode .wrapper > .main {
-      /* width: 700px; */
+      width: 100%;
     }
   }
+}
+
+@media (min-width: 1200px){
+  .wrapper {
+    max-width: 1220px;
+}
+}
+
+@media (min-width: 992px){
+  .wrapper {
+    max-width: 960px;
+}
+}
+
+@media (min-width: 768px){
+  .wrapper {
+    max-width: 720px;
+}
+}
+
+@media (min-width: 576px){
+  .wrapper {
+    max-width: 540px;
+}
+}
+
+.wrapper {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
