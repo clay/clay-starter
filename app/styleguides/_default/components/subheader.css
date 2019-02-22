@@ -1,16 +1,8 @@
 $black: #000;
-$grotesk-stack: Grotesk, sans-serif;
+$helvetica-stack: Helvetica, sans-serif;
 
 .subheader {
   color: $black;
-  display: inline-block;
-  /* font: 500 15px/26px $grotesk-stack; */
+  font: bold 22px $helvetica-stack;
   margin: 0 0 1em;
-  font-family: Helvetica;
-  font-size: 22px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.09;
-  letter-spacing: normal;
 }

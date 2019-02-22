@@ -1,10 +1,5 @@
 $black: #000;
 $accent-color: #0c71fa;
-/* $fallback-stack: Georgia, serif;
-$headline-stack: 'Georgia', $fallback-stack;
-$grotesk-stack: Grotesk, $fallback-stack;
-$sans-serif-stack: Georgia, Arial, sans-serif;
-$body-stack: Georgia, serif; */
 
 $fallback-stack: Helvetica, serif;
 $headline-stack: 'Helvetica', $fallback-stack;
@@ -152,8 +147,7 @@ $body-stack: Helvetica, serif;
     }
 
     .article-header .bylines .primary-bylines {
-      font: 600 17px / 20px $headline-stack;
-      letter-spacing: .57px
+      font: 14px $headline-stack;
     }
 
     .article-content {
@@ -202,8 +196,6 @@ $body-stack: Helvetica, serif;
 }
 
 .article .attribution {
-  width: 600px;
-  height: 14px;
   font-family: Helvetica;
   font-size: 12px;
   font-weight: normal;

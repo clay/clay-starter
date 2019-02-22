@@ -118,7 +118,6 @@ html {
     & > .wrapper {
       display: flex;
       justify-content: flex-end;
-      /* width: 1100px; */
       max-width: 960px;
       align-items: center;
       justify-content: center;
