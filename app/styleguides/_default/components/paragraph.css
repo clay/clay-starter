@@ -3,6 +3,6 @@ $serif-stack: Georgia, serif;
 
 .paragraph {
   color: $black;
-  font: 18px/1.5px $serif-stack;
+  font: 18px/1.5 $serif-stack;
   margin: 0 0 1em;
 }

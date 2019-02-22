@@ -111,14 +111,10 @@ html {
       margin: 0 auto;
     }
 
-    & > .top {
-      width: 1100px;
-    }
-
     & > .wrapper {
       display: flex;
       justify-content: flex-end;
-      max-width: 960px;
+      max-width: $wrapperMaxWidth;
       align-items: center;
       justify-content: center;
     }
