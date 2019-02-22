@@ -2,6 +2,9 @@
 
 > A basic starter for Clay
 
+## Docs
+Documentation around Clay is being refined in cojunction with iteration on this starter. For beginning documentation about Clay and its data structures you can browse this link: https://claycms.gitbook.io/clay/
+
 ## Requirements
 
 - [NodeJS](https://github.com/creationix/nvm)
