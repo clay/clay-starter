@@ -62,9 +62,15 @@ html {
 
   & > .primary,
   & > .secondary,
-  & > .bottom,
-  & > .wrapper {
+  & > .bottom{
     width: 100vw;
+  }
+  & > .wrapper{
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -118,6 +124,7 @@ html {
       max-width: $wrapperMaxWidth;
       align-items: center;
       justify-content: center;
+
     }
 
     &.kiln-edit-mode .wrapper > .main {
@@ -126,10 +133,3 @@ html {
   }
 }
 
-.wrapper {
-    width: 100%;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-right: auto;
-    margin-left: auto;
-}
