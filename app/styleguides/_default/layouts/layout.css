@@ -48,8 +48,6 @@ html {
 
   & > .page-header,
   & > .wrapper,
-  & > .primary,
-  & > .secondary,
   & > .bottom {
     margin: auto;
   }
@@ -60,8 +58,6 @@ html {
     margin:0 auto;
   }
 
-  & > .primary,
-  & > .secondary,
   & > .bottom{
     width: 100vw;
   }
@@ -76,8 +72,6 @@ html {
 
 @media screen and (max-width: 767.9px) {
   .layout {
-    & > .primary,
-    & > .secondary,
     & > .bottom,
     & > .wrapper {
       padding: 0 20px;
@@ -87,7 +81,6 @@ html {
 
 @media screen and (min-width: 768px) and (max-width: 1179.9px) {
   .layout > .wrapper,
-  .layout > .primary,
   .layout > .bottom {
     padding: 0 7vw;
   }
@@ -103,8 +96,6 @@ html {
 
 @media screen and (min-width: 1180px) {
   .layout {
-    & > .primary,
-    & > .secondary,
     & > .bottom {
       width: 1180px;
     }
@@ -112,9 +103,7 @@ html {
     & > .bottom,
     & > .page-header,
     & > .top,
-    & > .wrapper,
-    & > .primary,
-    & > .secondary {
+    & > .wrapper {
       margin: 0 auto;
     }
 
