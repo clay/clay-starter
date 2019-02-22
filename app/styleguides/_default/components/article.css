@@ -187,15 +187,7 @@ $body-stack: Helvetica, serif;
 }
 
 .article .attribution {
-  font-family: Helvetica;
   font-size: 12px;
   font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #767676;
-}
-.This-is-an-example-o .text-style-1 {
   color: #767676;
 }
