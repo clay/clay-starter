@@ -12,5 +12,5 @@ module.exports.routes = [
 // Resolve the url to publish to
 module.exports.resolvePublishUrl = [
   // Simple url format
-  (uri, data, locals) => publishing.getSlugUrl(data, locals, mainComponentRefs),
+  (uri, data, locals) => publishing.getSlugUrl(data, locals, mainComponentRefs)
 ];

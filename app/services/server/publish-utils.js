@@ -116,6 +116,8 @@ function getMainComponentFromRef(componentReference, locals) {
 
 /**
  * Return the URL prefix of a site.
+ * @param {Object} site
+ * @returns {String}
  */
 function getUrlPrefix(site) {
   const proto = site && site.proto || canonicalProtocol,
@@ -139,7 +141,6 @@ function getUrlOptions(component, locals) {
   urlOptions.slug = component.slug || sanitize.cleanSlug(component.headline);
 
   if (!(locals.site && locals.date && urlOptions.slug)) {
-    console.log(locals.site, locals.date, urlOptions.slug)
     throw new Error(`Client: Cannot generate a canonical url at prefix: ${locals.site.prefix} slug: ${urlOptions.slug} date: ${locals.date}`);
   }
 
