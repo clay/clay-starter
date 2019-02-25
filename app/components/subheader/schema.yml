@@ -1,10 +1,33 @@
 _description: |
   A simple subheader component.
 
+# text:
+#   _label: Subheader Text
+#   _placeholder:
+#     height: 20px
+#     text: Subheader Text
+#   _has:
+#     input: inline
+
+type:
+  _label: Subheader type
+  _has:
+    input: radio
+    options:
+      - small
+      - medium
+      - large
 text:
   _label: Subheader Text
-  _placeholder:
-    height: 20px
-    text: Subheader Text
   _has:
-    input: inline
+    input: text
+
+_groups:
+  subheader:
+    fields:
+      - text
+      - type
+    _placeholder:
+      text: Subheader Text
+      height: 20px
+      ifEmpty: text

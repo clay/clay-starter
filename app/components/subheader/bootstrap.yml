@@ -1,3 +1,4 @@
 _components:
   subheader:
     text: ''
+    type: 'small'

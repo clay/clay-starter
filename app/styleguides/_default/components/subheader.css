@@ -6,3 +6,7 @@ $helvetica-stack: Helvetica, sans-serif;
   font: bold 22px $helvetica-stack;
   margin: 0 0 1em;
 }
+
+.ui-radio-group.is-vertical .ui-radio-group__radios{
+  flex-direction: row !important;
+}
