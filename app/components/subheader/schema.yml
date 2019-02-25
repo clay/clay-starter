@@ -1,14 +1,6 @@
 _description: |
   A simple subheader component.
 
-# text:
-#   _label: Subheader Text
-#   _placeholder:
-#     height: 20px
-#     text: Subheader Text
-#   _has:
-#     input: inline
-
 type:
   _label: Subheader type
   _has:
@@ -19,10 +11,10 @@ type:
         value: 'small'
       -
         name: 'medium (h3)'
-        value: 'madium'
+        value: 'medium'
       -
         name: 'large (h2)'
-        value: 'large 2'
+        value: 'large'
 text:
   _label: Subheader Text
   _has:
