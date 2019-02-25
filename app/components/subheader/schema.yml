@@ -14,9 +14,15 @@ type:
   _has:
     input: radio
     options:
-      - small
-      - medium
-      - large
+      -
+        name: 'small (h4)'
+        value: 'small'
+      -
+        name: 'medium (h3)'
+        value: 'madium'
+      -
+        name: 'large (h2)'
+        value: 'large 2'
 text:
   _label: Subheader Text
   _has:
