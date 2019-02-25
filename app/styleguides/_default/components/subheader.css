@@ -10,3 +10,18 @@ $helvetica-stack: Helvetica, sans-serif;
 .ui-radio-group.is-vertical .ui-radio-group__radios{
   flex-direction: row !important;
 }
+
+.small {
+  font-size: 22px;
+  line-height: 1.09;
+}
+
+.medium {
+  font-size: 28px;
+  line-height: 1.09;
+}
+
+.large {
+  font-size: 38px;
+  line-height: 1.05;
+}
