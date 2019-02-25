@@ -58,10 +58,10 @@ html {
     width: $wrapperMaxWidth;
   }
 
-  & > .bottom{
+  & > .bottom {
     width: 100vw;
   }
-  & > .wrapper{
+  & > .wrapper {
     margin-right: auto;
     margin-left: auto;
     padding-right: 10px;
