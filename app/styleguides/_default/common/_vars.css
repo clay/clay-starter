@@ -7,10 +7,14 @@ $sans-serif-narrow-stack: GroteskNarrow, sans-serif;
 
 /* Colors */
 
-$background-primary-color: #ebebeb;
+$background-primary-color: #fff;
 $black: #000;
 $blue: #0086be;
 $light-gray: #b1b1b1;
 $light-text: #707070;
 $medium-gray: #404040;
 $text-black: #111;
+
+
+/* Wrapper */
+$wrapperMaxWidth: 600px;

@@ -48,29 +48,30 @@ html {
 
   & > .page-header,
   & > .wrapper,
-  & > .primary,
-  & > .secondary,
   & > .bottom {
     margin: auto;
   }
 
   & > .page-header,
   & > .top {
-    width: 100%;
+    margin: 0 auto;
+    width: $wrapperMaxWidth;
   }
 
-  & > .primary,
-  & > .secondary,
-  & > .bottom,
-  & > .wrapper {
+  & > .bottom {
     width: 100vw;
+  }
+  & > .wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 767.9px) {
   .layout {
-    & > .primary,
-    & > .secondary,
     & > .bottom,
     & > .wrapper {
       padding: 0 20px;
@@ -80,7 +81,6 @@ html {
 
 @media screen and (min-width: 768px) and (max-width: 1179.9px) {
   .layout > .wrapper,
-  .layout > .primary,
   .layout > .bottom {
     padding: 0 7vw;
   }
@@ -90,14 +90,12 @@ html {
   }
 
   .layout > .wrapper {
-    min-width: 660px;
+    max-width: 720px;
   }
 }
 
 @media screen and (min-width: 1180px) {
   .layout {
-    & > .primary,
-    & > .secondary,
     & > .bottom {
       width: 1180px;
     }
@@ -105,31 +103,19 @@ html {
     & > .bottom,
     & > .page-header,
     & > .top,
-    & > .wrapper,
-    & > .primary,
-    & > .secondary {
+    & > .wrapper {
       margin: 0 auto;
     }
 
-    & > .top {
-      width: 1100px;
-    }
-
     & > .wrapper {
+      align-items: center;
       display: flex;
-      justify-content: flex-end;
-      width: 1100px;
-    }
-
-    & > .wrapper > .main {
-      margin: 0 100px 0 0;
-      width: 600px;
-      z-index: 1;
+      justify-content: center;
+      max-width: $wrapperMaxWidth;
     }
 
     &.kiln-edit-mode .wrapper > .main {
-      width: 700px;
+      width: 100%;
     }
   }
 }
-

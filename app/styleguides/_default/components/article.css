@@ -1,10 +1,12 @@
 $black: #000;
 $accent-color: #0c71fa;
-$fallback-stack: Georgia, serif;
-$headline-stack: 'GroteskNarrow', $fallback-stack;
-$grotesk-stack: Grotesk, $fallback-stack;
+$attribution-gray: #767676;
+
+$fallback-stack: Helvetica, serif;
+$headline-stack: 'Helvetica', $fallback-stack;
+$grotesk-stack: Helvetica, $fallback-stack;
 $sans-serif-stack: Helvetica, Arial, sans-serif;
-$body-stack: Georgia, serif;
+$body-stack: Helvetica, serif;
 
 .article {
   counter-reset: annotated;
@@ -26,9 +28,9 @@ $body-stack: Georgia, serif;
     }
 
     .headline-primary {
-      font: 600 46px/44px $headline-stack;
+      font-size: 48px;
+      font-weight: bold;
       margin: 0 0 8px;
-      position: relative;
     }
 
     .headline-primary:last-child {
@@ -36,8 +38,8 @@ $body-stack: Georgia, serif;
     }
 
     .bylines {
-      color: #808080;
-      letter-spacing: 1px;
+      font-size: 14px;
+      letter-spacing: normal;
     }
 
     .bylines a {
@@ -46,24 +48,25 @@ $body-stack: Georgia, serif;
     }
   }
 
-  .lede-wrapper {
-    background: #EBEBEB;
+  .lede-image-wrapper {
+    margin-bottom: 20px
   }
 
   .lede-image-wrapper {
     img {
       display: block;
+      margin-bottom: 7px;
       width: 100%;
     }
 
     .lede-image-data {
-      background: #EBEBEB;
       position: relative;
     }
   }
 
   .attribution {
-    font: bold 13px/16px $body-stack;
+    color: $attribution-gray;
+    font: 12px/16px $body-stack;
 
     a {
       box-shadow: 0 1px 0;
@@ -82,7 +85,6 @@ $body-stack: Georgia, serif;
   }
 
   .primary-area:before {
-    background: #EBEBEB;
     content: '';
     height: 100%;
     left: -20px;
@@ -125,12 +127,6 @@ $body-stack: Georgia, serif;
       margin: 0 0 26px;
     }
 
-    .article-header {
-      border-bottom: 1px solid $black;
-      margin: 0 0 20px -100px;
-      width: 1100px;
-    }
-
     .article-header .article-timestamp {
       font: 12px / 1.2 $grotesk-stack;
       letter-spacing: 2.56px;
@@ -144,13 +140,11 @@ $body-stack: Georgia, serif;
     }
 
     .article-header .headline-primary {
-      font: 500 85px/86px $headline-stack;
-      letter-spacing: 0;
+      font-family: Helvetica;
     }
 
     .article-header .bylines .primary-bylines {
-      font: 600 17px / 20px $headline-stack;
-      letter-spacing: .57px
+      font: 14px $headline-stack;
     }
 
     .article-content {
@@ -190,10 +184,6 @@ $body-stack: Georgia, serif;
   .kiln-edit-mode .article {
     .article-header {
       margin: 0;
-    }
-
-    .body {
-      margin: 40px 0 0 100px;
     }
   }
 }
