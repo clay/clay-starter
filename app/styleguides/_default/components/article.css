@@ -1,5 +1,6 @@
 $black: #000;
 $accent-color: #0c71fa;
+$attribution-gray: #767676;
 
 $fallback-stack: Helvetica, serif;
 $headline-stack: 'Helvetica', $fallback-stack;
@@ -64,7 +65,7 @@ $body-stack: Helvetica, serif;
   }
 
   .attribution {
-    color: #767676;
+    color: $attribution-gray;
     font: 12px/16px $body-stack;
 
     a {
