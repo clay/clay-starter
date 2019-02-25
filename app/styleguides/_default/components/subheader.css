@@ -7,7 +7,7 @@ $helvetica-stack: Helvetica, sans-serif;
   margin: 0 0 1em;
 }
 
-.ui-radio-group.is-vertical .ui-radio-group__radios{
+.ui-radio-group.is-vertical .ui-radio-group__radios {
   flex-direction: row !important;
 }
 
@@ -24,4 +24,23 @@ $helvetica-stack: Helvetica, sans-serif;
 .large {
   font-size: 38px;
   line-height: 1.05;
+}
+
+/* .subheader:hover {
+  opacity: 1;
+  & > .link {
+    opacity: 1;
+  }
+} */
+
+.link {
+  opacity: 0;
+  transition: opacity 150ms ease;
+  padding-left: 4px;
+  -moz-transition: opacity 150ms ease;
+  -webkit-transition: opacity 150ms ease;
+}
+
+.link-show {
+  opacity: 1;
 }

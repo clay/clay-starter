@@ -19,12 +19,17 @@ text:
   _label: Subheader Text
   _has:
     input: text
+link:
+  _label: Subheader Link
+  _has:
+    input: text
 
 _groups:
   subheader:
     fields:
       - text
       - type
+      - link
     _placeholder:
       text: Subheader Text
       height: 20px
