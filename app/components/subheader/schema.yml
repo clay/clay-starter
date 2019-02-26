@@ -16,8 +16,8 @@ text:
   _label: Subheader Text
   _has:
     input: text
-link:
-  _label: Hash Id
+subheaderid:
+  _label: Hash (Subheader text by default)
   _has:
     input: text
 
@@ -26,7 +26,7 @@ _groups:
     fields:
       - text
       - type
-      - link
+      - subheaderid
     _placeholder:
       text: Subheader Text
       height: 20px

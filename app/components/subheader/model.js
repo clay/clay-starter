@@ -7,8 +7,7 @@ module.exports.save = function (ref, data) {
     sanitize.toSmartText(data.text || '')
   );
   data.css = data.type;
-  data.link = `${data.link || data.text}`.replace(/\s+/g, '-');
-  console.log(data.link);
-  debugger;
+  data.subheaderid = `${data.link || data.text}`.replace(/\s+/g, '-');
+  data.iconcss = 'link';
   return data;
 };

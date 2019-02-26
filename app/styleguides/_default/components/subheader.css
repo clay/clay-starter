@@ -19,22 +19,28 @@ $helvetica-stack: Helvetica, sans-serif;
 .medium {
   font-size: 28px;
   line-height: 1.09;
+  & > .link {
+    padding: 3px 0px 0px 5px;
+  }
 }
 
 .large {
   font-size: 38px;
   line-height: 1.05;
+  & > .link {
+    padding: 0px 0px 0px 5px;
+  }
 }
 
 .subheader:hover {
-  opacity: 1;
-  & > .link {
+  & .link {
     opacity: 1;
   }
 }
 
 .link {
-  padding-left: 4px;
+  padding: 2px 0px 0px 5px;
+  position: absolute;
   transition: opacity 150ms ease;
   opacity: 0;
   -moz-transition: opacity 150ms ease;

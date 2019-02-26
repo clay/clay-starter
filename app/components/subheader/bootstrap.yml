@@ -4,4 +4,4 @@ _components:
     type: "small"
     css: ""
     link: ""
-    cssclass: "link"
+    iconcss: "link"
