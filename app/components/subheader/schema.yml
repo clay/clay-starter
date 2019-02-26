@@ -2,25 +2,22 @@ _description: |
   A simple subheader component.
 
 type:
-  _label: Subheader type
+  _label: Type
   _has:
     input: radio
     options:
-      -
-        name: 'small (h4)'
-        value: 'small'
-      -
-        name: 'medium (h3)'
-        value: 'medium'
-      -
-        name: 'large (h2)'
-        value: 'large'
+      - name: "small (h4)"
+        value: "small"
+      - name: "medium (h3)"
+        value: "medium"
+      - name: "large (h2)"
+        value: "large"
 text:
   _label: Subheader Text
   _has:
     input: text
 link:
-  _label: Subheader Link
+  _label: Hash Id
   _has:
     input: text
 

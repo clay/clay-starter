@@ -6,6 +6,7 @@
  */
 module.exports = element => {
   element.addEventListener('click', event => {
-    debugger;
+    console.log('::ELEMENT', element);
+    console.log('::EVENT', event);
   });
 };
