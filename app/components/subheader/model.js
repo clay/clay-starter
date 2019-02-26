@@ -10,6 +10,7 @@ module.exports.save = function (ref, data) {
 
   data.css = data.type;
   data.link = hash;
+  data.cssclass = 'link'
   console.log(data.link);
   debugger;
   return data;
