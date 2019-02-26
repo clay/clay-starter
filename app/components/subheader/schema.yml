@@ -17,7 +17,7 @@ text:
   _has:
     input: text
 subheaderid:
-  _label: Hash (Subheader text by default)
+  _label: Hash (Subheader text if is empty)
   _has:
     input: text
 
