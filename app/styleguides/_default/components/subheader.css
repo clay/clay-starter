@@ -26,21 +26,17 @@ $helvetica-stack: Helvetica, sans-serif;
   line-height: 1.05;
 }
 
-/* .subheader:hover {
+.subheader:hover {
   opacity: 1;
   & > .link {
     opacity: 1;
   }
-} */
-
-.link {
-  opacity: 0;
-  transition: opacity 150ms ease;
-  padding-left: 4px;
-  -moz-transition: opacity 150ms ease;
-  -webkit-transition: opacity 150ms ease;
 }
 
-.link-show {
-  opacity: 1;
+.link {
+  padding-left: 4px;
+  transition: opacity 150ms ease;
+  opacity: 0;
+  -moz-transition: opacity 150ms ease;
+  -webkit-transition: opacity 150ms ease;
 }

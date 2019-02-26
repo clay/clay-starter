@@ -5,11 +5,9 @@
  * @param  {Element} el
  */
 module.exports = element => {
-  element.addEventListener('mouseover', event => {
-    event.currentTarget.classList.add('link-show');
-  });
-
-  element.addEventListener('mouseout', event => {
-    event.currentTarget.classList.remove('link-show');
+  element.addEventListener('click', event => {
+    // alert('clicked');
+    // const url = window.location.href
+    // event.currentTarget.classList.add('link-show');
   });
 };
