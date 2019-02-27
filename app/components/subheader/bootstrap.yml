@@ -1,7 +1,7 @@
 _components:
   subheader:
     text: ""
-    type: "small"
+    type: "h4"
     css: ""
     link: ""
     iconcss: "link"

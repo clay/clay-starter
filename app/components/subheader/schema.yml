@@ -7,11 +7,11 @@ type:
     input: radio
     options:
       - name: "small (h4)"
-        value: "small"
+        value: "h4"
       - name: "medium (h3)"
-        value: "medium"
+        value: "h3"
       - name: "large (h2)"
-        value: "large"
+        value: "h2"
 text:
   _label: Subheader Text
   _has:

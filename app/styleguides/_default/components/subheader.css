@@ -11,12 +11,12 @@ $helvetica-stack: Helvetica, sans-serif;
   flex-direction: row !important;
 }
 
-.small {
+.h4 {
   font-size: 22px;
   line-height: 1.09;
 }
 
-.medium {
+.h3 {
   font-size: 28px;
   line-height: 1.09;
   & > .link {
@@ -24,7 +24,7 @@ $helvetica-stack: Helvetica, sans-serif;
   }
 }
 
-.large {
+.h2 {
   font-size: 38px;
   line-height: 1.05;
   & > .link {
