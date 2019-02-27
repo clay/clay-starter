@@ -1,3 +1,10 @@
-<h2 class="{{ componentVariation }}" data-editable="text" data-uri="{{default _ref _self}}">
-  {{{ text }}}
-</h2>
+<div class="{{ componentVariation }}" data-editable="subheader" data-uri="{{default _ref _self}}" id={{subheaderid}}>
+  <p class="{{css}}">
+    {{{text}}}
+    {{#if text}}
+    <a href="#{{subheaderid}}" class="{{iconcss}}">
+      {{{ read 'public/media/components/subheader/icon-link.svg' }}}
+    </a>
+    {{/if}}
+  </p>
+</div>

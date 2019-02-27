@@ -1,3 +1,7 @@
 _components:
   subheader:
-    text: ''
+    text: ""
+    type: "h4"
+    css: ""
+    link: ""
+    iconcss: "link"
