@@ -2,6 +2,9 @@
 
 > A basic starter for Clay
 
+## Docs
+Documentation around Clay is being refined in cojunction with iteration on this starter. For beginning documentation about Clay and its data structures you can browse this link: https://claycms.gitbook.io/clay/
+
 ## Requirements
 
 - [NodeJS](https://github.com/creationix/nvm)
@@ -24,6 +27,12 @@ Clone the repo and run the following commands:
 - `make bootstrap-user` (This command seeds a user from `sample_users.yml` file at the root of this project)
 
 You should be able to navigate to http://localhost/_pages/sample-article.html to see an article page render!
+
+### Accessing The Edit UI
+
+The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own Gmail address.
+
+Once you're done that you can access edit mode from any page by adding `?edit=true` or by holding down `Shift` and typing `CLAY`. For example, navigating to http://localhost/_pages/sample-article.html?edit=true will grant you access to the edit interface.
 
 ### Stopping & Clearing Out Data
 

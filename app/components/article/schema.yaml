@@ -59,6 +59,7 @@ content:
       - subheader
       - divider
       - image
+      - code-sample
 
 ledeUrl:
   _label: Lede Image URL
