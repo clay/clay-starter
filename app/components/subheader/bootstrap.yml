@@ -2,5 +2,4 @@ _components:
   subheader:
     text: ""
     type: "h2"
-    css: ""
     link: ""

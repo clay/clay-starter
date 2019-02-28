@@ -41,8 +41,7 @@ $helvetica-stack: Helvetica, sans-serif;
     -webkit-transition: opacity 150ms ease;
   }
 
-}
-
-.ui-radio-group.is-vertical .ui-radio-group__radios {
-  flex-direction: row !important;
+  & .ui-radio-group.is-vertical .ui-radio-group__radios {
+    flex-direction: row !important;
+  }
 }
