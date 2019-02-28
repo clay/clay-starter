@@ -1,4 +1,4 @@
-_version: 1.1
+_version: 1.3
 
 _description: |
   Youtube video embed for Clay. Can only be used for Youtube videos hosted by NYMag or Vulture. For externally hosted videos, use the Video component.
@@ -8,7 +8,6 @@ videoId:
   _publish: videoPlayerId
   _has:
     input: text
-  _subscribe: articleVideoId
 
 videoType:
   _label: Type
@@ -62,7 +61,7 @@ playerCaption:
   _has: text
 
 autoPlay:
-  _label: Autoplay on Page Load
+  _label: Autoplay with muted audio on Page Load
   _has: checkbox
 
 autoPlayNextVideo:

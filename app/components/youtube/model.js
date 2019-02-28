@@ -1,6 +1,6 @@
 'use strict';
 const _get = require('lodash/get'),
-  { getVideoDetails } = require('../../services/universal/youtube'),
+   { getVideoDetails } = require('../../services/universal/youtube'),
   defaultPlayerBorderTopCTA = 'Watch';
 
 /**
@@ -84,12 +84,13 @@ module.exports.save = (uri, data, locals) => {
     data.videoPlaylist = getDefaultPlaylistBySite(data, locals);
   }
 
-  if (data.videoId) {
-    return getVideoDetails(data.videoId)
-      .then(videoDetails => setVideoDetails(data, videoDetails));
-  }
+  //   if (data.videoId) {
+  //     return getVideoDetails(data.videoId)
+  //       .then(videoDetails => setVideoDetails(data, videoDetails));
+  //   }
 
   data.videoValid = true; // technically not an invalid video because no videoId so we don't want to show an error message in edit mode
 
   return data;
 };
+
