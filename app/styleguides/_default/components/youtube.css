@@ -1,0 +1,99 @@
+@import '_default/common/_vars.css';
+
+$text-stack: 'MillerText', Georgia, serif;
+
+.youtube {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 24px;
+
+  .lede-video &,
+  .lede-video &.edit-mode {
+    margin: 0;
+  }
+
+  &-headline {
+    color: $black;
+    font: 21px / 25px $text-stack;
+    letter-spacing: -.01em;
+    margin: 0 0 6px;
+  }
+
+  &-caption {
+    color: $black;
+  }
+
+  &-headerline,
+  &-caption,
+  & .player-wrapper {
+    flex: 0 0 100%;
+  }
+
+  &.edit-mode {
+    height: auto;
+    margin: 0 0 20px;
+
+    .youtube-video-preview {
+      width: 100%;
+    }
+  }
+
+  &.border-top {
+    border-top: 1px solid $black;
+  }
+
+  &.border-top:before {
+    color: $black;
+    font: 15px Egyptienne, Georgia, serif;
+    letter-spacing: 2px;
+    padding: 8px 0 16px;
+    text-transform: uppercase;
+  }
+
+  & .player-wrapper {
+    margin: 0 0 10px;
+  }
+
+  & .player {
+    padding-top: calc((9/16) * 100%);
+    position: relative;
+  }
+
+  & .player iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  & + & {
+    margin-top: -5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0 0 40px -60px;
+
+    & + & {
+      margin-top: 0;
+    }
+
+    &.sponsored.break-out,
+    &.editorial.break-out {
+      width: 700px;
+    }
+  }
+
+  @media screen and (min-width: 1180px) {
+    margin: 0 0 40px;
+
+    &.embedded {
+      margin: 0 0 40px;
+    }
+
+    &.sponsored.break-out,
+    &.editorial.break-out {
+      width: 1100px;
+    }
+  }
+}

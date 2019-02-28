@@ -1,0 +1,53 @@
+{{ set 'uniquePlayerID' (randomString 'youtube-player-') }}
+{{#ifAny @root.locals.edit videoValid}}
+<div data-uri="{{ default _ref _self }}"
+     class="youtube{{if @root.locals.edit ' edit-mode'}}{{ if playerBorderTop ' border-top' }} {{ videoSize }} {{ videoType }}"
+     data-element-id="{{ uniquePlayerID }}"
+     data-video-id="{{ videoId }}"
+     data-autoplay-next-video="{{ autoPlayNextVideo }}"
+     data-autoplay-video="{{ autoPlay }}"
+     data-playlist="{{ videoPlaylist }}"
+     data-track-video-type="{{ videoType }}"
+     data-track-video-location="{{ videoLocation }}"
+     data-track-video-title="{{ videoTitle }}"
+     data-track-video-duration="{{ videoDuration }}"
+     data-track-channel-name="{{ channelName }}"
+     data-editable="inline"
+     data-custom-play="{{ customPlay }}"
+     data-origsrc="https://www.youtube.com/watch?v={{ videoId }}">
+  {{#if playerBorderTopCTA }}
+    <style>
+      .youtube[data-uri="{{ default _ref _self }}"].border-top:before {
+        content: '{{ playerBorderTopCTA }}';
+      }
+    </style>
+  {{/if}}
+
+  <div class="player-wrapper">
+    {{#unless @root.locals.edit}}
+      <div class="player">
+        {{!-- The <iframe> (and video player) will replace this <div> tag. --}}
+        <div id="{{ uniquePlayerID }}"></div>
+      </div>
+    {{else}}
+      {{#unless videoValid}}
+        <div data-placeholder="videoValid"></div>
+      {{else}}
+        {{#if videoThumbnail}}
+          <img class="youtube-video-preview" src="{{ videoThumbnail }}" alt="">
+        {{/if}}
+      {{/unless}}
+    {{/unless}}
+  </div>
+
+  {{#ifAll playerHeadline (compare videoType 'related')}}
+    <h2 class="youtube-headline">{{ playerHeadline }}</h2>
+  {{/ifAll}}
+
+  {{#if playerCaption}}
+    <div class="attribution youtube-caption">
+      <span class="caption">{{ playerCaption }}</span>
+    </div>
+  {{/if}}
+</div>
+{{/ifAny}}

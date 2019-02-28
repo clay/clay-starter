@@ -1,4 +1,8 @@
 _components:
+  youtube-player-head:
+    instances:
+      new:
+        allowed: true
   # meta components
   meta-title:
     instances:
