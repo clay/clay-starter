@@ -3,17 +3,14 @@ $helvetica-stack: Helvetica, sans-serif;
 
 .subheader {
   color: $black;
-  /* font: bold 22px $helvetica-stack; */
   margin: 0 0 1em;
 
    h4& {
     font: bold 22px $helvetica-stack;
-    /* font-size: 22px; */
     line-height: 1.09;
   }
 
    h3& {
-    /* font-size: 28px; */
     font: bold 28px $helvetica-stack;
     line-height: 1.09;
 
@@ -23,7 +20,6 @@ $helvetica-stack: Helvetica, sans-serif;
   }
 
   h2& {
-    /* font-size: 38px; */
     font: bold 38px $helvetica-stack;
     line-height: 1.05;
 
