@@ -3,26 +3,32 @@ $helvetica-stack: Helvetica, sans-serif;
 
 .subheader {
   color: $black;
-  font: bold 22px $helvetica-stack;
+  /* font: bold 22px $helvetica-stack; */
   margin: 0 0 1em;
-  .h4 {
-    font-size: 22px;
+
+   h4& {
+    font: bold 22px $helvetica-stack;
+    /* font-size: 22px; */
     line-height: 1.09;
   }
 
-  .h3 {
-    font-size: 28px;
+   h3& {
+    /* font-size: 28px; */
+    font: bold 28px $helvetica-stack;
     line-height: 1.09;
+
     & > .link {
-      padding: 3px 0px 0px 5px;
+      padding: 3px 0 0 5px;
     }
   }
 
-  .h2 {
-    font-size: 38px;
+  h2& {
+    /* font-size: 38px; */
+    font: bold 38px $helvetica-stack;
     line-height: 1.05;
+
     & > .link {
-      padding: 0px 0px 0px 5px;
+      padding: 0 0 0 5px;
     }
   }
 
@@ -33,15 +39,11 @@ $helvetica-stack: Helvetica, sans-serif;
   }
 
   .link {
-    padding: 2px 0px 0px 5px;
+    padding: 2px 0 0 5px;
     position: absolute;
     transition: opacity 150ms ease;
     opacity: 0;
     -moz-transition: opacity 150ms ease;
     -webkit-transition: opacity 150ms ease;
-  }
-
-  & .ui-radio-group.is-vertical .ui-radio-group__radios {
-    flex-direction: row !important;
   }
 }

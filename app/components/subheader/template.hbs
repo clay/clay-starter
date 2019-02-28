@@ -1,10 +1,8 @@
-<div class="{{ componentVariation }}" data-editable="subheader" data-uri="{{default _ref _self}}" id={{subheaderid}}>
-  <p class="{{type}}">
-    {{{text}}}
-    {{#if text}}
-    <a href="#{{subheaderid}}" class="link">
-      {{{ read 'public/media/components/subheader/icon-link.svg' }}}
-    </a>
-    {{/if}}
-  </p>
-</div>
+<{{type}} class="{{ componentVariation }}" data-editable="subheader" data-uri="{{default _ref _self}}" id={{subheaderId}}>
+  {{{text}}}
+  {{#if text}}
+  <a href="#{{subheaderid}}" class="link">
+    {{{ read 'public/media/components/subheader/icon-link.svg' }}}
+  </a>
+  {{/if}}
+</{{type}}>

@@ -6,17 +6,17 @@ type:
   _has:
     input: radio
     options:
-      - name: "small (h4)"
-        value: "h4"
-      - name: "medium (h3)"
-        value: "h3"
-      - name: "large (h2)"
-        value: "h2"
+      - name: 'small (h4)'
+        value: 'h4'
+      - name: 'medium (h3)'
+        value: 'h3'
+      - name: 'large (h2)'
+        value: 'h2'
 text:
   _label: Subheader Text
   _has:
     input: text
-subheaderid:
+subheaderId:
   _label: Hash (Use subheader text when is empty)
   _has:
     input: text
@@ -26,7 +26,7 @@ _groups:
     fields:
       - text
       - type
-      - subheaderid
+      - subheaderId
     _placeholder:
       text: Subheader Text
       height: 20px

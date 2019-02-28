@@ -1,5 +1,5 @@
 _components:
   subheader:
-    text: ""
-    type: "h2"
-    link: ""
+    text: ''
+    type: 'h2'
+    link: ''
