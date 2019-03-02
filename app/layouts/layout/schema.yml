@@ -12,12 +12,14 @@ head:
       - meta-keywords
       - meta-authors
       - meta-image
+      - youtube-player-head
 
 headLayout:
   _componentList:
     include:
       - meta-site
       - meta-icons
+      - youtube-player-head
 top:
   _componentList:
     include: []

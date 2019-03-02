@@ -47,7 +47,7 @@ const dom = require('@nymag/dom'),
   _each = require('lodash/each'),
   productLinks = require('./product-links'),
   $visibility = require('./visibility'),
-  visit = require('./visit'),
+  visit = require('./visit.js'),
 
   /**
    * the `config`
