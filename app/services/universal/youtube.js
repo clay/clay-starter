@@ -13,7 +13,6 @@ function getDurationInSeconds(duration) {
 }
 
 function getVideoDetails(videoId) {
-  debugger;
   const videoSearchUrl = `${YT_API}/videos`,
     qs = querystring.stringify({
       part: 'snippet,contentDetails',
