@@ -60,7 +60,6 @@ content:
       - divider
       - image
       - code-sample
-      # - twitter
       - youtube
 
 ledeUrl:
