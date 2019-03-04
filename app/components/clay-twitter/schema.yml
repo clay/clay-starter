@@ -1,5 +1,3 @@
-_version: 1.0
-
 _description: |
   Embeds a tweet via the tweet’s URL.
   _Similar to: [clay-facebook-post](https://github.com/nymag/sites/blob/master/components/clay-facebook-post/README.md), [clay-instagram](https://github.com/nymag/sites/blob/master/components/clay-instagram/README.md), [clay-pinterest](https://github.com/nymag/sites/blob/master/components/clay-pinterest/README.md), [tumblr-post](https://github.com/nymag/sites/blob/master/components/tumblr-post/README.md)_

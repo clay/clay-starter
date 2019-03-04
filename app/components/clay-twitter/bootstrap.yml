@@ -1,5 +1,5 @@
 _components:
-  twitter:
+  clay-twitter:
     url: ''
     showThread: true
     showMedia: true
