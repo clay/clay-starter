@@ -1,24 +1,26 @@
-$text-stack: 'MillerText', Georgia, serif;
+@import '_default/common/_vars.css';
 
-.lede-video .youtube,
-.lede-video .youtube.edit-mode {
-  margin: 0;
-}
+$text-stack: 'MillerText', Georgia, serif;
 
 .youtube {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 24px;
 
+  .lede-video &,
+  .lede-video &.edit-mode {
+    margin: 0;
+  }
+
   &-headline {
-    color: #000;
+    color: $black;
     font: 21px / 25px $text-stack;
     letter-spacing: -.01em;
     margin: 0 0 6px;
   }
 
   &-caption {
-    color: #000;
+    color: $black;
   }
 
   &-headerline,
@@ -37,11 +39,11 @@ $text-stack: 'MillerText', Georgia, serif;
   }
 
   &.border-top {
-    border-top: 1px solid #000;
+    border-top: 1px solid $black;
   }
 
   &.border-top:before {
-    color: #000;
+    color: $black;
     font: 15px Egyptienne, Georgia, serif;
     letter-spacing: 2px;
     padding: 8px 0 16px;

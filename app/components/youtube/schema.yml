@@ -1,8 +1,6 @@
-_version: 1.3
-
 _description: |
-  Youtube video embed for Clay. Can only be used for Youtube videos hosted by NYMag or Vulture. For externally hosted videos, use the Video component.
-  For technical reasons, YouTube embeds don't display a preview in edit mode. Preview the video by previewing the full page (from the Clay toolbar). Embeds can display a specific video ID.
+  Youtube video embed for Clay. For technical reasons, YouTube embeds don't display a preview in edit mode.
+  Preview the video by previewing the full page (from the Clay toolbar). Embeds can display a specific video ID.
 videoId:
   _label: YouTube Video ID
   _publish: videoPlayerId

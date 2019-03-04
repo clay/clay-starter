@@ -8,7 +8,6 @@ const _assign = require('lodash/assign'),
 
 // Global client service for the YouTube player as primary video content playback.
 
-
 /**
  * Adds a video configuration to the video queue
  * @param {Object} videoConfig
