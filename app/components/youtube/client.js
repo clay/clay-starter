@@ -116,5 +116,3 @@ function getAnalyticsCustomDimensions(el) {
     youtubeVideoDuration: el.getAttribute('data-track-video-duration')
   };
 }
-
-// module.exports = (el) =>{console.log(el);};

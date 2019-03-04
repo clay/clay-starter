@@ -13,17 +13,12 @@ function getDurationInSeconds(duration) {
 }
 
 function getVideoDetails(videoId) {
-  debugger;
   const videoSearchUrl = `${YT_API}/videos`,
     qs = querystring.stringify({
       part: 'snippet,contentDetails',
       id: videoId,
-      key: 'AIzaSyCtD1a3SWW3QFzyfkLi0NpwvHL9InosQi8'
+      key: process.env.YOUTUBE_API_KEY
     });
-
-  // key: process.env.YOUTUBE_API_KEY
-
-  console.log(qs);
 
   return rest.get(`${videoSearchUrl}?${qs}`)
     .then(res => Object.assign(
