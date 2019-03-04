@@ -3,6 +3,43 @@ $helvetica-stack: Helvetica, sans-serif;
 
 .subheader {
   color: $black;
-  font: bold 22px $helvetica-stack;
   margin: 0 0 1em;
+
+   h4& {
+    font: bold 22px $helvetica-stack;
+    line-height: 1.09;
+  }
+
+   h3& {
+    font: bold 28px $helvetica-stack;
+    line-height: 1.09;
+
+    & > .link {
+      padding: 3px 0 0 5px;
+    }
+  }
+
+  h2& {
+    font: bold 38px $helvetica-stack;
+    line-height: 1.05;
+
+    & > .link {
+      padding: 0 0 0 5px;
+    }
+  }
+
+  &:hover {
+    & .link {
+      opacity: 1;
+    }
+  }
+
+  .link {
+    padding: 2px 0 0 5px;
+    position: absolute;
+    transition: opacity 150ms ease;
+    opacity: 0;
+    -moz-transition: opacity 150ms ease;
+    -webkit-transition: opacity 150ms ease;
+  }
 }
