@@ -12,7 +12,6 @@ head:
       - meta-keywords
       - meta-authors
       - meta-image
-      - youtube-player-head
 
 headLayout:
   _componentList:

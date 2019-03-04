@@ -29,7 +29,7 @@ $text-stack: 'MillerText', Georgia, serif;
 
   &.edit-mode {
     height: auto;
-    margin: 0 0 40px -100px;
+    margin: 0 0 40px;
 
     .youtube-video-preview {
       width: 100%;
