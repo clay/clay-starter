@@ -197,25 +197,6 @@ function shouldBePreloaded(el, rect, preloadThreshold, innerHeight) {
 }
 
 /**
- * Create a one-dimensional spacial hash of x
- * @param {number} x
- * @param {number} stepSize
- * @param {number} optimalK
- * @param {number} base
- * @return {number}
- */
-function getLinearSpacialHash(x, stepSize, optimalK, base) {
-  var index = Math.floor(x / (stepSize || 1)),
-    remainder = x % stepSize,
-    result = index.toString(base);
-
-  if (optimalK > 1) {
-    result += getLinearSpacialHash(remainder, Math.floor(stepSize / base), optimalK - 1, base);
-  }
-  return result;
-}
-
-/**
  * @param {ClientRect} rect
  * @param {number} innerHeight
  * @returns {number}
@@ -310,7 +291,6 @@ $document.addEventListener('scroll', _throttle(updateVisibility, 200));
 
 // public
 module.exports.getPageOffset = getPageOffset;
-// module.exports.getLinearSpacialHash = getLinearSpacialHash;
 // module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
 // module.exports.getViewportHeight = getViewportHeight;
 // module.exports.getViewportWidth = getViewportWidth;
