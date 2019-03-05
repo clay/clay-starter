@@ -1,10 +1,33 @@
 _description: |
   A simple subheader component.
 
+type:
+  _label: Type
+  _has:
+    input: radio
+    options:
+      - name: 'small (h4)'
+        value: 'h4'
+      - name: 'medium (h3)'
+        value: 'h3'
+      - name: 'large (h2)'
+        value: 'h2'
 text:
   _label: Subheader Text
-  _placeholder:
-    height: 20px
-    text: Subheader Text
   _has:
-    input: inline
+    input: text
+subheaderId:
+  _label: Hash (Use subheader text when is empty)
+  _has:
+    input: text
+
+_groups:
+  subheader:
+    fields:
+      - text
+      - type
+      - subheaderId
+    _placeholder:
+      text: Subheader Text
+      height: 20px
+      ifEmpty: text
