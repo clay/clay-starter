@@ -2,10 +2,6 @@
 
 const $window = window,
   $document = document,
-  _filter = require('lodash/filter'),
-  _map = require('lodash/map'),
-  _invokeMap = require('lodash/invokeMap'),
-  _assign = require('lodash/assign'),
   _throttle = require('lodash/throttle'),
   Eventify = require('eventify');
 var list = [],
@@ -207,8 +203,9 @@ Visible.prototype = {
 Eventify.enable(Visible.prototype);
 
 VisibleEvent = function (type, options) {
+  debugger;
   this.type = type;
-  _assign(this, options);
+  Object.assign({},this,options);
 };
 
 // listen for scroll events (throttled)

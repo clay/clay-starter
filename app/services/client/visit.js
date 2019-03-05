@@ -530,5 +530,5 @@ function init() {
 init();
 
 module.exports.onceReady = getPublicStateOnceReady;
-// module.exports.getQueryParamsObject = getQueryParamsObject;
-// module.exports.getBrowserInfo = getBrowserInfo;
+module.exports.getQueryParamsObject = getQueryParamsObject;
+module.exports.getBrowserInfo = getBrowserInfo;
