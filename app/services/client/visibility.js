@@ -64,7 +64,7 @@ function updateSeen(item, evt) {
 /**
  * sets preload property
  * @param  {Visible} item
- * @param  {{}} evt
+ * @param  {Object} evt
  * @param  {Number} innerHeight
  * @fires Visible#preload
  */
@@ -99,7 +99,7 @@ function updateVisibilityForItem(item) {
 
 /**
  * make sure an element isn't hidden by styles or etc
- * @param  {Element}  el
+ * @param  {Element} el
  * @return {Boolean}
  */
 function isElementNotHidden(el) {
@@ -124,28 +124,6 @@ function shouldBePreloaded(el, rect, preloadThreshold, innerHeight) {
  */
 function getVerticallyVisiblePixels(rect, innerHeight) {
   return min(innerHeight, max(rect.bottom, 0)) - min(max(rect.top, 0), innerHeight);
-}
-
-/**
- * Get offset of element relative to entire page
- *
- * @param {Element} el
- * @returns {{left: number, top: number}}
- * @see http://jsperf.com/offset-vs-getboundingclientrect/7
- */
-function getPageOffset(el) {
-  var offsetLeft = el.offsetLeft,
-    offsetTop = el.offsetTop;
-
-  while (el = el.offsetParent) {
-    offsetLeft += el.offsetLeft;
-    offsetTop += el.offsetTop;
-  }
-
-  return {
-    left: offsetLeft,
-    top: offsetTop
-  };
 }
 
 /**
@@ -203,7 +181,6 @@ Visible.prototype = {
 Eventify.enable(Visible.prototype);
 
 VisibleEvent = function (type, options) {
-  debugger;
   this.type = type;
   Object.assign({},this,options);
 };
@@ -212,7 +189,6 @@ VisibleEvent = function (type, options) {
 $document.addEventListener('scroll', _throttle(updateVisibility, 200));
 
 // public
-module.exports.getPageOffset = getPageOffset;
 module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
 module.exports.isElementNotHidden = isElementNotHidden;
 module.exports.Visible = Visible;
