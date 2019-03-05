@@ -36,7 +36,7 @@ function updateVisibility() {
 
 /**
  * updates seen property
- * @param  {Visble} item
+ * @param  {Visible} item
  * @param  {{}} evt
  * @fires Visible#shown
  * @fires Visible#hidden
@@ -153,6 +153,7 @@ Visible = function (el, options) {
     updateVisibilityForItem(this); // set immediately to visible or not
   }
 };
+
 Visible.prototype = {
   /**
    * Stop triggering.
@@ -178,6 +179,7 @@ Visible.prototype = {
    * @param {{}}
    */
 };
+
 Eventify.enable(Visible.prototype);
 
 VisibleEvent = function (type, options) {

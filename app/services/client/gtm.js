@@ -20,7 +20,6 @@ window.dataLayer = window.dataLayer || [];
 
 /**
  * queues any events given in the params and reports the queue immediately
- * @param {...object} optional event(s)
  */
 function reportNow() {
   eventsQueue.push.apply(eventsQueue, arguments);

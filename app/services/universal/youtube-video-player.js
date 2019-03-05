@@ -32,7 +32,7 @@ function extractVideoIdFromUrl(str) {
 
 /**
  * create the YouTube / YT player
- * @param {Object} videoConfig
+ * @param {object} videoConfig
  * @param {string} videoConfig.videoContainerId
  * @param {string} videoConfig.videoId
  * @param {object} videoConfig.playerParams
@@ -65,9 +65,9 @@ function createPlayer(videoConfig) {
 
 /**
  * handleVideoReady
- * @param {Object} event
+ * @param {object} event
  * @param {string} customParams
- * @returns {Function}
+ * @returns {function}
  */
 function handleVideoReady(event, customParams) {
   return function (e) {
@@ -88,8 +88,8 @@ function handleVideoReady(event, customParams) {
 
 /**
  * Loads next video
- * @param {Object} evt - video event
- * @param {Boolean} shouldAutoplayNextVideo
+ * @param {object} evt - video event
+ * @param {boolean} shouldAutoplayNextVideo
  */
 function loadNextVideo(evt, shouldAutoplayNextVideo) {
   if (shouldAutoplayNextVideo !== 'true') {
@@ -99,9 +99,9 @@ function loadNextVideo(evt, shouldAutoplayNextVideo) {
 
 /**
  * Video state change wrapper
- * @param {Object} customParams - custom configuration object
- * @param {Object} playerEvents - YT player custom events
- * @return {Function} handles when the video state changes
+ * @param {object} customParams - custom configuration object
+ * @param {object} playerEvents - YT player custom events
+ * @return {function} handles when the video state changes
  */
 function videoStateChangeWrapper(customParams, playerEvents) {
   var hasVideoStarted = false;
