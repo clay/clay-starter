@@ -9,34 +9,7 @@ const $window = window,
   _throttle = require('lodash/throttle'),
   Eventify = require('eventify');
 var list = [],
-  Visible, VisibleEvent,
-  primaryContentEl; // need to hold on to this in case the page layout changes
-
-/**
- * the purpose of the primaryContentEl is to calculate if other elements are above or below it
- * this helps product determine if a module is doing well in a certain position
- * there can only be one primary content element on a page
- * @param {Element} [el]
- */
-function setPrimaryContent(el) {
-  if (el) {
-    primaryContentEl = el;
-  }
-}
-
-/**
- * for position we only care if it is below the content or not
- * @param {Element} el - element to measure position relative to primary content
- * @returns {boolean}
- */
-function isBelowPrimaryContent(el) {
-  // calculating position lazily as this function is not called frequently and the position can change
-  // alternative would be to cache primaryContentBottom and update on load and resize events
-  var primaryContentRect = primaryContentEl && primaryContentEl.getBoundingClientRect(),
-    elRect = el && el.getBoundingClientRect();
-
-  return !!(primaryContentRect && elRect && primaryContentRect.bottom < elRect.top);
-}
+  Visible, VisibleEvent;
 
 /**
  * @param {number} a
@@ -135,23 +108,6 @@ function updateVisibilityForItem(item) {
  */
 function isElementNotHidden(el) {
   return el && el.offsetParent !== null && !el.getAttribute('hidden') && getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden';
-}
-
-/**
- * Simple 2D box collision detection
- * @param {Element} element
- * @param {Element} possibleContainingElement
- * @returns {boolean}
- * @example if ($visibility.isElementVisibleInsideAnother(el, el.parent)) { ... }
- */
-function isElementInsideAnother(element, possibleContainingElement) {
-  var elementRect = element.getBoundingClientRect(),
-    possibleContainingElementRect = possibleContainingElement.getBoundingClientRect();
-
-  return elementRect.top >= possibleContainingElementRect.top &&
-    elementRect.left >= possibleContainingElementRect.left &&
-    elementRect.bottom <= possibleContainingElementRect.bottom &&
-    elementRect.right <= possibleContainingElementRect.right;
 }
 
 /**
@@ -260,11 +216,7 @@ $document.addEventListener('scroll', _throttle(updateVisibility, 200));
 
 // public
 module.exports.getPageOffset = getPageOffset;
-// module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
+module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
 module.exports.isElementNotHidden = isElementNotHidden;
-// module.exports.isElementInsideAnother = isElementInsideAnother;
-// module.exports.watchForAny = watchForAny;
 module.exports.Visible = Visible;
-// module.exports.setPrimaryContent = setPrimaryContent;
-// module.exports.isBelowPrimaryContent = isBelowPrimaryContent;
-// module.exports.updateVisibility = updateVisibility;
+module.exports.updateVisibility = updateVisibility;
