@@ -32,18 +32,15 @@ var page = require('./page'),
   author = page.getAuthor(),
   eventsQueue = [], // enables us to send multiple events with one dataLayer push  and pixel fire to google
   isCurrentlyReporting = false,
-  processQueueDelay = 1000 * 30,// wait 30 seconds before reporting in case more events happen
   typeAttr = 'data-track-type',
   zoneAttr = 'data-track-zone',
   pageZoneAttr = 'data-page-zone',
   verticalPositionAttr = 'data-vertical-position',
   gtmPageZoneKey = 'pageZone',
-  gtmVerticalPositionKey = 'verticalPosition',
-  publicVisitState;
+  gtmVerticalPositionKey = 'verticalPosition';
 const dom = require('@nymag/dom'),
   _assign = require('lodash/assign'),
   _find = require('lodash/find'),
-  _debounce = require('lodash/debounce'),
   _each = require('lodash/each'),
   productLinks = require('./product-links'),
   $visibility = require('./visibility'),
@@ -260,7 +257,7 @@ const dom = require('@nymag/dom'),
           newsletterPrefix = el.parentElement && el.parentElement.classList.contains('modal') ? 'nl modal ' : 'nl sub ';
 
         queueOnceVisible(el, dataTrackType, dataOnLoad, function queueCustomEventImpression(el, dataTrackType, dataOnLoad) {
-          eventsQueue.push(_assign({
+          eventsQueue.push(Object.assign({},{
             event: eventName,
             newsletter: newsletterPrefix + 'display' // todo: move this into gtm with another event trigger name
           }, addDataOnView(el, dataTrackType, dataOnLoad)));
@@ -530,20 +527,6 @@ function queueOnceVisible(el, type, dataOnLoad, addToQueueFn) {
 }
 
 /**
- * queues any events given in the params and reports with the next batch of events
- * @param {...object} optional event(s)
- * @returns {Function}
- */
-function debounceReportNow() {
-  var debouncedReportNow = _debounce(module.exports.reportNow, processQueueDelay);
-
-  return function () {
-    eventsQueue.push.apply(eventsQueue, arguments);
-    debouncedReportNow();
-  };
-}
-
-/**
  * queues any events given in the params and reports the queue immediately
  * @param {...object} optional event(s)
  */
@@ -578,18 +561,6 @@ function initializeEventsFromDom(visitState, element) {
       typeConfig.init(el, type, visitState);
     }
   });
-}
-
-/**
- * Initialize all trackable elements in the provided container element
- * useful for tracking elements added to the page after the initial load
- *
- * @param {Element} el
- */
-function initializeElement(el) {
-  if (!initializedOnLoad) { return; }
-
-  initializeEventsFromDom(publicVisitState, el);
 }
 
 /**
@@ -657,35 +628,6 @@ function initGtm(containerId) {
   });
 }
 
-/**
- * report a custom event
- * @param {object}  opts
- * @param {string}  opts.category - event category (e.g. 'interactives')
- * @param {string}  opts.action - event action (e.g. 'article end')
- * @param {string}  opts.label - event label (e.g. 'on=[page-url]')
- * @param {object}  [customDimensions] - optional argument for any numbered custom dimesions
- */
-
-function reportCustomEvent(opts, customDimensions) {
-  var category = opts.category,
-    action = opts.action,
-    label = opts.label,
-    dimensions = {
-      event: 'universalCustomEvent',
-      customEventCategory: category && category.trim(),
-      customEventAction: action && action.trim(),
-      customEventLabel: label && label.trim()
-    };
-
-  if (!!customDimensions) {
-    dimensions = Object.assign(dimensions, customDimensions);
-  }
-
-  reportNow(dimensions);
-}
 
 module.exports.init = initGtm;
 module.exports.reportNow = reportNow;
-module.exports.reportSoon = debounceReportNow.call(this);
-module.exports.reportCustomEvent = reportCustomEvent;
-module.exports.initializeElement = initializeElement;
