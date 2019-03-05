@@ -247,36 +247,6 @@ function getPageOffset(el) {
 }
 
 /**
- * Execute function when any of the selectors become visible
- *
- * Safely stops watching all selectors after first 'shown' event.
- *
- * @param {string} selector
- * @param {function} fn
- * @returns {[Visible]}  Array of elements that we're watching for visibility
- */
-function watchForAny(selector, fn) {
-  var el,
-    visibleList;
-
-  selector = selector.split(',');
-
-  visibleList = _filter(_map(selector, function (selector) {
-    el = $document.querySelector(selector);
-
-    return el && new Visible(el).on('shown', function () {
-      // stop watching for visibility
-      _invokeMap(visibleList, 'destroy');
-
-      // let them proceed
-      fn();
-    });
-  }));
-
-  return visibleList;
-}
-
-/**
  * Create a new Visible class to observe when elements enter and leave the viewport
  *
  * Call destroy function to stop listening (this is until we have better support for watching for Node Removal)
@@ -340,15 +310,15 @@ $document.addEventListener('scroll', _throttle(updateVisibility, 200));
 
 // public
 module.exports.getPageOffset = getPageOffset;
-module.exports.getLinearSpacialHash = getLinearSpacialHash;
-module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
-module.exports.getViewportHeight = getViewportHeight;
-module.exports.getViewportWidth = getViewportWidth;
+// module.exports.getLinearSpacialHash = getLinearSpacialHash;
+// module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
+// module.exports.getViewportHeight = getViewportHeight;
+// module.exports.getViewportWidth = getViewportWidth;
 module.exports.isElementNotHidden = isElementNotHidden;
-module.exports.isElementInViewport = isElementInViewport;
-module.exports.isElementInsideAnother = isElementInsideAnother;
-module.exports.watchForAny = watchForAny;
+// module.exports.isElementInViewport = isElementInViewport;
+// module.exports.isElementInsideAnother = isElementInsideAnother;
+// module.exports.watchForAny = watchForAny;
 module.exports.Visible = Visible;
-module.exports.setPrimaryContent = setPrimaryContent;
-module.exports.isBelowPrimaryContent = isBelowPrimaryContent;
-module.exports.updateVisibility = updateVisibility;
+// module.exports.setPrimaryContent = setPrimaryContent;
+// module.exports.isBelowPrimaryContent = isBelowPrimaryContent;
+// module.exports.updateVisibility = updateVisibility;
