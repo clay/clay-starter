@@ -11,7 +11,6 @@ const _get = require('lodash/get'),
  * @return {String}
  */
 function formatSimpleByline(opts = {}) {
-  debugger;
   const bylines = _get(opts.hash, 'bylines', []),
     authors = bylines.map((author) => _isObject(author) ? author.text : author);
 
