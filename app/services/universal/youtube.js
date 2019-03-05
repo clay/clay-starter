@@ -7,7 +7,6 @@ const rest = require('./rest'),
   YT_API = 'https://www.googleapis.com/youtube/v3',
   log = require('./log').setup({ file: __filename });
 
-
 function getDurationInSeconds(duration) {
   return moment.duration(duration, moment.ISO_8601).asSeconds();
 }
