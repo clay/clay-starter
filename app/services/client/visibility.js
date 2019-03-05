@@ -129,43 +129,12 @@ function updateVisibilityForItem(item) {
 }
 
 /**
- * Return normalized viewport height
- * @return {number}
- */
-function getViewportHeight() {
-  return $window.innerHeight || $document.documentElement.clientHeight || $document.body.clientHeight;
-}
-
-/**
- * Return normalized viewport width
- * @return {number}
- */
-function getViewportWidth() {
-  return $window.innerWidth || $document.documentElement.clientWidth || $document.body.clientWidth;
-}
-
-/**
  * make sure an element isn't hidden by styles or etc
  * @param  {Element}  el
  * @return {Boolean}
  */
 function isElementNotHidden(el) {
   return el && el.offsetParent !== null && !el.getAttribute('hidden') && getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden';
-}
-
-/**
- * Apparently the fastest way...
- * @param {Element} el
- * @returns {boolean}
- * @example if (!$visibility.isElementInViewport(el)) { ... }
- */
-function isElementInViewport(el) {
-  var rect = el.getBoundingClientRect();
-
-  return rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= ($window.innerHeight || $document.documentElement.clientHeight) &&
-    rect.right <= ($window.innerWidth || $document.documentElement.clientWidth);
 }
 
 /**
@@ -292,10 +261,7 @@ $document.addEventListener('scroll', _throttle(updateVisibility, 200));
 // public
 module.exports.getPageOffset = getPageOffset;
 // module.exports.getVerticallyVisiblePixels = getVerticallyVisiblePixels;
-// module.exports.getViewportHeight = getViewportHeight;
-// module.exports.getViewportWidth = getViewportWidth;
 module.exports.isElementNotHidden = isElementNotHidden;
-// module.exports.isElementInViewport = isElementInViewport;
 // module.exports.isElementInsideAnother = isElementInsideAnother;
 // module.exports.watchForAny = watchForAny;
 module.exports.Visible = Visible;
