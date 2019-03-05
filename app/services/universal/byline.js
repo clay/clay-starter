@@ -1,8 +1,6 @@
 'use strict';
 
 const _get = require('lodash/get'),
-  _join = require('lodash/join'),
-  _map = require('lodash/map'),
   _isObject = require('lodash/isObject');
 
 /**
@@ -13,21 +11,22 @@ const _get = require('lodash/get'),
  * @return {String}
  */
 function formatSimpleByline(opts = {}) {
+  debugger;
   const bylines = _get(opts.hash, 'bylines', []),
-    authors = _map(bylines, (author) => _isObject(author) ? author.text : author);
+    authors = bylines.map((author) => _isObject(author) ? author.text : author);
 
   if (authors.length === 1) {
     return '<span>' + authors[0] + '</span>';
   } else if (authors.length === 2) {
     return '<span>' + authors[0] + '</span><span class="and"> and </span><span>' + authors[1] + '</span>';
   } else {
-    return _join(_map(authors, function (author, idx) {
+    return authors.map((author, idx) => {
       if (idx < authors.length - 1) {
         return '<span>' + author + ', </span>';
       } else {
         return '<span class="and">and </span><span>' + author + '</span>';
       }
-    }), '');
+    }).join('');
   }
 }
 
