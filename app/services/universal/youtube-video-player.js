@@ -9,7 +9,7 @@ const VIDEO_ID_RE = /v=([\w-]+)/,
 
 /**
  * Adds a video configuration to the video queue
- * @param {Object} videoConfig
+ * @param {object} videoConfig
  * @param {string} videoConfig.videoContainerId
  * @param {string} videoConfig.videoId
  */
@@ -88,12 +88,12 @@ function handleVideoReady(event, customParams) {
 
 /**
  * Loads next video
- * @param {object} evt - video event
+ * @param {object} event - video event
  * @param {boolean} shouldAutoplayNextVideo
  */
-function loadNextVideo(evt, shouldAutoplayNextVideo) {
+function loadNextVideo(event, shouldAutoplayNextVideo) {
   if (shouldAutoplayNextVideo !== 'true') {
-    evt.target.stopVideo();
+    event.target.stopVideo();
   }
 }
 
@@ -133,7 +133,7 @@ function consumeNextVideoInQueue() {
 
 /**
  * Inits video player process
- * @param  {Object} videoConfig
+ * @param  {object} videoConfig
  */
 module.exports.init = function (videoConfig) {
   if (videoConfig) {
