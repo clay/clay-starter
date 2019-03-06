@@ -5,13 +5,10 @@
  * @param {Object} props
  * @returns {Promise}
  */
-module.exports.props = function (props) {
-  return Promise.all(Object.keys(props).map((key) => {
-    return Promise.resolve(props[key]).then((res) => {
-      return { [key]: res };
-    });
-  }))
-    .then(function (resolvedArray) {
+module.exports.props = (props) => {
+  return Promise.all(Object.keys(props).map((key) => Promise.resolve(props[key]).then((res) => ({ [key]: res }))
+  ))
+    .then((resolvedArray) => {
       return resolvedArray.reduce((memo, oneRes) => {
         let key = Object.keys(oneRes)[0];
 
