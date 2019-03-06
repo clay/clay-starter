@@ -7,9 +7,9 @@ const formatTime = require('./format-time'),
  * Given a number or a string of a number, increment
  * the value and return it.
  *
- * @param {String|Number} index
- * @param {Number} inc
- * @returns {Number}
+ * @param {string|number} index
+ * @param {number} inc
+ * @returns {number}
  */
 function incrementIndex(index, inc = 1) {
   if (typeof index !== 'number') index = parseInt(index, 10);
@@ -20,7 +20,7 @@ function incrementIndex(index, inc = 1) {
 /**
  * Gets the property value at path of object. If the resolved value is undefined the defaultValue is used,
  * If no defaultValue is specified return undefined
- * @param {object} obj The object to query.
+ * @param {Object} obj The object to query.
  * @param {string} path The path of the property to get.
  * @param {undefined|defaultValue} defaultValue The value returned if the resolved value is undefined
  * @return {defaultValue|undefined} Returns the resolved value.
