@@ -60,7 +60,11 @@ content:
       - divider
       - image
       - code-sample
+<<<<<<< HEAD
+      - tweet
+=======
       - clay-twitter
+>>>>>>> 176194e3126e4771a64518b5c246d8bb060ca40c
 
 ledeUrl:
   _label: Lede Image URL

@@ -1,0 +1,33 @@
+_description: |
+  Embeds a tweet via the tweet’s URL.
+  _Similar to: [clay-facebook-post](https://github.com/nymag/sites/blob/master/components/clay-facebook-post/README.md), [clay-instagram](https://github.com/nymag/sites/blob/master/components/clay-instagram/README.md), [clay-pinterest](https://github.com/nymag/sites/blob/master/components/clay-pinterest/README.md), [tumblr-post](https://github.com/nymag/sites/blob/master/components/tumblr-post/README.md)_
+url:
+  _label: URL
+  _has:
+    input: text
+    type: url
+    help: https://twitter.com/username/status/ID
+showThread:
+  _label: Show Thread
+  _has: checkbox
+showMedia:
+  _label: Show Media
+  _has: checkbox
+
+_groups:
+  default:
+    fields:
+      - url
+      - showThread
+      - showMedia
+    _placeholder:
+      height: 50px
+      text: Tweet
+      ifEmpty: url
+
+# non-user-editable fields, set by model.js
+tweetValid:
+  help: Used to decide whether or not to display a tweet in the template
+  _placeholder:
+    text: Invalid tweet url ${url}. This tweet will not display.
+    permanent: true
