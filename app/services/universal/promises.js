@@ -10,7 +10,7 @@ module.exports.props = (props) => {
   ))
     .then((resolvedArray) => {
       return resolvedArray.reduce((memo, oneRes) => {
-        let key = Object.keys(oneRes)[0];
+        const key = Object.keys(oneRes)[0];
 
         memo[key] = oneRes[key];
 
