@@ -1,0 +1,59 @@
+/* stylelint-disable */
+
+@import '_default/common/_vars.css';
+
+$helvetica-full-stack: 16px / 1 Helvetica, sans-serif;
+$custom-indicator-red: #ec2c00;
+
+.list {
+    clear: both;
+    font: $helvetica-full-stack;
+    margin: 15px 0;
+    position: relative;
+
+      & .list-items {
+        counter-reset: listitem;
+        margin: 0;
+      }
+
+      & .list-item {
+        counter-increment: listitem;
+        padding: 0 0 5px;
+      }
+
+      &.custom-indicator {
+        clear: none;
+      }
+
+      &.custom-indicator .list-items {
+        padding: 0;
+      }
+
+      &.custom-indicator .list-item {
+        align-items: baseline;
+        display: flex;
+        list-style-type: none;
+        position: relative;
+      }
+
+      &.custom-indicator .list-item:before {
+        flex: 0 0 auto;
+        margin: 0 12px 0 22px;
+      }
+
+      &.custom-indicator ul .list-item:before {
+        background-color: $custom-indicator-red;
+        border-radius: 50%;
+        content: '';
+        height: 6px;
+        position: relative;
+        top: -3px;
+        width: 6px;
+      }
+
+      &.custom-indicator ol .list-item:before {
+        color: $custom-indicator-red;
+        content: counter(listitem) '.';
+        font-weight: 700;
+      }
+  }

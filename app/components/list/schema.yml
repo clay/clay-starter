@@ -1,0 +1,54 @@
+_description: |
+  A simple and semantic list of text items which can take custom styling.
+
+items:
+  _label: List Items
+  _has:
+    input: complex-list
+    props:
+      - prop: text
+        _label: Text
+        _has:
+          input: wysiwyg
+          styled: true
+          buttons:
+            - bold
+            - italic
+            - strike
+            - link
+            - phrase:
+                class: clay-designed
+                button: De
+          validate:
+            required: true
+
+orderedList:
+  _label: Ordered List
+  _has:
+    input: checkbox
+    help: Select when the list items have a strict order. E.g. ranked items, or steps in a process
+
+customIndicator:
+  _label: Use Custom Indicator
+  _has:
+    input: checkbox
+    help: Use a custom list item indicator instead of the browser's default. This can be targeted in per-instance styles using '&.custom-indicator ul .text-list-item:before'
+
+sass:
+  _label: Custom Styles
+  _has:
+    input: codemirror
+    mode: text/x-scss
+    help: Custom styles for this specific component, can be written in CSS/SASS.
+
+_groups:
+  settings:
+    fields:
+      - items (List Items)
+      - orderedList (Settings)
+      - customIndicator (Settings)
+      - sass (Settings)
+    _placeholder:
+      text: New List
+      height: 30px
+      ifEmpty: items
