@@ -60,7 +60,7 @@ content:
       - divider
       - image
       - code-sample
-      - clay-twitter
+      - tweet
 
 ledeUrl:
   _label: Lede Image URL

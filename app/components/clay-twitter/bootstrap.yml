@@ -1,6 +1,0 @@
-_components:
-  clay-twitter:
-    url: ''
-    showThread: true
-    showMedia: true
-    tweetValid: true
