@@ -3,7 +3,7 @@ host: ${CLAY_SITE_HOST}
 path: ''
 assetDir: public
 assetPath: ''
-port: 80
-protocol: http
+port: ${CLAY_SITE_PORT}
+protocol: ${CLAY_SITE_PROTOCOL}
 shortKey: ${CLAY_SITE_SHORTKEY}
 styleguide: claydemo
