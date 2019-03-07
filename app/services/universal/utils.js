@@ -62,7 +62,7 @@ function replaceVersion(uri, version) {
 /**
  * generate a url from a uri (and some site data)
  * @param  {string} uri
- * @param  {object} locals
+ * @param  {Object} locals
  * @return {string}
  */
 function uriToUrl(uri, locals) {
@@ -106,7 +106,7 @@ function formatStart(n) {
 }
 /*
  *
- * @param {object} locals
+ * @param {Object} locals
  * @param {string} [locals.site.protocol]
  * @param {string} locals.site.host
  * @param {string} [locals.site.port]

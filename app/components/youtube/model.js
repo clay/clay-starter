@@ -5,7 +5,7 @@ const _get = require('lodash/get'),
 
 /**
  * Override various settings by type of video
- * @param {object} data
+ * @param {Object} data
  */
 function updateSettingsByType(data) {
   switch (data.videoType) {
@@ -53,26 +53,20 @@ function setVideoDetails(data, videoDetails) {
   return data;
 }
 
-function getDefaultPlaylistBySite(data, locals) {
+function getDefaultPlaylistBySite(locals) {
   switch (locals.site.slug) {
     case 'wwwthecut':
       return 'PL4B448958847DA6FB';
-      break;
     case 'vulture':
       return 'PLZQfnFyelTBOQ15kmHSgEbdjzLMWzZpL7';
-      break;
     case 'grubstreet':
       return 'PLtmzdzCeRsyG_td56GV9JtS3yif177lfK';
-      break;
     case 'di':
       return 'PLtmzdzCeRsyHbGTxOX4BZvSgXBh20n-_4';
-      break;
     case 'selectall':
       return 'PLtmzdzCeRsyHh67c-VlEj8Nqpj5nL8pf6';
-      break;
     default:
       return 'PLtmzdzCeRsyFQ64kOTZS7eBLQ1fH2feu7'; // if its a site without a default playlist, use the 'latest from new york' playlist
-      break;
   }
 }
 
@@ -81,7 +75,7 @@ module.exports.save = (uri, data, locals) => {
   updateSettingsByType(data);
 
   if (data.videoId && !data.videoPlaylist) {
-    data.videoPlaylist = getDefaultPlaylistBySite(data, locals);
+    data.videoPlaylist = getDefaultPlaylistBySite(locals);
   }
 
   if (data.videoId) {

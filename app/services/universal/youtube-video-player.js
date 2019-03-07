@@ -9,7 +9,7 @@ const VIDEO_ID_RE = /v=([\w-]+)/,
 
 /**
  * Adds a video configuration to the video queue
- * @param {object} videoConfig
+ * @param {Object} videoConfig
  * @param {string} videoConfig.videoContainerId
  * @param {string} videoConfig.videoId
  */
@@ -32,10 +32,10 @@ function extractVideoIdFromUrl(str) {
 
 /**
  * create the YouTube / YT player
- * @param {object} videoConfig
+ * @param {Object} videoConfig
  * @param {string} videoConfig.videoContainerId
  * @param {string} videoConfig.videoId
- * @param {object} videoConfig.playerParams
+ * @param {Object} videoConfig.playerParams
  */
 function createPlayer(videoConfig) {
   var elementId = videoConfig.videoContainerId || '',
@@ -65,7 +65,7 @@ function createPlayer(videoConfig) {
 
 /**
  * handleVideoReady
- * @param {object} event
+ * @param {Object} event
  * @param {string} customParams
  * @returns {function}
  */
@@ -88,7 +88,7 @@ function handleVideoReady(event, customParams) {
 
 /**
  * Loads next video
- * @param {object} event - video event
+ * @param {Object} event - video event
  * @param {boolean} shouldAutoplayNextVideo
  */
 function loadNextVideo(event, shouldAutoplayNextVideo) {
@@ -99,8 +99,8 @@ function loadNextVideo(event, shouldAutoplayNextVideo) {
 
 /**
  * Video state change wrapper
- * @param {object} customParams - custom configuration object
- * @param {object} playerEvents - YT player custom events
+ * @param {Object} customParams - custom configuration object
+ * @param {Object} playerEvents - YT player custom events
  * @return {function} handles when the video state changes
  */
 function videoStateChangeWrapper(customParams, playerEvents) {
@@ -133,7 +133,7 @@ function consumeNextVideoInQueue() {
 
 /**
  * Inits video player process
- * @param  {object} videoConfig
+ * @param  {Object} videoConfig
  */
 module.exports.init = function (videoConfig) {
   if (videoConfig) {

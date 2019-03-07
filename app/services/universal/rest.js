@@ -7,8 +7,8 @@ require('isomorphic-fetch');
 
 /**
  * if you're doing api calls to Clay, authenticate on the server/client side
- * @param  {object} payload
- * @return {object}
+ * @param  {Object} payload
+ * @return {Object}
  */
 function authenticate(payload) {
   // the access key is stringified at runtime
@@ -29,8 +29,8 @@ function addFakeCallback() {
  * check status after doing http calls
  * note: this is necessary because fetch doesn't reject on errors,
  * only on network failure or incomplete requests
- * @param  {object} res
- * @return {object}
+ * @param  {Object} res
+ * @return {Object}
  * @throws {Error} on non-2xx status
  */
 function checkStatus(res) {
@@ -47,7 +47,7 @@ function checkStatus(res) {
 /**
  * GET
  * @param {string} url
- * @param {object} opts See https://github.github.io/fetch/#options
+ * @param {Object} opts See https://github.github.io/fetch/#options
  * @return {Promise}
  */
 module.exports.get = function (url, opts) {

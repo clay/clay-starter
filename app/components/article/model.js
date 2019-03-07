@@ -22,7 +22,7 @@ function stripHeadlineTags(oldHeadline) {
 
 /**
  * sanitize headline
- * @param  {object} data
+ * @param  {Object} data
  */
 function sanitizeInputs(data) {
   if (has(data.headline)) {
@@ -33,8 +33,8 @@ function sanitizeInputs(data) {
 /**
  * set the publish date from the locals (even if it's already set),
  * and format it correctly
- * @param  {object} data
- * @param  {object} locals
+ * @param  {Object} data
+ * @param  {Object} locals
  */
 function formatDate(data, locals) {
   if (_get(locals, 'date')) {
@@ -51,8 +51,8 @@ function formatDate(data, locals) {
 
 /**
  * set the canonical url from the locals (even if it's already set)
- * @param {object} data
- * @param {object} locals
+ * @param {Object} data
+ * @param {Object} locals
  */
 function setCanonicalUrl(data, locals) {
   if (_get(locals, 'publishUrl')) {
@@ -62,7 +62,7 @@ function setCanonicalUrl(data, locals) {
 
 /**
  * Set the feed image to the lede url if it isn't already set
- * @param  {object} data
+ * @param  {Object} data
  */
 function generateFeedImage(data) {
   if (data.ledeUrl) {

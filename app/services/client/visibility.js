@@ -37,26 +37,26 @@ function updateVisibility() {
 /**
  * updates seen property
  * @param  {Visible} item
- * @param  {{}} evt
+ * @param  {{}} event
  * @fires Visible#shown
  * @fires Visible#hidden
  */
-function updateSeen(item, evt) {
-  var px = evt.visiblePx,
-    percent = evt.visiblePercent;
+function updateSeen(item, event) {
+  var px = event.visiblePx,
+    percent = event.visiblePercent;
 
   // if some pixels are visible and we're greater/equal to threshold
   if (px && percent >= item.shownThreshold && !item.seen) {
     item.seen = true;
     setTimeout(function () {
-      item.trigger('shown', new VisibleEvent('shown', evt));
+      item.trigger('shown', new VisibleEvent('shown', event));
     }, 15);
 
     // if no pixels or percent is less than threshold
   } else if ((!px || percent < item.hiddenThreshold) && item.seen) {
     item.seen = false;
     setTimeout(function () {
-      item.trigger('hidden', new VisibleEvent('hidden', evt));
+      item.trigger('hidden', new VisibleEvent('hidden', event));
     }, 15);
   }
 }
@@ -64,15 +64,15 @@ function updateSeen(item, evt) {
 /**
  * sets preload property
  * @param  {Visible} item
- * @param  {Object} evt
- * @param  {Number} innerHeight
+ * @param  {Object} event
+ * @param  {number} innerHeight
  * @fires Visible#preload
  */
-function updatePreload(item, evt, innerHeight) {
-  if (!item.preload && item.preloadThreshold && shouldBePreloaded(evt.target, evt.rect, item.preloadThreshold, innerHeight)) {
+function updatePreload(item, event, innerHeight) {
+  if (!item.preload && item.preloadThreshold && shouldBePreloaded(event.target, event.rect, item.preloadThreshold, innerHeight)) {
     item.preload = true;
     setTimeout(function () {
-      item.trigger('preload', new VisibleEvent('preload', evt));
+      item.trigger('preload', new VisibleEvent('preload', event));
     }, 15);
   }
 }
@@ -86,21 +86,21 @@ function updateVisibilityForItem(item) {
     innerHeight = $window.innerHeight || $document.documentElement.clientHeight,
     px = getVerticallyVisiblePixels(rect, innerHeight),
     percent = px / (rect.height || innerHeight),
-    evt = {
+    event = {
       target: item.el,
       rect: rect,
       visiblePx: px,
       visiblePercent: percent
     };
 
-  updateSeen(item, evt);
-  updatePreload(item, evt, innerHeight);
+  updateSeen(item, event);
+  updatePreload(item, event, innerHeight);
 }
 
 /**
  * make sure an element isn't hidden by styles or etc
  * @param  {Element} el
- * @return {Boolean}
+ * @return {boolean}
  */
 function isElementNotHidden(el) {
   return el && el.offsetParent !== null && !el.getAttribute('hidden') && getComputedStyle(el).display !== 'none' && getComputedStyle(el).visibility !== 'hidden';
@@ -109,9 +109,9 @@ function isElementNotHidden(el) {
 /**
  * @param {Element} el
  * @param  {ClientRect} rect
- * @param {Number} preloadThreshold
- * @param {Number} innerHeight
- * @return {Boolean}
+ * @param {number} preloadThreshold
+ * @param {number} innerHeight
+ * @return {boolean}
  */
 function shouldBePreloaded(el, rect, preloadThreshold, innerHeight) {
   return rect.bottom > preloadThreshold * -1 && rect.top <= innerHeight + preloadThreshold && isElementNotHidden(el);
