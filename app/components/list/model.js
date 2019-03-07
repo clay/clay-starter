@@ -6,9 +6,11 @@ const striptags = require('striptags'),
   { toSmartText } = require('../../services/universal/sanitize');
 
 module.exports.save = function (uri, data) {
+  const allowedTags = ['strong', 'em', 's', 'a', 'span'];
+
   if (has(data.items)) {
     data.items.forEach((item) => {
-      item.text = toSmartText(striptags(item.text, ['strong', 'em', 's', 'a', 'span']));
+      item.text = toSmartText(striptags(item.text, allowedTags));
     });
   }
 

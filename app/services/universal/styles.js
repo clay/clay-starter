@@ -1,6 +1,6 @@
 'use strict';
 
-var postcss = require('postcss'),
+const postcss = require('postcss'),
   nested = require('postcss-nested'),
   safe = require('postcss-safe-parser'),
   csso = require('postcss-csso'),

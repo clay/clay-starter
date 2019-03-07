@@ -16,9 +16,6 @@ items:
             - italic
             - strike
             - link
-            - phrase:
-                class: clay-designed
-                button: De
           validate:
             required: true
 
