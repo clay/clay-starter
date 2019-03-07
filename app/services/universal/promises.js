@@ -6,17 +6,14 @@
  * @returns {Promise}
  */
 module.exports.props = (props) => {
-  return Promise.all(Object.keys(props).map((key) => Promise.resolve(props[key]).then((res) => ({ [key]: res }))
-  ))
-    .then((resolvedArray) => {
-      return resolvedArray.reduce((memo, oneRes) => {
-        const key = Object.keys(oneRes)[0];
+  return Promise.all(Object.keys(props).map((key) => Promise.resolve(props[key]).then((res) => ({ [key]: res }))))
+    .then((resolvedArray) => resolvedArray.reduce((memo, oneRes) => {
+      const key = Object.keys(oneRes)[0];
 
-        memo[key] = oneRes[key];
+      memo[key] = oneRes[key];
 
-        return memo;
-      }, {});
-    });
+      return memo;
+    }, {}));
 };
 
 /**

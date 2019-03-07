@@ -17,8 +17,8 @@ function getRequestUrl(data) {
 /**
  * Gets Twitter Embeds data
  * @param {string} url
- * @param {object} data
- * @return {object}
+ * @param {Object} data
+ * @return {Object}
  */
 function makeTweetEmbedsRequest(url, data) {
   return rest.getJSONP(url)
