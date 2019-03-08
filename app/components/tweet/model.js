@@ -3,7 +3,7 @@
 const { get } = require('../../services/universal/helpers'),
   rest = require('../../services/universal/rest'),
   promises = require('../../services/universal/promises'),
-  utils = require('../../services/universal/utils'),
+  { isFieldEmpty } = require('../../services/universal/utils'),
   TWITTER_ENDPOINT = 'https://api.twitter.com/1/statuses/oembed.json',
   TWEET_URL_RE = /(https?:\/\/twitter\.com\/\w+?\/status(?:es)?\/(\d+))\/?/;
 
@@ -35,7 +35,7 @@ function makeTweetEmbedsRequest(url, data) {
       return data;
     })
     .catch(() => {
-      if (utils.isFieldEmpty(data.html)) {
+      if (isFieldEmpty(data.html)) {
         data.tweetValid = false;
       }
 
@@ -53,7 +53,7 @@ module.exports.render = (ref, data) => {
 };
 
 module.exports.save = (ref, data) => {
-  if (utils.isFieldEmpty(data.url)) {
+  if (isFieldEmpty(data.url)) {
     delete data.html;
 
     return data;

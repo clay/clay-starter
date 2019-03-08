@@ -18,8 +18,8 @@ module.exports.props = (props) => {
 
 /**
  * simple and easy promise timeout
- * @param  {Promise} promise
- * @param  {number} time    number of milliseconds to allow the promise to resolve
+ * @param {Promise} promise
+ * @param {number} time    number of milliseconds to allow the promise to resolve
  * @return {Promise}
  */
 module.exports.timeout = (promise, time) => {
