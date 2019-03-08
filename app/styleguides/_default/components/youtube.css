@@ -67,16 +67,7 @@ $text-stack: 'MillerText', Georgia, serif;
     width: 100%;
   }
 
-  & + & {
-    margin-top: -5px;
-  }
-
   @media screen and (min-width: 768px) {
-    margin: 0 0 40px -60px;
-
-    & + & {
-      margin-top: 0;
-    }
 
     &.sponsored.break-out,
     &.editorial.break-out {
