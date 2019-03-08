@@ -8,7 +8,7 @@ const striptags = require('striptags'),
 module.exports.save = function (uri, data) {
   const allowedTags = ['strong', 'em', 's', 'a', 'span'];
 
-  data.orderedList ? data.listType = 'ol' : data.listType = 'ul';
+  data.listType = data.orderedList ? 'ol' : 'ul';
 
   if (has(data.items)) {
     data.items.forEach((item) => {
