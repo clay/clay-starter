@@ -1,4 +1,5 @@
 'use strict';
+
 const _get = require('lodash/get'),
   { getVideoDetails } = require('../../services/universal/youtube'),
   defaultPlayerBorderTopCTA = 'Watch';

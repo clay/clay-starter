@@ -1,7 +1,7 @@
 'use strict';
 
 const youtubeVideoPlayer = require('../../services/universal/youtube-video-player'),
-  $visibility = require('../../services/client/visibility'),
+  { Visible, isElementNotHidden } = require('../../services/client/visibility'),
   { reportNow } = require('../../services/client/gtm');
 
 module.exports = (el) => {
@@ -37,10 +37,10 @@ module.exports = (el) => {
     videoConfig.playerParams.list = '';
   }
 
-  visible = new $visibility.Visible(el, { preloadThreshold: 800 });
+  visible = new Visible(el, { preloadThreshold: 800 });
 
   // when the video player element enters the viewport, load the video(s)
-  if (visible.preload && $visibility.isElementNotHidden(el)) {
+  if (visible.preload && isElementNotHidden(el)) {
     // if the YouTube api is ready the videos(s) can be loaded
     if (window.nymYTApiReady === true) {
       youtubeVideoPlayer.init(videoConfig);
