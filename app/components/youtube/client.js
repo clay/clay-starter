@@ -2,7 +2,7 @@
 
 const youtubeVideoPlayer = require('../../services/universal/youtube-video-player'),
   $visibility = require('../../services/client/visibility'),
-  $gtm = require('../../services/client/gtm');
+  { reportNow } = require('../../services/client/gtm');
 
 module.exports = (el) => {
   var autoplay = el.getAttribute('data-autoplay-video') === 'true',
@@ -63,7 +63,7 @@ module.exports = (el) => {
    * native gtm.video trigger on play and finish
    */
   document.addEventListener('player-ready-' + videoConfig.videoContainerId, function () {
-    $gtm.reportNow(Object.assign({
+    reportNow(Object.assign({
       youtubeAction: 'player ready'
     }, analytics));
   });
@@ -82,7 +82,7 @@ module.exports = (el) => {
       // this will tell the gtm.video trigger to stop ignoring gtm.video events
       // in the case that an external video was played initially then switched to
       // an internal playlist
-      $gtm.reportNow(Object.assign({
+      reportNow(Object.assign({
         event: 'youtubeVideoReset',
         youtubeVideoId: evt.player.videoId,
         youtubeChannelName: 'New York Magazine'
