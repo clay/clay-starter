@@ -61,6 +61,7 @@ content:
       - image
       - code-sample
       - youtube
+      - list
 
 ledeUrl:
   _label: Lede Image URL

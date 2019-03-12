@@ -1,0 +1,11 @@
+<div data-uri="{{ default _ref _self }}" class="list {{ if customIndicator 'custom-indicator' }}" data-editable="settings">
+  <{{listType}} class="list-items">
+    {{#each items}}
+      <li class="list-item"><span>{{{ text }}}</span></li>
+    {{/each}}
+  </{{listType}}>
+
+  {{#if css}}
+    <style>{{{ css }}}</style>
+  {{/if}}
+</div>

@@ -38,8 +38,8 @@ $helvetica-stack: Helvetica, sans-serif;
     opacity: 0;
     padding: 2px 0 0 5px;
     position: absolute;
-    transition: opacity 150ms ease;
     -moz-transition: opacity 150ms ease;
     -webkit-transition: opacity 150ms ease;
+    transition: opacity 150ms ease;
   }
 }
