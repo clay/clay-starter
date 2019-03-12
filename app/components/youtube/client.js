@@ -5,7 +5,7 @@ const youtubeVideoPlayer = require('../../services/universal/youtube-video-playe
   { reportNow } = require('../../services/client/gtm');
 
 module.exports = (el) => {
-  var autoplay = el.getAttribute('data-autoplay-video') === 'true',
+  let autoplay = el.getAttribute('data-autoplay-video') === 'true',
     videoConfig = {
       videoContainerId: el.getAttribute('data-element-id').trim(),
       videoId: el.getAttribute('data-video-id').trim(),
@@ -75,7 +75,7 @@ module.exports = (el) => {
    * also might be nice to send an event if we see the video id changed?
    */
   document.addEventListener('player-start-' + videoConfig.videoContainerId, function (evt) {
-    var hasChanged = el.getAttribute('data-video-id') !== evt.player.videoId;
+    const hasChanged = el.getAttribute('data-video-id') !== evt.player.videoId;
 
     if (hasChanged) {
       updateElementAttributes(el, evt.player);
