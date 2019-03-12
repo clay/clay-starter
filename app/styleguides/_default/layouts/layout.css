@@ -54,7 +54,7 @@ html {
 
   & > .page-header,
   & > .top {
-    margin: 0 auto;
+    margin: 20px auto;
     width: $wrapperMaxWidth;
   }
 
@@ -75,22 +75,28 @@ html {
     & > .bottom,
     & > .wrapper {
       padding: 0 20px;
+      width: 600px;
     }
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1179.9px) {
-  .layout > .wrapper,
-  .layout > .bottom {
-    padding: 0 7vw;
-  }
+  .layout{
+    & > .wrapper,
+    & > .bottom {
+      padding: 0 7vw;
+    }
 
-  .layout > .secondary > *:not(.ad) {
-    margin: 0 7vw;
-  }
+    & > .top {
+      margin: 20px 50px;
+    }
 
-  .layout > .wrapper {
-    max-width: 720px;
+    & > .secondary > *:not(.ad) {
+      margin: 0 7vw;
+    }
+    & > .wrapper {
+      min-width: 600px;
+    }
   }
 }
 
