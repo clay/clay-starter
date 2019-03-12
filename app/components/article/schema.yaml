@@ -60,6 +60,7 @@ content:
       - divider
       - image
       - code-sample
+      - list
 
 ledeUrl:
   _label: Lede Image URL
