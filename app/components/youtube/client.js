@@ -62,7 +62,7 @@ module.exports = (el) => {
    * component into the data layer. Information about the video itself is captured from the
    * native gtm.video trigger on play and finish
    */
-  document.addEventListener('player-ready-' + videoConfig.videoContainerId, function () {
+  document.addEventListener('player-ready-' + videoConfig.videoContainerId, () => {
     reportNow(Object.assign({
       youtubeAction: 'player ready'
     }, analytics));

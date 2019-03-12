@@ -20,6 +20,7 @@ function updateSettingsByType(data) {
     case 'sponsored':
       data.autoPlay = false;
       data.autoPlayNextVideo = false;
+      break;
     default:
       // Toggle borders off if user previously selected `related` type. `sponsored` and `editorial` types share defaults
       data.playerBorderTop = data.previousTypeRelated ? false : data.playerBorderTop;
@@ -35,15 +36,13 @@ function clearVideoId(data) {
 }
 
 function setVideoDetails(data, videoDetails) {
-  var maxResThumb;
-
   if (!videoDetails.title) {
     data.videoValid = false;
 
     return data;
   }
 
-  maxResThumb = _get(videoDetails, 'thumbnails.maxres.url');
+  const maxResThumb = _get(videoDetails, 'thumbnails.maxres.url');
 
   data.videoValid = true;
   data.channelName = videoDetails.channelTitle;
