@@ -1,14 +1,14 @@
 <!-- data-uri="{{ default _ref _self }}" -->
 {{#unless @root.locals.edit}}
-  {{! NYM flags for `video-player` component instances
-    player instances will first look for `nymYTApiReady` to be `true`
+  {{! flags for `video-player` component instances
+    player instances will first look for `youtubeApiReady` to be `true`
     if `false`, player instances will listen for the event `youtube-event:youtube-api-ready` }}
   <script>
     var youtubeApiReady = false;
     window.onYouTubeIframeAPIReady = function () {
       {{! when the YouTube API script is ready, dispatch an `youtube-event:youtube-api-ready` event }}
-      var nymEventYTApiReady = new Event('youtube-event:youtube-api-ready');
-      document.dispatchEvent(nymEventYTApiReady);
+      var eventYTApiReady = new Event('youtube-event:youtube-api-ready');
+      document.dispatchEvent(eventYTApiReady);
       {{! change this flag to 'true' when the YouTube api is ready }}
       youtubeApiReady = true;
     }
