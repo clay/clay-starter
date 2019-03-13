@@ -40,11 +40,11 @@ module.exports = (el) => {
   // when the video player element enters the viewport, load the video(s)
   if (visible.preload && isElementNotHidden(el)) {
     // if the YouTube api is ready the videos(s) can be loaded
-    if (window.nymYTApiReady === true) {
+    if (window.youtubeApiReady === true) {
       youtubeVideoPlayer.init(videoConfig);
     } else {
       // wait and listen for the YouTube api to be ready before loading the video(s)
-      document.addEventListener('nym-youtube-event:youtube-api-ready', function () {
+      document.addEventListener('youtube-event:youtube-api-ready', function () {
         youtubeVideoPlayer.init(videoConfig);
       });
     }
