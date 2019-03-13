@@ -7,8 +7,8 @@ const _get = require('lodash/get'),
  * Comma separate a list of author strings
  * or simple-list objects
  *
- * @param  {String[]} opts
- * @return {String}
+ * @param  {string[]} opts
+ * @return {string}
  */
 function formatSimpleByline(opts = {}) {
   const bylines = _get(opts.hash, 'bylines', []),
@@ -19,13 +19,10 @@ function formatSimpleByline(opts = {}) {
   } else if (authors.length === 2) {
     return '<span>' + authors[0] + '</span><span class="and"> and </span><span>' + authors[1] + '</span>';
   } else {
-    return authors.map((author, idx) => {
-      if (idx < authors.length - 1) {
-        return '<span>' + author + ', </span>';
-      } else {
-        return '<span class="and">and </span><span>' + author + '</span>';
-      }
-    }).join('');
+    return authors.map((author, index) => index < authors.length - 1
+      ? `<span>${author}, </span>`
+      : `<span class="and">and </span><span>${author}</span>`
+    ).join('');
   }
 }
 

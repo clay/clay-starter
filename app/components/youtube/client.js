@@ -4,7 +4,7 @@ const youtubeVideoPlayer = require('../../services/universal/youtube-video-playe
   { Visible, isElementNotHidden } = require('../../services/client/visibility');
 
 module.exports = (el) => {
-  let autoplay = el.getAttribute('data-autoplay-video') === 'true',
+  const autoplay = el.getAttribute('data-autoplay-video') === 'true',
     videoConfig = {
       videoContainerId: el.getAttribute('data-element-id').trim(),
       videoId: el.getAttribute('data-video-id').trim(),
@@ -29,13 +29,11 @@ module.exports = (el) => {
         muted: autoplay // always mute autplaying videos
       }
     },
-    visible;
+    visible = new Visible(el, { preloadThreshold: 800 });
 
   if (videoConfig.customParams.trackVideoType === 'Sponsored') {
     videoConfig.playerParams.list = '';
   }
-
-  visible = new Visible(el, { preloadThreshold: 800 });
 
   // when the video player element enters the viewport, load the video(s)
   if (visible.preload && isElementNotHidden(el)) {

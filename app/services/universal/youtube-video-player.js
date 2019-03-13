@@ -38,7 +38,7 @@ function extractVideoIdFromUrl(str) {
  * @param {Object} videoConfig.playerParams
  */
 function createPlayer(videoConfig) {
-  var elementId = videoConfig.videoContainerId || '',
+  let elementId = videoConfig.videoContainerId || '',
     videoId = videoConfig.videoId || '',
     player = null, // eslint-disable-line no-unused-vars
     playerParams = videoConfig.playerParams || {},
@@ -104,7 +104,7 @@ function loadNextVideo(event, shouldAutoplayNextVideo) {
  * @return {function} handles when the video state changes
  */
 function videoStateChangeWrapper(customParams, playerEvents) {
-  var hasVideoStarted = false;
+  let hasVideoStarted = false;
 
   return function handleVideoStateChange(playerEvt) {
     if (playerEvt.data === YT.PlayerState.PLAYING && !hasVideoStarted) {
