@@ -4,7 +4,7 @@ const $window = window,
   $document = document,
   _throttle = require('lodash/throttle'),
   Eventify = require('eventify');
-var list = [],
+let list = [],
   Visible, VisibleEvent;
 
 /**
