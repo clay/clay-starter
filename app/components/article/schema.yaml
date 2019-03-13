@@ -60,8 +60,8 @@ content:
       - divider
       - image
       - code-sample
-      - youtube
       - list
+      - youtube
 
 ledeUrl:
   _label: Lede Image URL
