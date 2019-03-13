@@ -30,7 +30,6 @@ module.exports = (el) => {
         muted: autoplay // always mute autplaying videos
       }
     },
-    analytics = getAnalyticsCustomDimensions(el),
     visible;
 
   if (videoConfig.customParams.trackVideoType === 'Sponsored') {
@@ -65,7 +64,7 @@ module.exports = (el) => {
   document.addEventListener('player-ready-' + videoConfig.videoContainerId, () => {
     reportNow(Object.assign({
       youtubeAction: 'player ready'
-    }, analytics));
+    }));
   });
 
   /**
@@ -98,21 +97,4 @@ module.exports = (el) => {
  */
 function updateElementAttributes(el, config) {
   el.setAttribute('data-video-id', config.videoId);
-}
-
-/**
- * Gets analytics custom dimensions for video player
- * @param {Object} el
- * @returns {Object} analytics
- */
-function getAnalyticsCustomDimensions(el) {
-  return {
-    event: 'youtubeVideo',
-    youtubeVideoId: el.getAttribute('data-video-id'),
-    youtubeVideoLocation: el.getAttribute('data-track-video-location'),
-    youtubeVideoType: el.getAttribute('data-track-video-type'),
-    youtubeVideoTitle: el.getAttribute('data-track-video-title'),
-    youtubeChannelName: el.getAttribute('data-track-channel-name'),
-    youtubeVideoDuration: el.getAttribute('data-track-video-duration')
-  };
 }
