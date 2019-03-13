@@ -1,8 +1,7 @@
 'use strict';
 
 const youtubeVideoPlayer = require('../../services/universal/youtube-video-player'),
-  { Visible, isElementNotHidden } = require('../../services/client/visibility'),
-  { reportNow } = require('../../services/client/gtm');
+  { Visible, isElementNotHidden } = require('../../services/client/visibility');
 
 module.exports = (el) => {
   let autoplay = el.getAttribute('data-autoplay-video') === 'true',
@@ -56,36 +55,14 @@ module.exports = (el) => {
   }
 
   /**
-   * Player ready event
-   * this fires when the player is initially loaded and pushes variables specific to the
-   * component into the data layer. Information about the video itself is captured from the
-   * native gtm.video trigger on play and finish
-   */
-  document.addEventListener('player-ready-' + videoConfig.videoContainerId, () => {
-    reportNow(Object.assign({
-      youtubeAction: 'player ready'
-    }));
-  });
-
-  /**
    * Player start event
-   *
    * we don't need to send an event here, updating the video id for posterity
-   * also might be nice to send an event if we see the video id changed?
    */
   document.addEventListener('player-start-' + videoConfig.videoContainerId, function (evt) {
     const hasChanged = el.getAttribute('data-video-id') !== evt.player.videoId;
 
     if (hasChanged) {
       updateElementAttributes(el, evt.player);
-      // this will tell the gtm.video trigger to stop ignoring gtm.video events
-      // in the case that an external video was played initially then switched to
-      // an internal playlist
-      reportNow(Object.assign({
-        event: 'youtubeVideoReset',
-        youtubeVideoId: evt.player.videoId,
-        youtubeChannelName: 'New York Magazine'
-      }));
     }
   });
 };
