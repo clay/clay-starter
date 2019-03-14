@@ -3,37 +3,30 @@ _description: |
 _confirmRemoval: true
 
 socialMediaLinks:
-  _label: Primary Links
+  _label: Social Media Links
   _placeholder:
-    text: Primary Links
+    text: Social Media Links
     height: 50px
   _has:
     input: complex-list
     props:
       -
+        prop: socialMediaNetwork
+        _label: socialMediaNetwork
+        _has:
+          input: radio
+          options:
+                - Facebook
+                - Twitter
+                - Instagram
+      -
         prop: url
         _label: Url
         _has:
-          input: text
-          type: url
-          validate:
-            required: true
-      -
-        prop: text
-        _label: Link Text
-        _has:
-          input: text
-          enforceMaxlength: true
-          validate:
-            required: true
-            max: 40
-            maxMessage: This field must be 40 or fewer characters long
-      -
-        prop: linkImage
-        _label: Link Image
-        _has:
-          input: text
-          type: text
+            input: text
+            type: url
+            validate:
+              required: true
 
 navegationLinks:
   _label: Navegation Links

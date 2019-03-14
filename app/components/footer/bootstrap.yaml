@@ -1,7 +1,5 @@
 _components:
   footer:
-    services: []
-    sponsoredLinks: []
     siteLogo: ''
     logoUrl: ''
     navegationLinks: []
