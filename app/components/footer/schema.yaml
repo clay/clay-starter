@@ -2,52 +2,43 @@ _description: |
   The footer at the bottom of all pages. Has toggle-able links to various New York Magazine properties.
 _confirmRemoval: true
 
-services:
-  _label: Social Buttons
+socialMediaLinks:
+  _label: Primary Links
   _placeholder:
-    text: Social Buttons
-    height: 30px
-  _componentList:
-    include:
-      - follow
+    text: Primary Links
+    height: 50px
+  _has:
+    input: complex-list
+    props:
+      -
+        prop: url
+        _label: Url
+        _has:
+          input: text
+          type: url
+          validate:
+            required: true
+      -
+        prop: text
+        _label: Link Text
+        _has:
+          input: text
+          enforceMaxlength: true
+          validate:
+            required: true
+            max: 40
+            maxMessage: This field must be 40 or fewer characters long
+      -
+        prop: linkImage
+        _label: Link Image
+        _has:
+          input: text
+          type: text
 
-# socialMediaLinks:
-#   _label: Primary Links
-#   _placeholder:
-#     text: Primary Links
-#     height: 50px
-#   _has:
-#     input: complex-list
-#     props:
-#       -
-#         prop: url
-#         _label: Url
-#         _has:
-#           input: text
-#           type: url
-#           validate:
-#             required: true
-#       -
-#         prop: text
-#         _label: Link Text
-#         _has:
-#           input: text
-#           enforceMaxlength: true
-#           validate:
-#             required: true
-#             max: 40
-#             maxMessage: This field must be 40 or fewer characters long
-#       -
-#         prop: linkImage
-#         _label: Link Image
-#         _has:
-#           input: text
-#           type: text
-
-secondaryLinks:
-  _label: Secondary Links
+navegationLinks:
+  _label: Navegation Links
   _placeholder:
-    text: Secondary Links
+    text: Navegation Links
     height: 50px
   _has:
     input: complex-list
@@ -71,29 +62,28 @@ secondaryLinks:
             max: 40
             maxMessage: This field must be 40 or fewer characters long
 
-# sponsoredLinks:
-#   _label: Sponsored Links
-#   _placeholder:
-#     text: Sponsored Links
-#     height: 50px
-#   _has:
-#     input: complex-list
-#     props:
-#       -
-#         prop: url
-#         _label: Url
-#         _has:
-#           input: text
-#           type: url
-#           validate:
-#             required: true
-#       -
-#         prop: text
-#         _label: Link Text
-#         _has:
-#           input: text
-#           enforceMaxlength: true
-#           validate:
-#             required: true
-#             max: 40
-#             maxMessage: This field must be 40 or fewer characters long
+siteLogo:
+  _label: Site Logo
+  _placeholder:
+    height: 50px
+  _has:
+    input: text
+    help: support svg
+
+logoUrl:
+  _label: Logo URL
+  _placeholder:
+    height: 50px
+  _has:
+    input: text
+
+_groups:
+  settings:
+    fields:
+      - siteLogo (General)
+      - logoUrl (General)
+      - navegationLinks (Navegation Links)
+    _placeholder:
+      text: Footer
+      height: 30px
+      ifEmpty: logoUrl

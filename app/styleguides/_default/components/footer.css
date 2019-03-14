@@ -75,4 +75,9 @@
     color: #000;
     text-decoration: none;
   }
+
+  & .logo svg {
+    height: 74px;
+    width: 340px;
+  }
 }

@@ -1,62 +1,18 @@
-{{!-- <div data-uri="{{ default _ref _self }}" class="footer" data-editable="settings">
-
-  <ul class="footer-social" data-editable="footerLinks">
-    {{> component-list footerLinks }}
-  </ul>
-
-  <div class="copyright">
-    Built in {{ moment 'now' 'YYYY' }} with Clay
-  </div>
-</div> --}}
-
 <div data-uri="{{ default _ref _self }}" class="footer">
-  {{!-- <div class="primary-section">
-    <div class="logo-wrapper">
-      <a class="logo" href="//{{ concat @root.locals.site.host @root.locals.site.path (default siteHomepage '') }}">
-        {{#if (compare @root.locals.site.slug 'wwwthecut')}}
-        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo-bold.svg') }}}
-        {{else}}
-        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo.svg') }}}
-        {{/if}}
-      </a>
-    </div>
-    {{#ifAny @root.locals.edit primaryLinks.length}}
-    <ul class="primary-links" data-editable="socialMediaLinks">
-      {{#each socialMediaLinks}}
-      {{ set "siteClass" (removeSpaces (lowercase text)) }}
-        <li class="primary-link">
-          <a href="{{ url }}" class="{{ siteClass }}">
-              {{#if linkImage}}
-                {{{ linkImage }}}
-              {{/if}}
-            <span class="link-text" aria-label="{{ text }}">{{ text }}</span>
-          </a>
+  <div class="logo-wrapper" data-editable="settings">
+    {{#if siteLogo}}
+    <a class="logo" href="{{ logoUrl }}">
+      {{{ siteLogo }}}
+    </a>
+    {{/if}}
+    <div>
+      <ul class="links">
+        {{#each navegationLinks}}
+        <li class="link-item">
+          <a href="{{ url }}">{{ text }}</a>
         </li>
-      {{/each}}
-    </ul>
-    {{/ifAny}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
-  <div data-editable="services" class="social-section">
-    {{#each services}}
-      {{> follow this}}
-    {{/each}}
-  </div>
-  <ul data-editable="sponsoredLinks" class="secondary-links sponsored-links">
-    <li class="secondary-link sponsored-prompt">sponsored:</li>
-    {{#each sponsoredLinks}}
-      <li class="secondary-link">
-        <a href="{{ url }}">{{ text }}</a>
-      </li>
-    {{/each}}
-  </ul> --}}
-  <ul data-editable="secondaryLinks" class="links">
-    {{#each secondaryLinks}}
-      <li class="link-item">
-        <a href="{{ url }}">{{ text }}</a>
-      </li>
-    {{/each}}
-  </ul>
-  {{!-- <div class="copyright">
-    Built in {{ moment 'now' 'YYYY' }} with Clay
-  </div> --}}
 </div>
