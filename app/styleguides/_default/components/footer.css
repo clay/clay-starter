@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   .logo-wrapper {
     margin: 0 auto 15px auto;
     width: 112px;
@@ -49,5 +49,30 @@
     .links {
       font: 19px GroteskNarrow, sans-serif;
     }
+  }
+} */
+
+.footer {
+  margin: 20px;
+  text-align: center;
+
+  .links {
+    display: inline;
+    width: 33px;
+    height: 14px;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .link-item {
+    display: inline;
+    margin: 6px 13px;
+    text-transform: uppercase
+  }
+
+   a {
+    color: #000;
+    text-decoration: none;
   }
 }

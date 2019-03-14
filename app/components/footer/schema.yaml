@@ -1,8 +1,54 @@
 _description: |
-  footer
+  The footer at the bottom of all pages. Has toggle-able links to various New York Magazine properties.
+_confirmRemoval: true
 
-footerLinks:
-  _label: Footer Links
+services:
+  _label: Social Buttons
+  _placeholder:
+    text: Social Buttons
+    height: 30px
+  _componentList:
+    include:
+      - follow
+
+# socialMediaLinks:
+#   _label: Primary Links
+#   _placeholder:
+#     text: Primary Links
+#     height: 50px
+#   _has:
+#     input: complex-list
+#     props:
+#       -
+#         prop: url
+#         _label: Url
+#         _has:
+#           input: text
+#           type: url
+#           validate:
+#             required: true
+#       -
+#         prop: text
+#         _label: Link Text
+#         _has:
+#           input: text
+#           enforceMaxlength: true
+#           validate:
+#             required: true
+#             max: 40
+#             maxMessage: This field must be 40 or fewer characters long
+#       -
+#         prop: linkImage
+#         _label: Link Image
+#         _has:
+#           input: text
+#           type: text
+
+secondaryLinks:
+  _label: Secondary Links
+  _placeholder:
+    text: Secondary Links
+    height: 50px
   _has:
     input: complex-list
     props:
@@ -25,7 +71,29 @@ footerLinks:
             max: 40
             maxMessage: This field must be 40 or fewer characters long
 
-_groups:
-  settings:
-    fields:
-      - footerLinks
+# sponsoredLinks:
+#   _label: Sponsored Links
+#   _placeholder:
+#     text: Sponsored Links
+#     height: 50px
+#   _has:
+#     input: complex-list
+#     props:
+#       -
+#         prop: url
+#         _label: Url
+#         _has:
+#           input: text
+#           type: url
+#           validate:
+#             required: true
+#       -
+#         prop: text
+#         _label: Link Text
+#         _has:
+#           input: text
+#           enforceMaxlength: true
+#           validate:
+#             required: true
+#             max: 40
+#             maxMessage: This field must be 40 or fewer characters long
