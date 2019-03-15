@@ -18,6 +18,7 @@ headLayout:
     include:
       - meta-site
       - meta-icons
+      - youtube-player-head
 top:
   _componentList:
     include:

@@ -1,0 +1,143 @@
+_description: |
+  Youtube video embed for Clay. For technical reasons, YouTube embeds don't display a preview in edit mode.
+  Preview the video by previewing the full page (from the Clay toolbar). Embeds can display a specific video ID.
+videoId:
+  _label: YouTube Video ID
+  _publish: videoPlayerId
+  _has:
+    input: text
+
+videoType:
+  _label: Type
+  _has:
+    input: radio
+    options:
+      -
+        name: Editorial (Original)
+        value: editorial
+      -
+        name: Editorial (External)
+        value: embedded
+      -
+        name: Related
+        value: related
+      -
+        name: Sponsored
+        value: sponsored
+    validate:
+      required: true
+      requiredMessage: Please select a video type
+
+videoSize:
+  _label: Size
+  _has:
+    input: radio
+    options:
+        -
+          name: Column Width
+          value: column-width
+        -
+          name: Break-out
+          value: break-out
+  _reveal:
+    field: videoType
+    operator: ===
+    values:
+      - sponsored
+      - editorial
+
+playerHeadline:
+  _label: Video Headline
+  _has:
+    input: text
+  _reveal:
+    field: videoType
+    value: related
+
+playerCaption:
+  _label: Video Caption
+  _has: text
+
+autoPlay:
+  _label: Autoplay with muted audio on Page Load
+  _has: checkbox
+
+autoPlayNextVideo:
+  _label: Automatically start next video
+  _has: checkbox
+  _reveal:
+    field: videoType
+    operator: '!=='
+    value: sponsored
+
+videoPlaylist:
+  _label: Youtube Playlist (defaults to current site)
+  _reveal:
+    field: autoPlayNextVideo
+    operator: truthy
+  _has:
+    input: text
+    validate:
+      required:
+        field: autoPlayNextVideo
+        operator: truthy
+      requiredMessage: Video Player should contain video playlist
+    help: Playlists are used for auto playing additional videos in the YouTube component after the assigned video is finished. Only required for videos that are selected to automatically start next video above
+
+playerBorderTopCTA:
+  _label: Top Border Title
+  _has: text
+
+playerBorderTop:
+  _label: Show Top Border
+  _has: checkbox
+
+playerBorderBottom:
+  _label: Show Bottom Border
+  _has: checkbox
+
+customPlay:
+  _subscribe: customPlay
+
+_groups:
+  settings:
+    fields:
+      - autoPlay (Autoplay)
+      - autoPlayNextVideo (Autoplay)
+      - videoPlaylist (Autoplay)
+      - playerBorderTopCTA (Borders and Border Title)
+      - playerBorderTop (Borders and Border Title)
+      - playerBorderBottom (Borders and Border Title)
+  inline:
+    fields:
+      - videoId
+      - videoType
+      - videoSize
+      - playerHeadline
+      - playerCaption
+    _label: Youtube Video Player
+    _placeholder:
+      text: Youtube Video Player
+      height: 100px
+      ifEmpty: videoId
+
+# set by bootstrap or first-run
+videoLocation:
+  help: For analytics, to tell what kind of page the video is on
+
+# non-user-editable fields, set by model.js
+previousTypeRelated:
+  help: Toggle for displaying convenience-based changes to player borders based on previously selected video type. Set by model.js
+videoValid:
+  help: Used to decide whether or not to display a video in the template
+  _placeholder:
+    text: Invalid video id ${videoId}. This video will not display.
+    permanent: true
+channelName:
+  help: Name of the channel the video comes from. Used to decide whether or not to listen to GTM triggers for this video
+videoTitle:
+  help: Title of the video
+videoThumbnail:
+  help: maxres video thumbnail
+videoDuration:
+  help: video duration in seconds

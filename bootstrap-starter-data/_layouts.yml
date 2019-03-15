@@ -8,6 +8,8 @@ _layouts:
             _ref: /_components/meta-site/instances/article
           -
             _ref: /_components/meta-icons/instances/claydemo
+          -
+            _ref: /_components/youtube-player-head/instances/new
         top:
           -
             _ref: /_components/header/instances/claydemo
