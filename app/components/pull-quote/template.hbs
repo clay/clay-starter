@@ -1,9 +1,9 @@
 <aside data-uri="{{ default _ref _self }}" class="pull-quote" itemscope data-editable="inlineGroup">
   {{#if quote}}
-    <span class="quote {{#if hasQuoteMarks}}has-quote-marks{{/if}}">{{{ quote }}}</span>
+    <span class="pull-quote-text {{#if hasQuoteMarks}}has-quote-marks{{/if}}">{{{ quote }}}</span>
   {{/if}}
 
   {{#if attribution}}
-    <span class="attribution">&mdash; {{{ attribution }}}</span>
+    <span class="pull-quote-attribution">&mdash; {{{ attribution }}}</span>
   {{/if}}
 </aside>
