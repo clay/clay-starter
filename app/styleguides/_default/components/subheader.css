@@ -35,11 +35,11 @@ $helvetica-stack: Helvetica, sans-serif;
   }
 
   .link {
+    opacity: 0;
     padding: 2px 0 0 5px;
     position: absolute;
-    transition: opacity 150ms ease;
-    opacity: 0;
     -moz-transition: opacity 150ms ease;
     -webkit-transition: opacity 150ms ease;
+    transition: opacity 150ms ease;
   }
 }

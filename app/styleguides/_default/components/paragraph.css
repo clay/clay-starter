@@ -5,5 +5,4 @@ $serif-stack: Georgia, serif;
   color: $black;
   font: 18px/1.5 $serif-stack;
   margin: 0 0 1em;
-  word-break: break-all;
 }
