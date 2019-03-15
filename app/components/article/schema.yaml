@@ -61,8 +61,9 @@ content:
       - subheader
       - divider
       - image
-      - code-sample
       - list
+      - pull-quote
+      - code-sample
 
 ledeUrl:
   _label: Lede Image URL

@@ -1,0 +1,55 @@
+.pull-quote {
+  margin: 0 0 20px;
+  padding: 0 0 0;
+  z-index: 1;
+
+  .quote {
+    font: bold 28px/32px Georgia, serif;
+  }
+
+  /* Quotation marks */
+  .has-quote-marks:before {
+    content: '\201C';
+    margin: 0 0 0 -.5em;
+  }
+
+  .has-quote-marks:after {
+    content: '\201D';
+  }
+  /* /Quotation marks */
+
+  .quote,
+  .attribution {
+    color: #000;
+    text-transform: none;
+  }
+
+  .attribution {
+    display: block;
+    font: italic 14px/1.5 Georgia, serif;
+    margin: 0;
+    padding: 6px 0 0;
+  }
+}
+
+
+@media screen and (min-width:768px) {
+  .pull-quote {
+    float: left;
+    margin: 0 40px 10px 0;
+    position: relative;
+    width: 260px;
+  }
+}
+
+@media screen and (min-width:1180px) {
+  .pull-quote {
+    margin: 0 20px 20px 0;
+  }
+}
+
+@media print {
+  .pull-quote {
+    display: none;
+  }
+}
