@@ -1,0 +1,9 @@
+@import '_default/components/divider.css';
+
+.divider.divider_short {
+  border-top-width: 5px;
+  height: 30px; /* if we use height to replace margin it becomes easier to click in edit mode */
+  margin: 25px 0 0;
+  max-width: 72px;
+  width: 12%;
+}
