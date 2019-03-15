@@ -1,5 +1,8 @@
-<div class="divider" data-uri="{{ default _ref self }}" data-editable="title">
-  {{#if title}}
-    <h2 class="title">{{ title }}</h2>
+<div class="divider {{ componentVariation }}" data-uri="{{ default _ref self }}">
+  {{!-- Check that we're dealing with the base variation --}}
+  {{#if (compare componentVariation "===" "divider")}}
+    {{#ifAny title @root.locals.edit}}
+      <h2 class="title" data-editable="title">{{ title }}</h2>
+    {{/ifAny}}
   {{/if}}
 </div>
