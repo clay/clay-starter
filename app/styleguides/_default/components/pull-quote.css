@@ -3,17 +3,6 @@
   padding: 0 0 0;
   z-index: 1;
 
-  @media screen and (min-width:768px) {
-    float: left;
-    margin: 0 40px 10px 0;
-    position: relative;
-    width: 260px;
-  }
-
-  @media screen and (min-width:1180px) {
-    margin: 0 20px 20px 0;
-  }
-
   & &-text {
     font: bold 28px/32px Georgia, serif;
   }
@@ -40,6 +29,17 @@
     font: italic 14px/1.5 Georgia, serif;
     margin: 0;
     padding: 6px 0 0;
+  }
+
+  @media screen and (min-width:768px) {
+    float: left;
+    margin: 0 40px 10px 0;
+    position: relative;
+    width: 260px;
+  }
+
+  @media screen and (min-width:1180px) {
+    margin: 0 20px 20px 0;
   }
 
   @media print {
