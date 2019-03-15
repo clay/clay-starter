@@ -30,7 +30,12 @@
   .links-wrapper {
     margin: 20px
   }
+
   .socialmedia-link:hover svg circle {
     fill: #acca59;
+  }
+
+  .socialmedia-link{
+    margin: 10px
   }
 }
