@@ -5,22 +5,24 @@
       {{{ siteLogo }}}
     </a>
     {{/if}}
+    {{#if navegationLinks.length}}
     <div class="links-wrapper">
       <ul class="links">
         {{#each navegationLinks}}
-        <li class="link-item">
-          <a href="{{ url }}">{{ text }}</a>
-        </li>
+          <li class="link-item">
+            <a href="{{ url }}">{{ text }}</a>
+          </li>
         {{/each}}
       </ul>
     </div>
+    {{/if}}
   </div>
 
   <div data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
-    <a href="{{ url }}" class="socialmedia-link {{ socialMediaNetwork }}">
-      {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
-   </a>
+      <a href="{{ url }}" class="socialmedia-link {{ socialMediaNetwork }}">
+        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
+      </a>
     {{/each}}
   </div>
 </div>
