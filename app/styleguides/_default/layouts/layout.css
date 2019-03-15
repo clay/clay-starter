@@ -52,10 +52,9 @@ html {
     margin: auto;
   }
 
-  & > .page-header,
   & > .top {
     margin: 20px auto;
-    width: $wrapperMaxWidth;
+    width: 1100px;
   }
 
   & > .bottom {

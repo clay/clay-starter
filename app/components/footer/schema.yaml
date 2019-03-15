@@ -6,7 +6,7 @@ socialMediaLinks:
   _label: Social Media Links
   _placeholder:
     text: New Follow
-    height: 50px
+    height: 56px
   _has:
     input: complex-list
     props:
@@ -33,7 +33,7 @@ navegationLinks:
   _label: Navegation Links
   _placeholder:
     text: Navegation Links
-    height: 50px
+    height: 56px
   _has:
     input: complex-list
     props:
@@ -59,7 +59,7 @@ navegationLinks:
 siteLogo:
   _label: Site Logo
   _placeholder:
-    height: 50px
+    height: 56px
   _has:
     input: text
     help: Support SVG
@@ -67,7 +67,7 @@ siteLogo:
 logoUrl:
   _label: Logo URL
   _placeholder:
-    height: 50px
+    height: 56px
   _has:
     input: text
     help: Example https://domain.com

@@ -1,5 +1,5 @@
 <div data-uri="{{ default _ref _self }}" class="footer">
-  <div class="logo-wrapper" data-editable="settings">
+  <div class="footer-settings-wrapper" data-editable="settings">
     {{#if siteLogo}}
     <a class="logo" href="{{ logoUrl }}">
       {{{ siteLogo }}}
@@ -18,7 +18,7 @@
     {{/if}}
   </div>
 
-  <div data-editable="socialMediaLinks">
+  <div class="socialMediaLinks" data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
       <a href="{{ url }}" class="socialmedia-link {{ socialMediaNetwork }}">
         {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
