@@ -1,6 +1,6 @@
 name: ${CLAY_SITE_NAME}
 host: ${CLAY_SITE_HOST}
-path: ''
+path: ${CLAY_SITE_PATH}
 assetDir: public
 assetPath: ''
 port: ${CLAY_SITE_PORT}
