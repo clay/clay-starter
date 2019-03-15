@@ -20,9 +20,17 @@
 
   <div class="socialMediaLinks" data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
-      <a href="{{ url }}" class="socialmedia-link {{ socialMediaNetwork }}">
+    {{!-- TODO: try to make this dynamic --}}
+     {{#if (compare socialMediaNetwork "===" "Facebook")}}
+      <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
         {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
       </a>
+     {{/if}}
+     {{#if (compare socialMediaNetwork "===" "Twitter")}}
+      <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
+        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/twitter.svg') }}}
+      </a>
+     {{/if}}
     {{/each}}
   </div>
 </div>
