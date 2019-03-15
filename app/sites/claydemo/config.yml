@@ -2,7 +2,7 @@ name: ${CLAY_SITE_NAME}
 host: ${CLAY_SITE_HOST}
 path: ${CLAY_SITE_PATH}
 assetDir: public
-assetPath: ''
+assetPath: ${CLAY_SITE_PATH}
 port: ${CLAY_SITE_PORT}
 protocol: ${CLAY_SITE_PROTOCOL}
 shortKey: ${CLAY_SITE_SHORTKEY}
