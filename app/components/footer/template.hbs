@@ -5,7 +5,7 @@
       {{{ siteLogo }}}
     </a>
     {{/if}}
-    <div>
+    <div class="links-wrapper">
       <ul class="links">
         {{#each navegationLinks}}
         <li class="link-item">
@@ -15,9 +15,12 @@
       </ul>
     </div>
   </div>
+
   <div data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
-        <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="nonzero"><circle fill="#000" cx="19" cy="19" r="19"></circle><path d="M20.788 28.998V19.42h3.538l.532-3.734h-4.07v-2.383c0-1.08.33-1.817 2.036-1.817H25v-3.34A32.453 32.453 0 0 0 21.832 8c-3.138 0-5.285 1.74-5.285 4.934v2.753H13v3.735h3.547V29h4.24v-.002z" fill="#FFF"></path></g></svg>
+    <a href="{{ url }}" class="socialmedia-link {{ socialMediaNetwork }}">
+      {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
+   </a>
     {{/each}}
   </div>
 </div>

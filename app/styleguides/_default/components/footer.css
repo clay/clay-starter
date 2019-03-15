@@ -26,4 +26,11 @@
     height: 74px;
     width: 340px;
   }
+
+  .links-wrapper {
+    margin: 20px
+  }
+  .socialmedia-link:hover svg circle {
+    fill: #acca59;
+  }
 }
