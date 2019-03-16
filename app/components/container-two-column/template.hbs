@@ -13,15 +13,15 @@
     .container-two-column[data-uri="{{ default _ref _self }}"] .container-two-column-wrapper {
       max-width: {{ concat wrapperMaxWidth "px" }};
       align-items: {{ alignment }};
-      padding: {{ concat spacingVal "px" }} 0;
+      padding: {{ concat spacingVal "px" }} 20px;
     }
   </style>
 
   <div class="container-two-column-wrapper">
-    <div class="container-two-column-left" data-editable="left">
+    <div class="container-two-column-left container-two-column-left_{{ratio}}" data-editable="left">
       {{> component-list left }}
     </div>
-    <div class="container-two-column-right" data-editable="right">
+    <div class="container-two-column-right container-two-column-right_{{ratio}}" data-editable="right">
       {{> component-list right }}
     </div>
   </div>

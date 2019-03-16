@@ -1,5 +1,5 @@
 _description: |
-  A simple paragraph component.
+  A block of content which has an image, a title, text and footer. All elements are stacked and are the full width of whichever container they appear in.
 
 
 text: &default
@@ -23,6 +23,7 @@ prologue:
   _has:
     input: text
     type: url
+    help: An image for an image to appear above the title
 
 epilogue:
   _label: Footer Image

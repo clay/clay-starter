@@ -12,11 +12,9 @@ function mapSpacing(data) {
   if (!data.spacing || data.spacing === 'none') {
     data.spacingVal = 0;
   } else {
-    console.log(data)
     data.spacingVal = SPACING_MAP[data.spacing];
   }
 
-  console.log(data)
   return data;
 }
 
@@ -35,7 +33,16 @@ function parseCustomStyles(ref, data) {
   })
 }
 
+function parseRatio(data) {
+  if (!data.ratio) {
+    data.ratio = 'even';
+  }
+
+  return data;
+}
+
 module.exports.save = (ref, data) => {
   return parseCustomStyles(ref, data)
-    .then(mapSpacing);
+    .then(mapSpacing)
+    .then(parseRatio);
 };

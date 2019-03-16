@@ -3,3 +3,4 @@ _components:
     wrapperMaxWidth: 1024
     alignment: center
     spacing: small
+    ratio: even
