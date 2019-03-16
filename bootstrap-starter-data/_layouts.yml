@@ -1,4 +1,12 @@
 _layouts:
+  full-width-layout:
+    instances:
+      general:
+        head: head
+        content: content
+        kilnInternals:
+          -
+            _ref: /_components/clay-kiln/instances/general
   layout:
     instances:
       article:

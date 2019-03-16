@@ -1,0 +1,32 @@
+_description: |
+  A full width layout
+
+head:
+  _componentList:
+    page: true
+    include:
+      - meta-site
+      - meta-title
+      - meta-url
+      - meta-description
+      - meta-keywords
+      - meta-authors
+      - meta-image
+
+headLayout:
+  _componentList:
+    include:
+      - meta-site
+      - meta-icons
+
+content:
+  _componentList:
+    page: true
+    include:
+      - article
+
+kilnInternals:
+  _componentList:
+    internals: true
+    include:
+      - clay-kiln

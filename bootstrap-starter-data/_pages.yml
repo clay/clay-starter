@@ -1,4 +1,9 @@
 _pages:
+  general:
+    layout: /_layouts/full-width-layout/instances/general
+    content: []
+    head: []
+
   sample-article:
     layout: /_layouts/layout/instances/article
     main:
