@@ -1,0 +1,29 @@
+@import '_default/common/_vars.css';
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+::selection {
+  background-color: #e7e7e7;
+}
+
+.full-width-layout {
+  background-color: $background-primary-color;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.simple-content-block {
+  font-family: Arial, Helvetica, sans-serif;
+
+  &-prologue img {
+    display: block;
+    max-width: 100%;
+  }
+
+  &-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  &-text {
+    font-size: 22px;
+  }
+}

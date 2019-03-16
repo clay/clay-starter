@@ -1,0 +1,22 @@
+<div data-uri="{{ default _ref self }}" class="simple-content-block {{ componentVariation }}">
+  {{#if prologue}}
+  <div class="simple-content-block-prologue">
+    <img src="{{ prologue }}" alt="">
+  </div>
+  {{/if}}
+  {{#ifAny title @root.locals.edit}}
+  <div class="simple-content-block-title" data-editable="title">
+    {{{ title }}}
+  </div>
+  {{/ifAny}}
+  {{#ifAny text @root.locals.edit}}
+  <div class="simple-content-block-text" data-editable="text">
+    {{{ text }}}
+  </div>
+  {{/ifAny}}
+  {{#if prologue }}
+  <div class="simple-content-block-epilogue">
+    {{{ epilogue }}}
+  </div>
+  {{/if}}
+</div>

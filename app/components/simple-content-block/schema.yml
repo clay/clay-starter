@@ -1,0 +1,37 @@
+_description: |
+  A simple paragraph component.
+
+
+text: &default
+  _placeholder:
+    height: 50px
+    text: Add Text Here
+    required: true
+  _has:
+    input: inline
+    type: multi-component
+    buttons:
+      - bold
+      - italic
+      - strike
+      - link
+
+title: *default
+
+prologue:
+  _label: Header Image
+  _has:
+    input: text
+    type: url
+
+epilogue:
+  _label: Footer Image
+  _has:
+    input: text
+    type: url
+
+_groups:
+  settings:
+    fields:
+      - prologue
+      - epilogue

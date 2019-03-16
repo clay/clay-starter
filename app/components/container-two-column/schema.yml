@@ -1,0 +1,77 @@
+_description: |
+  A simple divider between other components. Can provide an optional title for the divider.
+
+left:
+  _label: Left Content
+  _placeholder:
+    text: Left Content
+    height: &placeholder-height 300px
+  _componentList:
+    include: &components
+      - image
+      - simple-content-block
+      - code-sample
+right:
+  _label: Right Content
+  _placeholder:
+    text: Right Content
+    height: *placeholder-height
+  _componentList:
+    include: *components
+
+wrapperMaxWidth:
+  _label: Maximum Wrapper Width
+  _has:
+    input: text
+    type: number
+    placeholder: 1280
+    help: The maximum width in pixels which the row's wrapper will stretch to
+
+alignment:
+  _label: Content Alignment
+  _has:
+    input: select
+    options:
+      - center
+      - top
+      -
+        name: Bottom
+        value: flex-end
+    help: Specify if the content should align itself in the middle, at the top or at the bottom of the row
+
+spacing:
+  _label: Spacing
+  _has:
+    input: select
+    options:
+      - small
+      - medium
+      - large
+    help: This setting controls how much space surrounds the top and bottom of the content
+
+background:
+  _label: Background Image Url
+  _has:
+    input: text
+    type: url
+
+sass:
+  _label: Custom Styles
+  _has:
+    input: codemirror
+    mode: text/x-scss
+    help: Custom styles for this specific component, written in CSS/SASS
+
+css:
+  _label: CSS
+  _has:
+    help: Generated from Custom Styles
+
+_groups:
+  settings:
+    fields:
+      - wrapperMaxWidth (Structure)
+      - alignment (Structure)
+      - spacing (Structure)
+      - background (Background)
+      - sass (Background)

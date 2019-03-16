@@ -1,0 +1,14 @@
+.container-two-column {
+  &-wrapper {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1024px;
+
+
+    & > * {
+      flex-basis: 50%;
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+  }
+}

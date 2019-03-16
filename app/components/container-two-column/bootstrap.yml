@@ -1,0 +1,5 @@
+_components:
+  container-two-column:
+    wrapperMaxWidth: 1024
+    alignment: center
+    spacing: small

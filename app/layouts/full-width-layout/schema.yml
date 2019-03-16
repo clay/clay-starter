@@ -23,7 +23,7 @@ content:
   _componentList:
     page: true
     include:
-      - article
+      - container-two-column
 
 kilnInternals:
   _componentList:
