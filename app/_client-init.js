@@ -2,9 +2,9 @@
 
 window.modules = ['tags.client']
 
-function getClientJs(name) {
-  return import(`components/${name}/client.js`).then(mod => mod.default);
-}
+// function getClientJs(name) {
+//   return import(`components/${name}/client.js`).then(mod => mod.default);
+// }
 
 function tryToMount(fn, el, name) {
   try {
@@ -22,8 +22,8 @@ function tryToMount(fn, el, name) {
 function mountComponentModules() {
   window.modules
     .forEach(key => {
-      getClientJs(key.replace('.client', ''))
-        .then(mod => {
+      // getClientJs(key.replace('.client', ''))
+      //   .then(mod => {
           if (typeof mod === 'function') {
             const name = key.replace('.client', ''),
               instancesSelector = `[data-uri*="_components/${name}/"]`,
@@ -33,7 +33,7 @@ function mountComponentModules() {
               tryToMount(mod, el, name);
             }
           }
-        });
+        // });
     });
 }
 

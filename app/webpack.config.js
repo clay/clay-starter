@@ -7,12 +7,12 @@ const path = require('path'),
     '_client-init': './_client-init.js'
   };
 
-// glob.sync('./components/**/client.js').map(path => {
-//   const splitPath = path.split('/'),
-//     cmptName = splitPath[splitPath.length - 2];
+glob.sync('./components/**/client.js').map(path => {
+  const splitPath = path.split('/'),
+    cmptName = splitPath[splitPath.length - 2];
 
-//   entry[`${cmptName}.client`] = path;
-// });
+  entry[`${cmptName}.client`] = path;
+});
 
 
 
@@ -24,7 +24,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js',
     path: path.resolve(__dirname, 'public', 'js'),
-    publicPath: '/js/'
+    // publicPath: '/js/'
   },
   optimization: {
     splitChunks: {
@@ -43,7 +43,7 @@ module.exports = {
       components: path.resolve(__dirname, 'components')
     }
   }
-  // , plugins: [new ClayClientPlugin({ options: true })]
+  , plugins: [new ClayClientPlugin({ options: true })]
 }
 
 // module.exports = {
