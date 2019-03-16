@@ -1,7 +1,8 @@
 _pages:
   general:
     layout: /_layouts/full-width-layout/instances/general
-    content: []
+    content:
+      - /_components/container-two-column/instances/general
     head: []
 
   sample-article:

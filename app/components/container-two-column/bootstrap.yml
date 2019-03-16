@@ -1,6 +1,6 @@
 _components:
   container-two-column:
-    wrapperMaxWidth: 1024
+    wrapperMaxWidth: 1280
     alignment: center
     spacing: small
     ratio: even

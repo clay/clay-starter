@@ -117,6 +117,13 @@ _components:
             text: clay
           -
             text: cute puppy
+  container-two-column:
+    instances:
+      general:
+        wrapperMaxWidth: 1280
+        alignment: center
+        spacing: small
+        ratio: even
   article:
     instances:
       new-standard:
