@@ -64,7 +64,7 @@ navegationLinks:
             max: 40
             maxMessage: This field must be 40 or fewer characters long
 
-siteLogo:
+svgLogo:
   _label: Site Logo
   _placeholder:
     height: 56px
@@ -83,10 +83,10 @@ logoUrl:
 _groups:
   settings:
     fields:
-      - siteLogo (General)
+      - svgLogo (General)
       - logoUrl (General)
       - navegationLinks (Navegation Links)
     _placeholder:
       text: Footer
       height: 30px
-      ifEmpty: logoUrl AND siteLogo
+      ifEmpty: logoUrl AND svgLogo

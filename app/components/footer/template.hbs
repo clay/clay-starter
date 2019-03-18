@@ -1,13 +1,13 @@
 <div data-uri="{{ default _ref _self }}" class="footer">
   <div class="footer-settings-wrapper" data-editable="settings">
-    {{#if siteLogo}}
-    <a class="footer-logo" href="{{ logoUrl }}">
-      {{#if siteLogo }}
-        {{{ siteLogo }}}
-      {{else}}
-        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo.svg') }}}
-      {{/if}}
-    </a>
+     {{#if logoUrl }}
+      <a class="footer-logo" href="{{ logoUrl }}">
+        {{#if svgLogo }}
+          {{{ svgLogo }}}
+        {{else}}
+          {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo.svg') }}}
+        {{/if}}
+      </a>
     {{/if}}
     {{#if navegationLinks.length}}
       <div class="links-wrapper">

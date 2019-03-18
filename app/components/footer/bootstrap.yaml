@@ -1,5 +1,5 @@
 _components:
   footer:
-    siteLogo: ''
+    svgLogo: ''
     logoUrl: ''
     navegationLinks: []
