@@ -1,77 +1,66 @@
 @import '_default/common/_vars.css';
 
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 9px 0 0 8px;
+header.header {
+  margin: 0 auto;
+  max-width: 100%;
 
-  .menu-wrapper {
-    height: 46px;
-    margin: 20px 0 0;
-    width: 46px;
-
-    /* put in a pretend menu placeholder for now */
-    .menu {
-      border: 2px solid black;
-      border-radius: 50%;
-      display: block;
-      height: 38px;
-      margin: auto;
-      width: 38px;
-    }
+  .header-inner {
+    text-align: center;
   }
 
-  .heading-wrapper {
-    align-items: center;
-    display: flex;
-    flex-grow: 1;
-    text-align: center;
+  .header__logo-link:focus {
+    outline: none;
+  }
 
-    .logo {
-      height: max-content;
-    }
-
-    .title-logo {
-      margin: 0;
-    }
-
-    .title-logo svg {
-      width: max-content;
-    }
+  @media screen and (min-width: $lg) {
+    margin: 27px auto 20px;
+    max-width: $wrapperMaxWidth;
   }
 }
 
-@media screen and (min-width: 1180px) {
-  .header {
-    justify-content: flex-start;
-    margin: 27px auto 20px;
-    max-width: $wrapperMaxWidth;
 
-    .menu-wrapper {
-      height: 43px;
-      width: 43px;
+.header__tagline {
+  font-family: $sans-serif-stack;
+  margin: 15px 0;
+}
 
-      /* put in a pretend menu placeholder for now */
-      .menu {
-        border: 2px solid black;
-        border-radius: 50%;
-        display: block;
-        height: 43px;
-        margin: auto;
-        width: 43px;
-      }
+.header__logo-link,
+.header__title-logo{
+  display: inline-block;
+  svg, .header__logo {
+    max-width: 100%;
+    width: max-content;
+  }
+}
+
+.header__social-icons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    height: auto;
+    width: 26px;
+  }
+  .share-link {
+    margin-right: 20px;
+    position: relative;
+    span:last-child {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
     }
+  }
+  .share-link:last-child {
+    margin-right: 0;
+  }
 
-    .heading-wrapper {
-      flex-grow: unset;
-      position: relative;
-      text-align: left;
-      width: unset;
-
-      .title-logo {
-        margin: 0;
-      }
-    }
+  .share-link:focus {
+    outline: none;
   }
 }

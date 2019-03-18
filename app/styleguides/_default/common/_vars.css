@@ -18,3 +18,8 @@ $text-black: #111;
 
 /* Wrapper */
 $wrapperMaxWidth: 600px;
+
+
+$sm: 768px;
+$md: 992px;
+$lg: 1180px;

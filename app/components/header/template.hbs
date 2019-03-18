@@ -1,9 +1,42 @@
-<div data-uri="{{ default _ref _self }}" class="{{componentVariation}} {{ pageType }}">
-  <div class="heading-wrapper">
-    <a class="logo" href="//{{~ concat @root.locals.site.host @root.locals.site.path ~}}">
-      <span class="title-logo">
-        <span>{{{ read 'public/media/sites/claydemo/logo.svg' }}}</span>
+<header data-uri="{{ default _ref _self }}" class="{{componentVariation}} {{ pageType }}">
+  <div class="header-inner">
+    {{#if logoUrl}}
+    <a class="header__logo-link" href="{{logoUrl}}">
+    {{/if}}
+      <span class="header__title-logo">
+        {{#if isSVGString}}
+          {{{siteLogo}}}
+        {{else}}
+        <img class="heeader__logo" src="{{siteLogo}}">
+        {{/if}}
       </span>
+    {{#if logoUrl}}
     </a>
+    {{/if}}
+    {{#if tagline}}
+    <p class="header__tagline">{{tagline}}</p>
+    {{/if}}
+    {{#if enableSocialButtons}}
+      <div class="header__social-icons">
+        {{#if shareServices.facebook }}
+        <a
+          data-shareService="facebook"
+          target="_blank"
+          class="share-link facebook"
+          title="Share on Facebook"
+          aria-label="Share on Facebook"
+        >{{{ read 'public/media/sites/claydemo/facebook-square.svg' }}}<span>Share</span></a>
+      {{/if}}
+      {{#if shareServices.twitter }}
+      <a
+        data-shareService="twitter"
+        target="_blank"
+        class="share-link twitter"
+        title="Share on Twitter"
+        aria-label="Share on Twitter"
+        >{{{ read 'public/media/sites/claydemo/twitter.svg' }}}<span>Tweet</span></a>
+      {{/if}}
+      </div>
+    {{/if}}
   </div>
-</div>
+</header>
