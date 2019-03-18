@@ -23,7 +23,6 @@ class service {
  * openPopup Window
  * @param {string} url - address of the popup page
  * @param {object} dimensions { w: width of popup, h: height of popup}
- * @returns {string}
  */
   openPopUp(url, dimensions) {
     const popupPosition = this.getCenterPosition(this.getWindowSize(), dimensions),

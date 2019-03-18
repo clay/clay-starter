@@ -3,6 +3,11 @@
 const popup = require('./popup');
 
 class sharePopUp {
+  /**
+ * Create a Popup for share services
+ * @param {Node} shareLink - html anchor tag
+ * @param {string} shareURL - url of page to be shared
+ */
   constructor(shareLink, shareURL) {
     this.shareLink = shareLink;
     this.shareURL = shareURL;
