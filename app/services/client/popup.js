@@ -17,6 +17,14 @@ class service {
     return { left, top};
   }
 
+
+
+  /**
+ * openPopup Window
+ * @param {string} url - address of the popup page
+ * @param {object} dimensions { w: width of popup, h: height of popup}
+ * @returns {string}
+ */
   openPopUp(url, dimensions) {
     const popupPosition = this.getCenterPosition(this.getWindowSize(), dimensions),
       params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
