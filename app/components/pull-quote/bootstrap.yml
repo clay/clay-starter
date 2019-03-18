@@ -1,0 +1,5 @@
+_components:
+  pull-quote:
+    quote: ''
+    hasQuoteMarks: false
+    attribution: ''

@@ -3,12 +3,12 @@ _description: |
 
 description:
   _label: Description
-  _publish: pageDescription
+  _subscribe: pageDescription
   _has:
     input: text
     help: Description of the content on this page, used by search engines.
-    validate:
-      required: true
+    # validate: # TODO: make required when we have an approach for article metadata
+    #   required: true
 
 _groups:
   settings:
