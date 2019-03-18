@@ -30,8 +30,8 @@ module.exports = (el) => {
         let Position = $popup.position,
           Params = $popup.params,
           opts = {},
-          dimensions = { w: 780, h: 500 },
-          features = new Position(dimensions.w, dimensions.h),
+          dimensions = { width: 780, height: 500 },
+          features = new Position(dimensions.width, dimensions.height),
           classList = e.currentTarget.classList,
           args,
           socialHandler,
@@ -55,8 +55,5 @@ module.exports = (el) => {
         e.preventDefault();
       });
     });
-
   }
 };
-
-
