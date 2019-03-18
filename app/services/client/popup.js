@@ -7,14 +7,14 @@ class service {
       width = window.innerWidth || document.documentElement.clientWidth || screen.width,
       height = window.innerHeight || document.documentElement.clientHeight || screen.height;
 
-    return {dualScreenLeft, dualScreenTop, height, width};
+    return { dualScreenLeft, dualScreenTop, height, width };
   }
 
   getCenterPosition(windowSize, dimensions) {
     const left = windowSize.width / 2 - dimensions.w / 2 + windowSize.dualScreenLeft,
       top = windowSize.height / 2 - dimensions.h / 2 + windowSize.dualScreenTop;
 
-    return { left, top};
+    return { left, top };
   }
 
 

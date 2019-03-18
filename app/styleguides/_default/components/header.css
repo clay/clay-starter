@@ -27,6 +27,7 @@ header.header {
 .header__logo-link,
 .header__title-logo{
   display: inline-block;
+
   svg, .header__logo {
     max-width: 100%;
     width: max-content;
@@ -42,9 +43,11 @@ header.header {
     height: auto;
     width: 26px;
   }
+
   .share-link {
     margin-right: 20px;
     position: relative;
+
     span:last-child {
       border: none;
       clip: rect(0 0 0 0);
@@ -56,6 +59,7 @@ header.header {
       width: 1px;
     }
   }
+
   .share-link:last-child {
     margin-right: 0;
   }
