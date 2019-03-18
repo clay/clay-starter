@@ -24,7 +24,7 @@ socialMediaNetworks:
                 - name: 'Instagram'
                   value: 'instagram'
       -
-        prop: url
+        prop: handle
         _label: Social Media Handle
         _has:
             input: text
