@@ -2,7 +2,7 @@ _description: |
   The footer at the bottom of all pages.
 _confirmRemoval: true
 
-socialMediaLinks:
+socialMediaNetworks:
   _label: Social Media Links
   _placeholder:
     text: New Follow
@@ -16,16 +16,18 @@ socialMediaLinks:
         _has:
           input: radio
           help: Select the network for this follow button
-          options:
-                - Facebook
-                - Twitter
-                - Instagram
+          options: # new social media network should also be added to 'supportedSocialNetworks' in client.js
+                - name: 'Facebook'
+                  value: 'facebook'
+                - name: 'Twitter'
+                  value: 'twitter'
+                - name: 'Instagram'
+                  value: 'instagram'
       -
         prop: url
         _label: Social Media Handle
         _has:
             input: text
-            help: Example https://domain.com
             validate:
               required: true
       -

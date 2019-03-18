@@ -22,7 +22,7 @@
     text-decoration: none;
   }
 
-  & .logo svg {
+  & .footer-logo svg {
     height: 74px;
     width: 340px;
   }
@@ -31,15 +31,24 @@
     margin: 20px
   }
 
-  .socialmedia-link:hover svg circle {
+  .social-media-btn:hover svg circle {
     fill: #acca59;
   }
 
-  .socialmedia-link{
+  .social-media-btn {
     margin: 10px
   }
 
   .footer-settings-wrapper {
     margin: 10px 0;
+  }
+
+  .social-media-circle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    height: 39px;
+    padding: 0;
+    width: 39px;
   }
 }

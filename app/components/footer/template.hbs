@@ -1,7 +1,7 @@
 <div data-uri="{{ default _ref _self }}" class="footer">
   <div class="footer-settings-wrapper" data-editable="settings">
     {{#if siteLogo}}
-    <a class="logo" href="{{ logoUrl }}">
+    <a class="footer-logo" href="{{ logoUrl }}">
       {{#if siteLogo }}
         {{{ siteLogo }}}
       {{else}}
@@ -22,12 +22,12 @@
     {{/if}}
   </div>
 
-  <div class="socialMediaLinks" data-editable="socialMediaLinks">
-    {{#each socialMediaLinks}}
-      {{#if icon}}
-        {{{ icon }}}
-      {{else}}
-        <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
+  <div class="" data-editable="socialMediaNetworks">
+    {{#each socialMediaNetworks}}
+      <button data-handle="{{ url }}" class="social-media-circle social-media-btn {{ socialMediaNetwork }}">
+        {{#if icon}}
+          {{{ icon }}}
+        {{else}}
           {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/' socialMediaNetwork '.svg') }}}
         </a>
       {{/if}}
