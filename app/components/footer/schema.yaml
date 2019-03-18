@@ -28,6 +28,12 @@ socialMediaLinks:
             help: Example https://domain.com
             validate:
               required: true
+      -
+        prop: icon
+        _label: Social Media Icon
+        _has:
+            input: text
+            help: Support SVG
 
 navegationLinks:
   _label: Navegation Links

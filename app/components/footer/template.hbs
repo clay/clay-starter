@@ -2,35 +2,35 @@
   <div class="footer-settings-wrapper" data-editable="settings">
     {{#if siteLogo}}
     <a class="logo" href="{{ logoUrl }}">
-      {{{ siteLogo }}}
+      {{#if siteLogo }}
+        {{{ siteLogo }}}
+      {{else}}
+        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo.svg') }}}
+      {{/if}}
     </a>
     {{/if}}
     {{#if navegationLinks.length}}
-    <div class="links-wrapper">
-      <ul class="links">
-        {{#each navegationLinks}}
-          <li class="link-item">
-            <a href="{{ url }}">{{ text }}</a>
-          </li>
-        {{/each}}
-      </ul>
-    </div>
+      <div class="links-wrapper">
+        <ul class="links">
+          {{#each navegationLinks}}
+            <li class="link-item">
+              <a href="{{ url }}">{{ text }}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
     {{/if}}
   </div>
 
   <div class="socialMediaLinks" data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
-    {{!-- TODO: try to make this dynamic --}}
-     {{#if (compare socialMediaNetwork "===" "Facebook")}}
-      <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
-        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/facebook.svg') }}}
-      </a>
-     {{/if}}
-     {{#if (compare socialMediaNetwork "===" "Twitter")}}
-      <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
-        {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/twitter.svg') }}}
-      </a>
-     {{/if}}
+      {{#if icon}}
+        {{{ icon }}}
+      {{else}}
+        <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
+          {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/' socialMediaNetwork '.svg') }}}
+        </a>
+      {{/if}}
     {{/each}}
   </div>
 </div>
