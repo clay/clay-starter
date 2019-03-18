@@ -17,9 +17,12 @@ socialMediaLinks:
           input: radio
           help: Select the network for this follow button
           options:
-                - Facebook
-                - Twitter
-                - Instagram
+                - name: 'Facebook'
+                  value: 'facebook'
+                - name: 'Twitter'
+                  value: 'twitter'
+                - name: 'Instagram'
+                  value: 'instagram'
       -
         prop: url
         _label: Social Media Handle

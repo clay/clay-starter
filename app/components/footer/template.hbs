@@ -24,13 +24,13 @@
 
   <div class="socialMediaLinks" data-editable="socialMediaLinks">
     {{#each socialMediaLinks}}
-      {{#if icon}}
-        {{{ icon }}}
-      {{else}}
-        <a href="{{ url }}" target="_blank" class="socialmedia-link {{ socialMediaNetwork }}">
+      <button data-handle="{{ url }}" class="follow_circle socialmedia-link {{ socialMediaNetwork }}">
+        {{#if icon}}
+          {{{ icon }}}
+        {{else}}
           {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/' socialMediaNetwork '.svg') }}}
-        </a>
-      {{/if}}
+        {{/if}}
+      </button>
     {{/each}}
   </div>
 </div>
