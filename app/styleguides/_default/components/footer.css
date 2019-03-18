@@ -42,13 +42,4 @@
   .footer-settings-wrapper {
     margin: 10px 0;
   }
-
-  .follow_circle {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    height: 39px;
-    padding: 0;
-    width: 39px;
-}
 }
