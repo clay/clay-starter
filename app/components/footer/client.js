@@ -18,7 +18,7 @@ module.exports = (el) => {
         network: 'Instagram'
       },
       {
-        className: 'twitter',
+        className: 'twitter-black',
         url: 'https://twitter.com/intent/follow?screen_name={handle}&tw_p=followbutton&variant=2.0',
         network: 'Twitter'
       }
