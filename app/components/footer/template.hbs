@@ -1,10 +1,36 @@
-<div data-uri="{{ default _ref _self }}" class="footer" data-editable="settings">
+<div data-uri="{{ default _ref _self }}" class="footer">
+  <div class="footer-settings-wrapper" data-editable="settings">
+     {{#if logoUrl }}
+      <a class="footer-logo" href="{{ logoUrl }}">
+        {{#if svgLogo }}
+          {{{ svgLogo }}}
+        {{else}}
+          {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/logo.svg') }}}
+        {{/if}}
+      </a>
+    {{/if}}
+    {{#if navigationLinks.length}}
+      <div class="links-wrapper">
+        <ul class="links">
+          {{#each navigationLinks}}
+            <li class="link-item">
+              <a href="{{ url }}">{{ text }}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  </div>
 
-  <ul class="footer-social" data-editable="footerLinks">
-    {{> component-list footerLinks }}
-  </ul>
-
-  <div class="copyright">
-    Built in {{ moment 'now' 'YYYY' }} with Clay
+  <div class="" data-editable="socialMediaNetworks">
+    {{#each socialMediaNetworks}}
+      <button data-handle="{{ handle }}" class="social-media-circle social-media-btn {{ socialMediaNetwork }}">
+        {{#if icon}}
+          {{{ icon }}}
+        {{else}}
+          {{{ read (concat 'public/media/sites/' @root.locals.site.slug '/' socialMediaNetwork '.svg') }}}
+        </a>
+      {{/if}}
+    {{/each}}
   </div>
 </div>

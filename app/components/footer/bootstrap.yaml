@@ -1,3 +1,5 @@
 _components:
   footer:
-    footerLinks: []
+    svgLogo: ''
+    logoUrl: ''
+    navigationLinks: []

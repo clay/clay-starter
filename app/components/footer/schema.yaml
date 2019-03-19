@@ -1,8 +1,47 @@
 _description: |
-  footer
+  The footer at the bottom of all pages.
+_confirmRemoval: true
 
-footerLinks:
-  _label: Footer Links
+socialMediaNetworks:
+  _label: Social Media Links
+  _placeholder:
+    text: New Follow
+    height: 56px
+  _has:
+    input: complex-list
+    props:
+      -
+        prop: socialMediaNetwork
+        _label: socialMediaNetwork
+        _has:
+          input: radio
+          help: Select the network for this follow button
+          options: # new social media network should also be added to 'supportedSocialNetworks' in client.js
+                - name: 'Facebook'
+                  value: 'facebook'
+                - name: 'Twitter'
+                  value: 'twitter-black'
+                - name: 'Instagram'
+                  value: 'instagram'
+      -
+        prop: handle
+        _label: Social Media Handle
+        _has:
+            input: text
+            validate:
+              required: true
+      -
+        prop: icon
+        _label: Social Media Icon
+        _has:
+            input: text
+            help: Support SVG
+
+navigationLinks:
+  _label: Navegation Links
+  _placeholder:
+    text: Navegation Links
+    height: 56px
   _has:
     input: complex-list
     props:
@@ -11,7 +50,7 @@ footerLinks:
         _label: Url
         _has:
           input: text
-          type: url
+          help: Example https://domain.com
           validate:
             required: true
       -
@@ -25,7 +64,29 @@ footerLinks:
             max: 40
             maxMessage: This field must be 40 or fewer characters long
 
+svgLogo:
+  _label: Site Logo
+  _placeholder:
+    height: 56px
+  _has:
+    input: text
+    help: Support SVG
+
+logoUrl:
+  _label: Logo URL
+  _placeholder:
+    height: 56px
+  _has:
+    input: text
+    help: Example https://domain.com
+
 _groups:
   settings:
     fields:
-      - footerLinks
+      - svgLogo (General)
+      - logoUrl (General)
+      - navigationLinks (Navegation Links)
+    _placeholder:
+      text: Footer
+      height: 30px
+      ifEmpty: logoUrl AND svgLogo
