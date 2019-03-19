@@ -1,45 +1,7 @@
+$divider_color: #767676;
+
 .divider {
+  border-top: 1px solid $divider_color;
   margin: 0 0 20px;
   width: 100%;
-}
-
-.divider.component-selector-wrapper {
-  padding: 5px 0 0;
-}
-
-.divider.has-title {
-  height: auto;
-  position: relative;
-
-  .divider-title {
-    align-items: center;
-    background-color: #fff;
-    color: #333;
-    display: inline-flex;
-    font: italic 700 16px/15px Georgia, serif;
-    margin: 0;
-    width: 100%;
-    word-wrap: break-word;
-
-    span {
-      max-width: 85%;
-    }
-
-    &:after {
-      border-bottom: 1px solid #bdbdbd;
-      content: '';
-      flex: 5 0 15%;
-      height: calc(50% + 2px);
-      margin: 0 0 0 15px;
-      width: 100%;
-    }
-
-    @media screen and (min-width:600px) {
-      font: italic 700 20px/1.1 Georgia, serif;
-    }
-  }
-}
-
-.divider:not(.has-title) {
-  border-top: 1px solid #bdbdbd;
 }

@@ -2,8 +2,55 @@ _description: |
   This is the site header at the top of every page. It displays the site logo, navigational links, account button, and search button.
 _confirmRemoval: true
 
+siteLogo:
+  _label: Site Logo
+  _has:
+    input: text
+    help: Either the URL of the image or an SVG string.
+
+logoUrl:
+  _label: Logo URL
+  _has:
+    input: text
+    type: url
+    help: URL the Logo links to.
+
+tagline:
+  _label: Tagline
+  _has:
+    input: text
+    type: text
+    help: To display on the homepage with the site logo.
+
+enableSocialButtons:
+  _label: Enable Social Buttons
+  _has: checkbox
+
+shareServices:
+  _has:
+    input: checkbox-group
+    options:
+      -
+        name: Facebook
+        value: facebook
+      -
+        name: Twitter
+        value: twitter
+  _reveal:
+    field: enableSocialButtons
+    operator: ===
+    value: true
+
+
 _groups:
   settings:
     fields:
-      - mobileCTA
-      - mobileCTALink
+      - siteLogo
+      - logoUrl
+      - tagline
+      - enableSocialButtons
+      - shareServices
+    _placeholder:
+      text: Header
+      height: 100px
+      ifEmpty: siteLogo AND tagline

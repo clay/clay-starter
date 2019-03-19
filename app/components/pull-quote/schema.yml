@@ -1,0 +1,42 @@
+_description: |
+  Pull quote component for displaying text (often from the related article) and an optional attribution.
+
+quote:
+  _label: Quote Text
+  _has:
+    input: wysiwyg
+    styled: true
+    buttons:
+      - bold
+      - italic
+      - strike
+      - link
+    validate:
+      required: true
+
+hasQuoteMarks:
+  _label: Add Quotation Marks
+  _has:
+    input: checkbox
+
+attribution:
+  _label: Attribution
+  _has:
+    input: wysiwyg
+    buttons:
+      - bold
+      - italic
+      - strike
+      - link
+
+_groups:
+  inlineGroup:
+    fields:
+      - quote
+      - hasQuoteMarks
+      - attribution
+    _label: Pull Quote
+    _placeholder:
+      text: New Pull Quote
+      height: 100px
+      ifEmpty: quote AND attribution

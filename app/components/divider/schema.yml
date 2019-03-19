@@ -1,5 +1,5 @@
 _description: |
-  A simple divider component.
+  A simple divider between other components. Can provide an optional title for the divider.
 
 title:
   _label: Divider Title

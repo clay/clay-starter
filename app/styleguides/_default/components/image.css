@@ -137,15 +137,6 @@
 }
 
 .image-cmpt .image-container {
-  .img-figure,
-  .image-wrapper {
-    left: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
   .img-figure:before {
     content: '';
     display: block;
