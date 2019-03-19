@@ -6,9 +6,8 @@ module.exports.save = (ref, data) => {
   data = sanitize.recursivelyStripSeperators(data);
 
   if (!data.kilnTitle) {
-    data.kilnTitle = data.ogTitle;
-  } else if (!data.ogTitle && !data.title && data.kilnTitle) { // If the pagelist has title, but metatag is empty
-    data.ogTitle = data.kilnTitle;
+    data.kilnTitle = data.title;
+  } else if (!data.title && data.kilnTitle) { // If the pagelist has title, but metatag is empty
     data.title = data.kilnTitle;
   }
 

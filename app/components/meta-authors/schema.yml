@@ -4,7 +4,7 @@ _description: |
 authors:
   _label: Authors
   _display: settings
-  _subscribe: authors
+  _subscribe: pageAuthors
   _publish: kilnAuthors # set page authors in page list
   _has:
     - simple-list
