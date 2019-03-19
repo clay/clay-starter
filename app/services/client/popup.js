@@ -20,7 +20,7 @@ class Popup {
         this.name = opts.name;
       }
 
-      this.features = 'width=' + (dimensions.width || 0) + ',height=' + (dimensions.height || 0) + ',top=' + (dimensions.top || 0) + ',left=' + (dimensions.left || 0);
+      this.features = `width= ${ dimensions.width || 0 }, height= ${ dimensions.height || 0 }, top= ${ dimensions.top || 0 }, left= ${ dimensions.left || 0 }`;
 
       return this;
     };

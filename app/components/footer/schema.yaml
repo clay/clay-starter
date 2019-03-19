@@ -37,7 +37,7 @@ socialMediaNetworks:
             input: text
             help: Support SVG
 
-navegationLinks:
+navigationLinks:
   _label: Navegation Links
   _placeholder:
     text: Navegation Links
@@ -85,7 +85,7 @@ _groups:
     fields:
       - svgLogo (General)
       - logoUrl (General)
-      - navegationLinks (Navegation Links)
+      - navigationLinks (Navegation Links)
     _placeholder:
       text: Footer
       height: 30px
