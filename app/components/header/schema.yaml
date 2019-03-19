@@ -50,3 +50,7 @@ _groups:
       - tagline
       - enableSocialButtons
       - shareServices
+    _placeholder:
+      text: Header
+      height: 100px
+      ifEmpty: siteLogo AND tagline
