@@ -24,9 +24,10 @@ module.exports = (el) => {
       }
     ];
 
-  if (socialMediaButtons) {
-    socialMediaButtons.forEach((element)=>{
+  if (socialMediaButtons.length) {
+    socialMediaButtons.forEach((element) => {
       element.addEventListener('click', (e) => {
+        e.preventDefault();
         let Position = $popup.position,
           Params = $popup.params,
           opts = {},
@@ -42,17 +43,14 @@ module.exports = (el) => {
         dimensions.left = features.left;
         dimensions.top = features.top;
 
-        socialHandler = _find(socialNetworks, function (socialNetwork) {
-          return classList.contains(socialNetwork.className);
-        });
+        socialHandler = _find(socialNetworks, ({ className }) => classList.contains(className));
 
         opts.url = socialHandler.url.replace('{handle}', opts.handle);
         opts.network = socialHandler.network;
 
-        opts.name = 'Follow ' + opts.handle + ' on ' + opts.network;
+        opts.name = `Follow ${opts.handle} on ${opts.network}`;
         args = new Params(opts, dimensions);
         window.open(args.address, args.name, args.features);
-        e.preventDefault();
       });
     });
   }

@@ -57,7 +57,7 @@ class Popup {
     * @returns {Object}
     */
     this.position = (newWidth, newHeight) => {
-      let dimensions = this.getScreenDimensions();
+      const dimensions = this.getScreenDimensions();
 
       this.left = Math.floor(Math.max(dimensions.width / 2 - newWidth / 2 + dimensions.dualScreenLeft, 0));
       this.top = Math.floor(Math.max(dimensions.height / 2 - newHeight / 2 + dimensions.dualScreenTop, 0));
