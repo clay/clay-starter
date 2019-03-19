@@ -10,7 +10,8 @@ $body-stack: Helvetica, serif;
 
 .article {
   counter-reset: annotated;
-  margin: 20px 0 0;
+  margin: 0 auto;
+  width: 600px;
 
   .article-header {
     margin: 0 0 20px;
@@ -110,6 +111,8 @@ $body-stack: Helvetica, serif;
 
 @media screen and (max-width: 767.9px) {
   .article {
+    width: auto;
+
     .lede-image-wrapper {
       margin: 0 0 24px;
     }
@@ -118,7 +121,6 @@ $body-stack: Helvetica, serif;
 
 @media screen and (min-width: 1180px) {
   .article {
-    margin: 0;
 
     .lede-wrapper {
       align-items: stretch;

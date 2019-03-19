@@ -1,0 +1,45 @@
+_description: |
+  A feed which shows most recent articles
+
+feedTitle:
+  _label: Feed Title
+  _has:
+    input: text
+
+titleAlignment:
+  _label: Title Text Alignment
+  _has:
+    input: radio
+    options:
+      - name: 'Left'
+        value: 'text-left'
+      - name: 'Center'
+        value: 'text-center'
+      - name: 'Right'
+        value: 'text-right'
+
+size:
+  _label: Size
+  _has:
+    input: text
+    type: number
+    help: This determines how many articles display per pages
+
+showByLine:
+  _label: Show ByLine?
+  _has:
+    input: checkbox
+
+showTimestamp:
+  _label: Show Timestamp?
+  _has:
+    input: checkbox
+
+_groups:
+  settings:
+    fields:
+      - feedTitle (Display)
+      - titleAlignment (Display)
+      - size (Display)
+      - showByLine (Display)
+      - showTimestamp (Display)

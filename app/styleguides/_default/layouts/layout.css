@@ -62,8 +62,7 @@ html {
     width: 100vw;
   }
   & > .wrapper {
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
     padding-right: 10px;
     padding-left: 10px;
     width: 100%;
@@ -116,7 +115,6 @@ html {
       align-items: center;
       display: flex;
       justify-content: center;
-      max-width: $wrapperMaxWidth;
     }
 
     &.kiln-edit-mode .wrapper > .main {

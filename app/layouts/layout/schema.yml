@@ -33,6 +33,7 @@ main:
     page: true
     include:
       - article
+      - content-feed
 primary:
   _componentList:
     include: []
