@@ -10,10 +10,10 @@ var pkg = require('./package.json'),
   log = logger.setup({ file: __filename });
 
 startup(express())
-  .then(function (router) {
+  .then(function(router) {
     router.listen(port, ip);
     log('info', 'Clay listening on ' + ip + ':' + port + ' (process ' + process.pid + ')');
   })
-  .catch(function (error) {
+  .catch(function(error) {
     log('error', error.message, { stack: error.stack });
   });
