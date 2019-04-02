@@ -25,7 +25,7 @@ function formatSimpleByline(opts = {}) {
       _map(authors, (author, idx) =>
         idx < authors.length - 1
           ? `<span>${author}, </span>`
-          : '<span class="and">and </span><span>' + author + '</span>'
+          : `<span class="and">and </span><span>${author}</span>`
       ),
       ''
     );
