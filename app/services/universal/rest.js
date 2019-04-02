@@ -50,10 +50,14 @@ function checkStatus(res) {
  * @param {object} opts See https://github.github.io/fetch/#options
  * @return {Promise}
  */
-module.exports.get = function (url, opts) {
-  const conf = _defaults({method: 'GET'}, opts);
+module.exports.get = function(url, opts) {
+  const conf = _defaults({ method: 'GET' }, opts);
 
-  return fetch(url, conf).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, conf)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };
 
 /**
@@ -61,10 +65,10 @@ module.exports.get = function (url, opts) {
  * @param  {string} url
  * @return {Promise}
  */
-module.exports.getJSONP = function (url) {
-  return new Promise(function (resolve, reject) {
+module.exports.getJSONP = function(url) {
+  return new Promise(function(resolve, reject) {
     // note: this handles its own status checking
-    getJSONP(url + addFakeCallback(), function (err, res) {
+    getJSONP(url + addFakeCallback(), function(err, res) {
       if (err) {
         reject(err);
       } else {
@@ -79,8 +83,12 @@ module.exports.getJSONP = function (url) {
  * @param  {string} url
  * @return {Promise}
  */
-module.exports.getHTML = function (url) {
-  return fetch(url).then(checkStatus).then(function (res) { return res.text(); });
+module.exports.getHTML = function(url) {
+  return fetch(url)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.text();
+    });
 };
 
 /**
@@ -90,7 +98,7 @@ module.exports.getHTML = function (url) {
  * @param  {Boolean} isAuthenticated set to true if making PUT requests to Clay
  * @return {Promise}
  */
-module.exports.put = function (url, data, isAuthenticated) {
+module.exports.put = function(url, data, isAuthenticated) {
   const payload = {
     method: 'PUT',
     headers: {
@@ -103,9 +111,12 @@ module.exports.put = function (url, data, isAuthenticated) {
     authenticate(payload);
   }
 
-  return fetch(url, payload).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, payload)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };
-
 
 /**
  * PUT using a form
@@ -114,11 +125,11 @@ module.exports.put = function (url, data, isAuthenticated) {
  * @param  {Boolean} isAuthenticated set to true if making PUT requests to Clay
  * @return {Promise}
  */
-module.exports.putForm = function (url, data = {}, isAuthenticated) {
+module.exports.putForm = function(url, data = {}, isAuthenticated) {
   const formData = new FormData(),
     payload = {};
 
-  Object.keys(data).forEach((key) => {
+  Object.keys(data).forEach(key => {
     formData.append(key, data[key]);
   });
 
@@ -129,7 +140,11 @@ module.exports.putForm = function (url, data = {}, isAuthenticated) {
     authenticate(payload);
   }
 
-  return fetch(url, payload).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, payload)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };
 
 /**
@@ -140,7 +155,7 @@ module.exports.putForm = function (url, data = {}, isAuthenticated) {
  * @param  {Boolean} isAuthenticated set to true if making POST requests to Clay
  * @return {Promise}
  */
-module.exports.post = function (url, data, isAuthenticated) {
+module.exports.post = function(url, data, isAuthenticated) {
   const payload = {
     method: 'POST',
     headers: {
@@ -153,10 +168,14 @@ module.exports.post = function (url, data, isAuthenticated) {
     authenticate(payload);
   }
 
-  return fetch(url, payload).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, payload)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };
 
-module.exports.patch = function (url, data, isAuthenticated) {
+module.exports.patch = function(url, data, isAuthenticated) {
   const payload = {
     method: 'PATCH',
     headers: {
@@ -169,7 +188,11 @@ module.exports.patch = function (url, data, isAuthenticated) {
     authenticate(payload);
   }
 
-  return fetch(url, payload).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, payload)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };
 
 /**
@@ -178,7 +201,7 @@ module.exports.patch = function (url, data, isAuthenticated) {
  * @param  {string}  url
  * @return {Promise}
  */
-module.exports.purge = function (url) {
+module.exports.purge = function(url) {
   const payload = {
     method: 'PURGE',
     headers: {
@@ -187,5 +210,9 @@ module.exports.purge = function (url) {
     }
   };
 
-  return fetch(url, payload).then(checkStatus).then(function (res) { return res.json(); });
+  return fetch(url, payload)
+    .then(checkStatus)
+    .then(function(res) {
+      return res.json();
+    });
 };

@@ -33,7 +33,12 @@ function toSmartHeadline(text) {
  * @returns {string}
  */
 function toSmartText(text) {
-  return he.decode(typogr(he.decode(text)).chain().smartypants().value());
+  return he.decode(
+    typogr(he.decode(text))
+      .chain()
+      .smartypants()
+      .value()
+  );
 }
 
 /**
@@ -112,7 +117,7 @@ function recursivelyStripSeperators(data) {
  * Removes all non alphanumeric characters from a string
  * @param   {string} str
  * @returns {string}
-*/
+ */
 function removeNonAlphanumericCharacters(str = '') {
   return str.replace(NON_ALPHANUMERIC_RE, '');
 }

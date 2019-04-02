@@ -17,7 +17,9 @@ var moment = require('moment');
  */
 function formatDateRange(dateFrom = '', dateTo = '', format = 'MMMM D, YYYY') {
   if (dateTo && dateFrom) {
-    return `${moment(new Date(dateFrom).setHours(24)).format('MMMM D')}-${moment(new Date(dateTo).setHours(24)).format(format)}`;
+    return `${moment(new Date(dateFrom).setHours(24)).format('MMMM D')}-${moment(
+      new Date(dateTo).setHours(24)
+    ).format(format)}`;
   } else if (!dateTo && dateFrom) {
     return `${moment(new Date(dateFrom).setHours(24)).format(format)}`;
   } else {
@@ -37,10 +39,10 @@ function secondsToISO(seconds) {
  */
 function isPublished24HrsAgo(date) {
   let pubWithin24Hrs = false,
-	 articleDate = moment(new Date(date)).valueOf(),
-	 now = moment().valueOf();
+    articleDate = moment(new Date(date)).valueOf(),
+    now = moment().valueOf();
 
-  if (now - articleDate <= 24 * 60 * 60 * 1000 ) {
+  if (now - articleDate <= 24 * 60 * 60 * 1000) {
     pubWithin24Hrs = true;
   }
   return pubWithin24Hrs;

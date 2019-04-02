@@ -4,10 +4,10 @@ const popup = require('./popup');
 
 class sharePopUp {
   /**
- * Create a Popup for share services
- * @param {Node} shareLink - html anchor tag
- * @param {string} shareURL - url of page to be shared
- */
+   * Create a Popup for share services
+   * @param {Node} shareLink - html anchor tag
+   * @param {string} shareURL - url of page to be shared
+   */
   constructor(shareLink, shareURL) {
     this.shareLink = shareLink;
     this.shareURL = shareURL;
@@ -22,13 +22,17 @@ class sharePopUp {
   addShareURL() {
     switch (this.shareService) {
       case 'twitter':
-        this.shareLink.href = `https://twitter.com/share?text=${encodeURIComponent(this.shareTitle)}&url='${this.shareURL}?utm_source=tw&utm_medium=s3&utm_campaign=sharebutton-t`;
+        this.shareLink.href = `https://twitter.com/share?text=${encodeURIComponent(
+          this.shareTitle
+        )}&url='${this.shareURL}?utm_source=tw&utm_medium=s3&utm_campaign=sharebutton-t`;
         break;
       case 'facebook':
-        this.shareLink.href = `http://www.facebook.com/sharer/sharer.php?u=${this.shareURL}?utm_source=fb&utm_medium=s3&utm_campaign=sharebutton-t`;
+        this.shareLink.href = `http://www.facebook.com/sharer/sharer.php?u=${
+          this.shareURL
+        }?utm_source=fb&utm_medium=s3&utm_campaign=sharebutton-t`;
         break;
       default:
-    };
+    }
   }
 
   addClickHandler() {

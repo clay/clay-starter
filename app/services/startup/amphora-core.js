@@ -3,7 +3,10 @@
 const amphora = require('amphora'),
   renderers = require('./amphora-renderers'),
   healthCheck = require('@nymdev/health-check'),
-  searchExists = () => require('amphora-search').getInstance().ping();
+  searchExists = () =>
+    require('amphora-search')
+      .getInstance()
+      .ping();
 
 function initAmphora(app, search, sessionStore) {
   return amphora({
@@ -11,26 +14,19 @@ function initAmphora(app, search, sessionStore) {
     renderers,
     providers: ['apikey', 'google'],
     sessionStore,
-    plugins: [
-      search,
-      require('amphora-schedule')
-    ],
+    plugins: [search, require('amphora-schedule')],
     storage: require('amphora-storage-postgres'),
     eventBus: require('amphora-event-bus-redis')
   }).then(router => {
-    router.use(healthCheck({
-      env: [
-        'ELASTIC_HOST',
-        'MASTERMIND'
-      ],
-      stats: {
-        searchExists
-      },
-      required: [
-        'searchExists',
-        'ELASTIC_HOST'
-      ]
-    }));
+    router.use(
+      healthCheck({
+        env: ['ELASTIC_HOST', 'MASTERMIND'],
+        stats: {
+          searchExists
+        },
+        required: ['searchExists', 'ELASTIC_HOST']
+      })
+    );
 
     return router;
   });

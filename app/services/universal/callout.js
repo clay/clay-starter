@@ -3,9 +3,12 @@
 const _includes = require('lodash/includes');
 
 function isVideo(contentData) {
-  return contentData.featureTypes && (contentData.featureTypes['Video-Original'] ||
-    contentData.featureTypes['Video-Aggregation'] ||
-    contentData.featureTypes['Video-Original News']);
+  return (
+    contentData.featureTypes &&
+    (contentData.featureTypes['Video-Original'] ||
+      contentData.featureTypes['Video-Aggregation'] ||
+      contentData.featureTypes['Video-Original News'])
+  );
 }
 
 function isGallery(contentData) {

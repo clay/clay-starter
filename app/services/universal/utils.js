@@ -166,7 +166,9 @@ function kilnUrlToPageUrl(url) {
  * @returns {string}
  */
 function urlToCanonicalUrl(url) {
-  return kilnUrlToPageUrl(url).split('?')[0].split('#')[0];
+  return kilnUrlToPageUrl(url)
+    .split('?')[0]
+    .split('#')[0];
 }
 
 /**
@@ -179,7 +181,10 @@ function prefixElasticIndex(indexString) {
   const prefix = process.env.ELASTIC_PREFIX;
 
   return prefix
-    ? indexString.split(',').map((index) => `${prefix}_${index}`.trim()).join(',')
+    ? indexString
+        .split(',')
+        .map(index => `${prefix}_${index}`.trim())
+        .join(',')
     : indexString;
 }
 

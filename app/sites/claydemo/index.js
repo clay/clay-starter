@@ -4,7 +4,7 @@ const publishing = require('../../services/server/publish-url'),
   mainComponentRefs = ['article'];
 
 module.exports.routes = [
-  { path: '/'},
+  { path: '/' },
   { path: '/:year/:month/:name' },
   { path: '/article/:name' }
 ];

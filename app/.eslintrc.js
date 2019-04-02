@@ -36,7 +36,6 @@ module.exports = {
   },
   rules: {
     // possible errors
-    'no-extra-parens': 1,
     'valid-jsdoc': [
       1,
       {
@@ -78,13 +77,6 @@ module.exports = {
     'comma-style': [2, 'last'],
     'comma-dangle': [2, 'never'],
     'eol-last': [2, 'always'],
-    indent: [
-      2,
-      2,
-      {
-        SwitchCase: 1
-      }
-    ],
     'max-nested-callbacks': [2, 5],
     'newline-after-var': [2, 'always'],
     'no-nested-ternary': 2,

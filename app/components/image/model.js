@@ -3,11 +3,11 @@
 const _get = require('lodash/get'),
   defaultWidth = 'inline';
 
-module.exports.render = function (uri, data) {
+module.exports.render = function(uri, data) {
   return data;
 };
 
-module.exports.save = function (uri, data) {
+module.exports.save = function(uri, data) {
   const imageAspectRatio = _get(data, 'imageAspectRatio', null),
     imageAspectRatioFlexOverride = _get(data, 'imageAspectRatioFlexOverride', false),
     imageCaption = _get(data, 'imageCaption', null),
