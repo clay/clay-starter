@@ -29,6 +29,6 @@ function resolveMedia(media, locals) {
     // view mode - whole page
     media.scripts = getDependencies(media.scripts, assetPath);
   }
-};
+}
 
 module.exports = resolveMedia;

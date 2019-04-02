@@ -11,10 +11,9 @@ const _map = require('lodash/map'),
  * Removes all non alphanumeric characters from the tags
  * @param {array} items
  * @returns {array}
-*/
+ */
 function normalizeTags(items = []) {
-  return items.map(({ text }) => removeNonAlphanumericCharacters(text))
-    .filter(Boolean);
+  return items.map(({ text }) => removeNonAlphanumericCharacters(text)).filter(Boolean);
 }
 
 /**
@@ -23,7 +22,7 @@ function normalizeTags(items = []) {
  * @return {array}
  */
 function clean(items) {
-  return _map(items || [], function (item) {
+  return _map(items || [], function(item) {
     return _assign({}, item, { text: item.text.toLowerCase().trim() });
   });
 }
@@ -34,12 +33,12 @@ function clean(items) {
  * @return {array}
  */
 function setInvisible(items) {
-  return _map(items || [], function (item) {
+  return _map(items || [], function(item) {
     return _set(item, 'invisible', _includes(invisibleTags, item.text));
   });
 }
 
-module.exports.save = function (uri, data) {
+module.exports.save = function(uri, data) {
   let { items } = data;
 
   items = clean(items); // first, make sure everything is lowercase and has trimmed whitespace

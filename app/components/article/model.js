@@ -42,7 +42,9 @@ function formatDate(data, locals) {
     data.date = dateFormat(locals.date); // ISO 8601 date string
   } else if (has(data.articleDate) || has(data.articleTime)) {
     // make sure both date and time are set. if the user only set one, set the other to today / right now
-    data.articleDate = has(data.articleDate) ? data.articleDate : dateFormat(new Date(), 'YYYY-MM-DD');
+    data.articleDate = has(data.articleDate)
+      ? data.articleDate
+      : dateFormat(new Date(), 'YYYY-MM-DD');
     data.articleTime = has(data.articleTime) ? data.articleTime : dateFormat(new Date(), 'HH:mm');
     // generate the `date` data from these two fields
     data.date = dateFormat(dateParse(`${data.articleDate} ${data.articleTime}`)); // ISO 8601 date string
@@ -70,7 +72,7 @@ function generateFeedImage(data) {
   }
 }
 
-module.exports.save = function (uri, data, locals) {
+module.exports.save = function(uri, data, locals) {
   // first, let's get all the synchronous stuff out of the way:
   // sanitizing inputs, setting fields, etc
   sanitizeInputs(data);

@@ -31,4 +31,4 @@ width=${dimensions.w},height=${dimensions.h},left=${popupPosition.left},top=${po
   }
 }
 
-module.exports = new service;
+module.exports = new service();

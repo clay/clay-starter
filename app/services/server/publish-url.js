@@ -17,12 +17,11 @@ function getSlugUrl(pageData, locals, mainComponentRefs) {
     return Promise.reject(new Error('Could not find a main component on the page'));
   }
 
-  return pubUtils.getMainComponentFromRef(componentReference, locals)
-    .then(mainComponent => {
-      const urlOptions = pubUtils.getUrlOptions(mainComponent, locals);
+  return pubUtils.getMainComponentFromRef(componentReference, locals).then(mainComponent => {
+    const urlOptions = pubUtils.getUrlOptions(mainComponent, locals);
 
-      return pubUtils.slugUrlPattern(urlOptions);
-    });
+    return pubUtils.slugUrlPattern(urlOptions);
+  });
 }
 
 module.exports.getSlugUrl = getSlugUrl;
