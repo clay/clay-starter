@@ -7,7 +7,7 @@ module.exports = () => {
     canonicalURL = canonicalEl.getAttribute('href'),
     shareURL = canonicalURL.trim() || document.location.href;
 
-  [...document.querySelectorAll('header.header .share-link')].forEach((shareLink) => {
+  [...document.querySelectorAll('header.header .share-link')].forEach(shareLink => {
     new sharePopUp(shareLink, shareURL);
   });
 };

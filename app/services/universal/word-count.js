@@ -10,7 +10,7 @@ var htmlWordCount = require('html-word-count'),
     subheader: 'text',
     subsection: null
   },
-  {getComponentName} = require('clayutils');
+  { getComponentName } = require('clayutils');
 
 /**
  * determine if mutation uri is a component that we care about
@@ -41,8 +41,7 @@ function normalizeCmptSrc(cmptSrc) {
   if (Array.isArray(cmptSrc)) {
     return cmptSrc;
   } else if (typeof cmptSrc === 'object') {
-    return Object.keys(cmptSrc)
-      .map(key => Object.assign({}, cmptSrc[key], {_ref: key}));
+    return Object.keys(cmptSrc).map(key => Object.assign({}, cmptSrc[key], { _ref: key }));
   }
   return [];
 }
@@ -64,4 +63,4 @@ module.exports.count = count;
 module.exports.isComponentWithWords = isComponentWithWords;
 
 // for testing
-module.exports.setComponentsWithWords = i => COMPONENTS_WITH_WORDS = i;
+module.exports.setComponentsWithWords = i => (COMPONENTS_WITH_WORDS = i);

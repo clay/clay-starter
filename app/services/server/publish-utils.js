@@ -99,19 +99,19 @@ function guaranteeLocalDate(component, publishedComponent, locals) {
  * @returns {Promise}
  */
 function getMainComponentFromRef(componentReference, locals) {
-  return bluebird.all([
-    db.get(componentReference)
-      .catch(error => {
+  return bluebird
+    .all([
+      db.get(componentReference).catch(error => {
         log('error', `Failure to fetch component at ${componentReference}`);
         throw error;
       }),
-    db.get(componentReference + '@published')
-      .catch(_.noop)
-  ]).spread((component, publishedComponent) => {
-    guaranteeHeadline(component);
-    guaranteeLocalDate(component, publishedComponent, locals);
-    return component;
-  });
+      db.get(componentReference + '@published').catch(_.noop)
+    ])
+    .spread((component, publishedComponent) => {
+      guaranteeHeadline(component);
+      guaranteeLocalDate(component, publishedComponent, locals);
+      return component;
+    });
 }
 
 /**
@@ -120,8 +120,8 @@ function getMainComponentFromRef(componentReference, locals) {
  * @returns {String}
  */
 function getUrlPrefix(site) {
-  const proto = site && site.proto || canonicalProtocol,
-    port = site && site.port || canonicalPort,
+  const proto = (site && site.proto) || canonicalProtocol,
+    port = (site && site.port) || canonicalPort,
     urlPrefix = utils.uriToUrl(site.prefix, { site: { protocol: proto, port: port } });
 
   return _.trimEnd(urlPrefix, '/'); // never has a trailing slash; newer lodash uses `trimEnd`
@@ -141,7 +141,11 @@ function getUrlOptions(component, locals) {
   urlOptions.slug = component.slug || sanitize.cleanSlug(component.headline);
 
   if (!(locals.site && locals.date && urlOptions.slug)) {
-    throw new Error(`Client: Cannot generate a canonical url at prefix: ${locals.site.prefix} slug: ${urlOptions.slug} date: ${locals.date}`);
+    throw new Error(
+      `Client: Cannot generate a canonical url at prefix: ${locals.site.prefix} slug: ${
+        urlOptions.slug
+      } date: ${locals.date}`
+    );
   }
 
   return urlOptions;

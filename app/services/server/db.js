@@ -10,14 +10,16 @@ const db = require('amphora-storage-postgres');
  * @returns {Promise}
  */
 function update(ref, fn) {
-  return db.get(ref)
-    .catch(function () {
+  return db
+    .get(ref)
+    .catch(function() {
       // doesn't exist yet
       return null;
     })
-    .then(function (value) {
+    .then(function(value) {
       return fn(value);
-    }).then(function (result) {
+    })
+    .then(function(result) {
       if (result) {
         // must be object or array
         if (!(typeof result === 'object')) {

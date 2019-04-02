@@ -5,13 +5,13 @@ const striptags = require('striptags'),
   { render } = require('../../services/universal/styles'),
   { toSmartText } = require('../../services/universal/sanitize');
 
-module.exports.save = function (uri, data) {
+module.exports.save = function(uri, data) {
   const allowedTags = ['strong', 'em', 's', 'a', 'span'];
 
   data.listType = data.orderedList ? 'ol' : 'ul';
 
   if (has(data.items)) {
-    data.items.forEach((item) => {
+    data.items.forEach(item => {
       item.text = toSmartText(striptags(item.text, allowedTags));
     });
   }
@@ -21,11 +21,10 @@ module.exports.save = function (uri, data) {
 
     return data;
   } else {
-    return render(uri, data.sass)
-      .then((css) => {
-        data.css = css;
+    return render(uri, data.sass).then(css => {
+      data.css = css;
 
-        return data;
-      });
+      return data;
+    });
   }
 };

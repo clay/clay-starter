@@ -13,8 +13,9 @@ const postcss = require('postcss'),
  * @returns {string} css scoped style
  */
 function render(uri, styles) {
-  return postcss([nested, simpleVars, csso]).process(`[data-uri="${uri}"] { ${styles} }`, { parser: safe })
-    .then((result) => result.css);
+  return postcss([nested, simpleVars, csso])
+    .process(`[data-uri="${uri}"] { ${styles} }`, { parser: safe })
+    .then(result => result.css);
 }
 
 module.exports.render = render;
