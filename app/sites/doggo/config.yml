@@ -1,0 +1,9 @@
+name: ${SECOND_SITE_NAME}
+host: ${SECOND_SITE_HOST}
+path: ${SECOND_SITE_PATH}
+assetDir: public
+assetPath: ${SECOND_SITE_PATH}
+port: ${SECOND_SITE_PORT}
+protocol: ${SECOND_SITE_PROTOCOL}
+shortKey: ${SECOND_SITE_SHORTKEY}
+styleguide: claydemo
