@@ -14,7 +14,7 @@ function initAmphora(app, search, sessionStore) {
     renderers,
     providers: ['apikey', 'google'],
     sessionStore,
-    plugins: [search, require('amphora-schedule')],
+    plugins: [search, require('amphora-schedule'), require('amphora-serve-static')],
     storage: require('amphora-storage-postgres'),
     eventBus: require('amphora-event-bus-redis')
   }).then(router => {
