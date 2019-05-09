@@ -13,7 +13,11 @@ let log = logger.setup({ file: __filename }),
   app;
 
 if (cluster.isMaster) {
-  const numCPUs = require('os').cpus().length;
+  const numCPUs = require('os').cpus().length,
+    failedWorkers = [],
+    availableWorkers = [];
+
+  let readyWorkers = 0;
 
   log('info', `Creating ${numCPUs} worker(s)`);
 
@@ -23,6 +27,29 @@ if (cluster.isMaster) {
 
   cluster.on('exit', worker => {
     log('warn', `worker ${worker.process.pid} died`);
+  });
+
+  // Only available for Node +v6.0
+  cluster.on('message', (worker, payload) => {
+    console.log('Master recieved the message:', payload);
+
+    if (payload.message === 'READY') {
+      readyWorkers++;
+      availableWorkers.push(worker);
+    }
+
+    if (readyWorkers === numCPUs && payload.message !== 'RETRY') {
+      worker.send('CONTINUE');
+    }
+
+    if (payload.message === 'RETRY') {
+      failedWorkers.push(worker.process.pid);
+
+      const allWorkers = availableWorkers.filter(w => !failedWorkers.includes(w.process.pid)),
+        nextWorker = allWorkers.pop();
+
+      nextWorker ? nextWorker.send('CONTINUE') : log(new Error('NO WORKERS AVAILABLE'));
+    }
   });
 
   log('info', 'Master process is running');
