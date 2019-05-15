@@ -5,7 +5,8 @@ start-services:
 	docker-compose up -d nginx postgres redis elasticsearch
 
 start-clay:
-	cd app && npm i && npm run start:dev
+	cd app && npm run start:dev
+	# cd app && npm i && npm run start:dev
 
 stop-services:
 	docker-compose stop nginx postgres redis elasticsearch
