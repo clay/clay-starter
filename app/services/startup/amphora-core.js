@@ -12,7 +12,7 @@ function initAmphora(app, search, sessionStore) {
   return amphora({
     app,
     renderers,
-    providers: ['apikey', 'google'],
+    providers: ['apikey', 'google', 'local'],
     sessionStore,
     plugins: [search, require('amphora-schedule'), require('amphora-serve-static')],
     storage: require('amphora-storage-postgres'),
