@@ -64,6 +64,8 @@ content:
       - list
       - pull-quote
       - code-sample
+      - snash
+      - kilnjs-example
 
 ledeUrl:
   _label: Lede Image URL

@@ -21,3 +21,4 @@ _groups:
   settings:
     fields:
       - language
+      - code

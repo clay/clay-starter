@@ -1,6 +1,6 @@
 # Below is a sample user object for an admin user
 _users:
   -
-    username: myemail@gmail.com
+    username: scott.nash@nymag.com
     provider: google
     auth: admin

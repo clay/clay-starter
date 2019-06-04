@@ -7,3 +7,9 @@ module.exports.save = function (ref, data) {
 
   return data;
 };
+
+module.exports.render = function (ref, data) {
+
+
+  return data;
+};

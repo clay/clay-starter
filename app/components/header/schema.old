@@ -1,5 +1,5 @@
 _description: |
-  This is the site header at the top of every page. It displays the site logo, navigational links, account button, and search button.
+  This is the site header at the top of every page. It displays the site logo, an optional tagline and social share buttons.
 _confirmRemoval: true
 
 siteLogo:
@@ -36,6 +36,11 @@ shareServices:
       -
         name: Twitter
         value: twitter
+  _reveal:
+    field: enableSocialButtons
+    operator: ===
+    value: true
+
 
 _groups:
   settings:
@@ -47,4 +52,5 @@ _groups:
       - shareServices
     _placeholder:
       text: Header
+      height: 100px
       ifEmpty: siteLogo AND tagline

@@ -18,7 +18,6 @@ function resolveMedia(media, locals) {
   // We're dealing with a page, let's include the site CSS,
   // and the scripts as needed
   media.styles.unshift('/css/_inlined-fonts.' + stylesSource + '.css');
-
   if (locals.edit) {
     // edit mode - whole page
     // note: turning minify: false will link all model.js and dep files individually,

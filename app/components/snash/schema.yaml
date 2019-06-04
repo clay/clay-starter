@@ -1,0 +1,198 @@
+_allowBookmarks: true
+_description: |
+  This is a pointless component only used for testing
+_confirmRemoval: true
+
+title:
+  _label: Title
+  _has:
+    input: text
+    help: Title of the Component
+
+altTitle:
+  _has:
+    input: text
+    help: Alternative Text for screen readers
+    attachedButton:
+      name: abutton
+      tooltip: Click Me
+      icon: home
+
+type:
+  _has:
+    input: radio
+    options:
+      - name: 'small (h4)'
+        value: 'h4'
+      - name: 'medium (h3)'
+        value: 'h3'
+      - name: 'large (h2)'
+        value: 'h2'
+  _label: Type
+
+shareServices:
+  _has:
+    input: checkbox-group
+    options:
+      -
+        name: Facebook
+        value: facebook
+      -
+        name: Twitter
+        value: twitter
+
+field1:
+  _label: Should we use a special logo in this component?
+  _has: checkbox
+
+code:
+  _label: Insert Code Snippet
+  _placeholder:
+    height: 10px
+    text: Insert Code Snippet
+  _has:
+    input: codemirror
+    mode: text/x-yaml
+
+codeLanguage:
+  _has:
+    input: select
+    options:
+      - javascript
+      - css
+      - sass
+      - yaml
+
+links:
+  _has:
+    input: complex-list
+    collapse: title
+    filter: true
+    props:
+      -
+        prop: url
+        _label: URL
+        _has:
+          input: text
+          type: url
+      -
+        prop: title
+        _label: Title
+        _has: text
+articleDate:
+  _label: First Published Date
+  _has:
+    input: datepicker
+    help: Custom published date, if it should be different than the actual date the article was first published
+
+caption:
+  _label: Lede Caption Text
+  _has:
+    input: wysiwyg
+    buttons:
+      - link
+      - bold
+      - italic
+
+livefyreId:
+  _label: Livefyre Site ID
+  _has:
+    input: text
+    help: Title of the Component
+    attachedButton: lock
+
+ranger:
+  _label: My Range
+  _has:
+    input: range
+    help: This is a range
+    min: 0
+    max: 100
+
+feedLayout:
+  _label: Layout in Feeds
+  _publish: circFeedLayout
+  _has:
+    multiple: true
+    input: segmented-button
+    options:
+      -
+        icon: /media/components/article/icon-feed-noimg.svg
+        value: none
+      -
+        icon: /media/components/article/icon-feed-thumb.svg
+        value: thumb
+      -
+        icon: /media/components/article/icon-feed-square.svg
+        value: small
+      -
+        icon: /media/components/article/icon-feed-horizontal.svg
+        value: large
+
+ledeLayout:
+  _label: Lede Image Aspect Ratio
+  _has:
+    input: segmented-button-group
+    help: Orientation
+    options:
+      - title: Inset Lede Layout
+        values:
+          - icon: /media/components/article/icon-square.svg
+            value: square
+          - icon: /media/components/article/icon-vertical.svg
+            value: vertical
+      - title: Column-width Lede Layout
+        values:
+          - icon: /media/components/article/icon-square.svg
+            value: square
+          - icon: /media/components/article/icon-vertical.svg
+            value: vertical
+          - icon: /media/components/article/icon-horizontal.svg
+            value: horizontal
+      - title: Feature (Recurring) / Special Feature (One-off) Lede Layout
+        values:
+          - icon: /media/components/article/icon-vertical.svg
+            value: vertical
+          - icon: /media/components/article/icon-horizontal.svg
+            value: horizontal
+
+atitle:
+  _label: Title from Service
+  _has: static
+atitleOverride:
+  _label: Title Override
+  _has: text
+
+startTime:
+  _label: Start Time
+  _has:
+    input: timepicker
+    validate:
+      required:
+        field: startDay
+        operator: not-empty
+    help: The start time that the component should be displayed on. Start date must also be filled out.
+
+
+_groups:
+  stuff:
+    fields:
+      - title
+      - altTitle
+      - type
+      - field1
+      - codeLanguage
+      - code
+      - links
+      - articleDate
+      - caption
+      - livefyreId
+      - ranger
+      - feedLayout
+      - ledeLayout
+      - atitle
+      - atitleOverride
+      - startTime
+    _placeholder:
+      text: SNASH
+      ifEmpty: title

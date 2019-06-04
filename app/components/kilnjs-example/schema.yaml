@@ -1,0 +1,60 @@
+_description: |
+  This is a pointless component only used for testing
+
+pubDate:
+  _has:
+    help: Last Published
+
+pageTitle:
+    _has:
+      help: Meta Title
+
+title:
+  _label: Title
+  _has:
+    input: text
+    help: Title of the Component
+
+manualPageTitle:
+  _label: Manual Page Title
+  _has:
+    input: text
+
+size:
+  _has:
+    input: radio
+    options:
+      - name: 'small (h4)'
+        value: 'h4'
+      - name: 'medium (h3)'
+        value: 'h3'
+      - name: 'large (h2)'
+        value: 'h2'
+  _label: Title Size
+
+quantity:
+  _label: Quantity
+  _has:
+    input: text
+    help: Only Numbers
+
+users:
+  _label: Users
+  _has:
+    input: select
+    options:
+    help: Users
+
+_groups:
+  settings:
+    fields:
+      - title
+      - size
+      - pubDate
+      - pageTitle
+      - manualPageTitle
+      - quantity
+      - users
+    _placeholder:
+      text: Kiln.js Example
+      ifEmpty: title AND pubDate
