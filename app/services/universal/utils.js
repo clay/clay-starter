@@ -188,6 +188,10 @@ function prefixElasticIndex(indexString) {
     : indexString;
 }
 
+function getPyxisHost() {
+  return { PYXIS_HOST: process.env.PYXIS_HOST, PYXIS_KEY: process.env.PYXIS_KEY };
+}
+
 module.exports.isFieldEmpty = isFieldEmpty;
 module.exports.has = has;
 module.exports.replaceVersion = replaceVersion;
@@ -200,3 +204,5 @@ module.exports.ensurePublishedVersion = ensurePublishedVersion;
 module.exports.isInstance = isInstance;
 module.exports.urlToCanonicalUrl = urlToCanonicalUrl;
 module.exports.prefixElasticIndex = prefixElasticIndex;
+
+module.exports.getPyxisHost = getPyxisHost;
