@@ -30,9 +30,9 @@ You should be able to navigate to http://localhost/_pages/sample-article.html to
 
 ### Accessing The Edit UI
 
-The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own Gmail address.
+The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own credentials or using the default one.
 
-Once you're done that you can access edit mode from any page by adding `?edit=true` or by holding down `Shift` and typing `CLAY`. For example, navigating to http://localhost/_pages/sample-article.html?edit=true will grant you access to the edit interface.
+Once you're done that you can access edit mode from any page by adding `?edit=true` or by holding down `Shift` and typing `CLAY`. For example, navigating to http://localhost/_pages/sample-article.html?edit=true will grant you access to the edit interface. In the login screen, you can gain access to edit mode by setting `Username: testuser` and `Password: secret`, or the credentials you set in `sample_users.yml`.
 
 ### Stopping & Clearing Out Data
 
