@@ -21,6 +21,7 @@ Documentation around Clay is being refined in cojunction with iteration on this 
 
 Clone the repo and run the following commands:
 
+- `cp .env.sample .env` (This will create a file with the required env variables)
 - `make` (This will download the containers, run an `npm install` and start the app)
 - `make add-access-key` ([Please read this doc for more information about your Clay access key](docs/clay-access-key.md))
 - `make bootstrap` (This command seeds some starting data)
