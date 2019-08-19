@@ -71,6 +71,9 @@ ledeUrl:
     input: text
     type: url
     help: Image URL
+    attachedButton:
+      name: pyxis-picker
+      tooltip: Fetch from Pyxis
 ledeAlt:
   _label: Lede Alt Text
   _has:
