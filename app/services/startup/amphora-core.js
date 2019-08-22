@@ -6,13 +6,14 @@ const amphora = require('amphora'),
   searchExists = () =>
     require('amphora-search')
       .getInstance()
-      .ping();
+      .ping(),
+  PROVIDERS = ['apikey', process.env.CLAY_PROVIDER];
 
 function initAmphora(app, search, sessionStore) {
   return amphora({
     app,
     renderers,
-    providers: ['apikey', 'google'],
+    providers: PROVIDERS,
     sessionStore,
     plugins: [search, require('amphora-schedule'), require('amphora-serve-static')],
     storage: require('amphora-storage-postgres'),
