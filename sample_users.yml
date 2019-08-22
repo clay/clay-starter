@@ -1,7 +1,7 @@
 # Below is a sample user object for an admin user
 _users:
   -
-    username: testuser
-    password: secret
+    username: admin
+    password: clay
     provider: local
     auth: admin
