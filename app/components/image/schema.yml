@@ -9,6 +9,10 @@ imageUrl:
     validate:
       required: true
     help: Must be an image URL
+    attachedButton:
+      name: pyxis-picker
+      tooltip: Fetch from Pyxis
+      multiple: true
 clickUrl:
   _label: Click URL
   _has:
