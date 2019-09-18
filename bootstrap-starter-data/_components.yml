@@ -102,7 +102,6 @@ _components:
       claydemo:
         componentVariation: footer
         footerLinks: []
-
   paragraph:
     instances:
       new:
@@ -145,7 +144,6 @@ _components:
         text: ''
         type: 'h2'
         link: ''
-
   article:
     instances:
       new-standard:
