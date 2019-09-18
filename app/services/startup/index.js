@@ -40,9 +40,11 @@ function setupApp(app) {
   app.use(function(req, res, next) {
     res.set(
       'X-Powered-By',
-      [`clay v ${pkg.version}`, `amphora v ${amphoraPkg.version}`, `kiln v ${kilnPkg.versio}`].join(
-        '; '
-      )
+      [
+        `clay v ${pkg.version}`,
+        `amphora v ${amphoraPkg.version}`,
+        `kiln v ${kilnPkg.version}`
+      ].join('; ')
     );
     next();
   });
