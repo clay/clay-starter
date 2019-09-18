@@ -95,3 +95,5 @@ app/client-env.json
 app/client-env.js
 
 package-lock.json
+
+app/.env
