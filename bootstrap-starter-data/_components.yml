@@ -102,7 +102,6 @@ _components:
       claydemo:
         componentVariation: footer
         footerLinks: []
-
   paragraph:
     instances:
       new:
@@ -117,6 +116,34 @@ _components:
             text: clay
           -
             text: cute puppy
+  code-sample:
+    instances:
+      new:
+        code: ''
+        language: 'javascript'
+        html: ''
+  divider:
+    instances:
+      new:
+        title: ''
+  list:
+    instances:
+      new:
+        items: []
+        sass: ''
+        listType: ''
+  pull-quote:
+    instances:
+      new:
+        quote: ''
+        hasQuoteMarks: false
+        attribution: ''
+  subheader:
+    instances:
+      new:
+        text: ''
+        type: 'h2'
+        link: ''
   article:
     instances:
       new-standard:
