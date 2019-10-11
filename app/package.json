@@ -9,7 +9,7 @@
     "check-elastic": "while ! curl -sSI -o /dev/null localhost:9200/_cat/indices; do sleep 3; done",
     "postinstall": "npm run build",
     "build": "CLAYCLI_COMPILE_MINIFIED_TEMPLATES=true npx clay compile --inlined --linked --reporter pretty",
-    "watch": "CLAYCLI_COMPILE_MINIFIED_TEMPLATES=true npx clay compile --inlined --linked --reporter pretty --watch",
+    "watch": "npm run build -- --watch",
     "lint-css": "(for d in styleguides/* ; do stylelint --max-warnings 0 \"$d/components/*.css\" || exit; done)",
     "lint-js": "eslint . --cache app.js components search services sites"
   },
