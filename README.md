@@ -19,7 +19,7 @@ Documentation around Clay is being refined in cojunction with iteration on this 
 
 ## Setup
 
-Clone the repo and run the following commands:
+Clone the repo and run the following commands from the project root directory:
 
 - `cp app/.env.sample app/.env` (This will create a file with the required env variables)
 - `make` (This will download the containers, run an `npm install` and start the app)
