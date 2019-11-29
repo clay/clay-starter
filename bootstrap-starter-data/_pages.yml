@@ -3,6 +3,7 @@ _pages:
     layout: /_layouts/layout/instances/article
     main:
       - /_components/article/instances/sample
+      - /_components/carousel/instances/new
     head: []
   new-standard:
     layout: /_layouts/layout/instances/article

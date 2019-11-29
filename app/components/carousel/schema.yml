@@ -1,0 +1,28 @@
+_description: |
+  A simple carousel.
+
+images:
+  _label: Images
+  _has:
+    input: complex-list
+    props:
+      -
+        prop: imgSrc
+        _label: Image URL
+        _has:
+          input: text
+          type: url
+          validate:
+            required: true
+      -
+        prop: altText
+        _label: Alt Text
+        _has:
+          input: text
+          type: text
+          validate:
+            required: true
+_groups:
+  settings:
+    fields:
+      - images

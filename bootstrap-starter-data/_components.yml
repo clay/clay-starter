@@ -176,3 +176,17 @@ _components:
             _ref: /_components/paragraph/instances/new
         tags:
           _ref: /_components/tags/instances/sample
+
+  carousel:
+    instances:
+      new:
+        images: [
+          {
+            imgSrc: 'https://images.dog.ceo/breeds/corgi-cardigan/n02113186_6415.jpg',
+            altText: 'Corgi'
+          },
+          {
+            imgSrc: 'https://images.dog.ceo/breeds/corgi-cardigan/n02113186_6300.jpg',
+            altText: 'Another Corgi'
+          }
+        ]

@@ -1,0 +1,26 @@
+<div data-uri="{{ default _ref _self }}" class="{{ componentVariation }}" data-editable="settings">
+  <ul class="images">
+    {{#each images}}
+      <li class="image fade">
+        <img src={{ imgSrc }} alt={{ altTex }}>
+      </li>
+    {{/each}}
+  </ul>
+  <button class="prev" onclick=" changeSlide('prev')">&lang;</button>
+  <button class="next" onclick="changeSlide()">&rang;</button>
+</div>
+<script>
+  const imageList = [...document.querySelectorAll('.image')];
+  let currentSlide = 0
+  imageList[currentSlide].classList.add('active');
+
+  function changeSlide(action) {
+    imageList[currentSlide].classList.remove('active');
+    if (action === 'prev') {
+      currentSlide = !currentSlide ? imageList.length - 1 : --currentSlide;
+    } else {
+      currentSlide = currentSlide < imageList.length - 1 ? ++currentSlide : 0;
+    }
+    imageList[currentSlide].classList.add('active');
+  }
+</script>
