@@ -64,6 +64,7 @@ content:
       - list
       - pull-quote
       - code-sample
+      - tweet
 
 ledeUrl:
   _label: Lede Image URL

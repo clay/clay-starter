@@ -1,0 +1,32 @@
+_description: |
+  Embeds a tweet via the tweet’s URL.
+url:
+  _label: URL
+  _has:
+    input: text
+    type: url
+    help: https://twitter.com/username/status/ID
+showThread:
+  _label: Show Thread
+  _has: checkbox
+showMedia:
+  _label: Show Media
+  _has: checkbox
+
+_groups:
+  settings:
+    fields:
+      - url
+      - showThread
+      - showMedia
+    _placeholder:
+      height: 50px
+      text: Tweet
+      ifEmpty: url
+
+# non-user-editable fields, set by model.js
+tweetValid:
+  help: Used to decide whether or not to display a tweet in the template
+  _placeholder:
+    text: Invalid tweet url ${url}. This tweet will not display.
+    permanent: true

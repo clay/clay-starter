@@ -1,0 +1,15 @@
+{{#ifAny @root.locals.edit tweetValid}}
+  <aside data-uri="{{ default _ref _self }}" class="tweet" data-editable="settings">
+    {{#ifAll html tweetValid}}
+      {{{ html }}}
+    {{/ifAll}}
+    {{#unless tweetValid}}
+      <div data-placeholder="tweetValid"></div>
+    {{/unless}}
+
+    {{#unless @root.locals.edit}}
+      {{! don't add rich twitter script in edit mode }}
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {{/unless}}
+  </aside>
+{{/ifAny}}
