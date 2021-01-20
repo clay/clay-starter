@@ -2,7 +2,7 @@ version: '3'
 services:
 
   clay:
-    image: starter-internal
+    build: .
     command: ["npm", "run", "start:dev"]
     expose:
       - 3001

@@ -22,10 +22,10 @@ clear-public:
 	docker-compose exec clay rm -f browserify-cache.json
 
 build:
-	docker-compose exec clay clay compile --inlined --linked --reporter pretty
+	docker-compose exec clay npm run build
 
 bootstrap:
-	cat ./bootstrap-starter-data/* | clay import -k starter -y localhost.vox.com
+	cat ./bootstrap-starter-data/* | clay import -k starter -y localhost
 
 bootstrap-user:
 	cat sample_users.yml | clay import -k starter -y localhost
