@@ -1,42 +1,63 @@
 version: '3'
 services:
 
+  clay:
+    image: starter-internal
+    command: ["npm", "run", "start:dev"]
+    expose:
+      - 3001
+    links:
+      - elasticsearch
+      - postgres
+      - nginx
+      - redis
+    volumes:
+      - ./app/.env:/usr/local/src/.env
+      - ./app/app.js:/usr/local/src/app.js
+      - ./app/claycli.config.js:/usr/local/src/claycli.config.js
+      - ./app/components/:/usr/local/src/components/
+      - ./app/layouts/:/usr/local/src/layouts/
+      - ./app/nodemon.json:/usr/local/src/nodemon.json
+      - ./app/package.json:/usr/local/src/package.json
+      - ./app/services/:/usr/local/src/services/
+      - ./app/sites/:/usr/local/src/sites/
+      - ./app/styleguides/:/usr/local/src/styleguides/
+
   ################################################
   ## Local Sites Setup:                         ##
   ## Nginx, Elastic Search, Redis               ##
   ################################################
   nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    logging:
-      driver: json-file
+    image: nginx
     ports:
       - 80:80
+    volumes:
+      - ./nginx/configs/:/etc/nginx/conf.d/
 
   # Event Bus, Postgres Cache and Session Store
   redis:
     image: redis
-    logging:
-      driver: none
     ports:
       - 6379:6379
     volumes:
       - ./redis/config/redis.conf:/usr/local/etc/redis/redis.conf
-      - ./redis/data:/data
+      - redis:/data
 
   # You know, for search
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.6.0
-    command: elasticsearch
-    logging:
-      driver: none
+    command: ["elasticsearch", "-Elogger.level=ERROR"]
+    environment:
+      - cluster.routing.allocation.disk.threshold_enabled="false"
+      - cluster.routing.allocation.disk.watermark.flood_stage=10mb
+      - cluster.routing.allocation.disk.watermark.high=200mb
+      - cluster.routing.allocation.disk.watermark.low=50mb
+      - discovery.type=single-node
     ports:
       - 9200:9200
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./elasticsearch/config/logging.yml:/usr/share/elasticsearch/config/logging.yml
-      - ./elasticsearch/data:/usr/share/elasticsearch/data
+      - elasticsearch:/usr/share/elasticsearch/data
 
   # Primary data store
   postgres:
@@ -45,13 +66,11 @@ services:
     environment:
       - POSTGRES_PASSWORD=example
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
-  # Simple GUI for Postgres if you want
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+volumes:
+  elasticsearch:
+  postgres:
+  redis:
