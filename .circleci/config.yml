@@ -1,0 +1,65 @@
+---
+version: 2
+
+jobs:
+  test_node10:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v3-node10-dependencies-{{ checksum "package.json" }}
+          - v3-node10-dependencies-
+      - run: cd app && npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v3-node10-dependencies-{{ checksum "package.json" }}
+      - run: cd app && npm run lint-js
+      - run: cd app && npm run lint-css
+
+  test_node12:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v3-node12-dependencies-{{ checksum "package.json" }}
+          - v3-node12-dependencies-
+      - run: cd app && npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v3-node12-dependencies-{{ checksum "package.json" }}
+      - run: cd app && npm run lint-js
+      - run: cd app && npm run lint-css
+
+  test_node14:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v3-node14-dependencies-{{ checksum "package.json" }}
+          - v3-node14-dependencies-
+      - run: cd app && npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v3-node14-dependencies-{{ checksum "package.json" }}
+      - run: cd app && npm run lint-js
+      - run: cd app && npm run lint-css
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test_node10
+      - test_node12
+      - test_node14
