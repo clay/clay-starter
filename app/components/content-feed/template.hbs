@@ -1,0 +1,36 @@
+<section class="content-feed {{ componentVariation }}" data-uri="{{default _ref _self}}" data-track-type="article-list">
+  {{#if feedTitle}}
+    <h2 class="content-feed-heading {{ titleAlignment }}">{{ feedTitle }}</h2>
+  {{/if}}
+  <ol class="content-feed-list-wrapper grid-container">
+    {{~#each articles as |article|~}}
+      <li class="article-item grid-item">
+        <div class="article-item-wrap">
+          <div class="article-item-img-wrapper">
+            <picture>
+              <img class="article-item-img" alt="">
+            </picture>
+          </div>
+          {{#if ../showTimestamp}}
+            <div class="timestamp">
+              <time class="paginate-time">00/00/2019</time>
+            </div>
+          {{/if}}
+            <div class="main-article-content">
+              <a href="#article.canonicalUrl" class="link-text">
+                <span class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </a>
+            </div>
+          {{#if ../showByLine}}
+            <div class="byline">
+              By Authors
+            </div>
+          {{/if}}
+        </div>
+      </li>
+    {{~/each~}}
+  </ol>
+
+  <a href="?start=start" class="more-stories-button">More Stories</a>
+
+</section>

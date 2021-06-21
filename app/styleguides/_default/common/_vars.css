@@ -3,7 +3,7 @@
 $serif-stack: Georgia, serif;
 $sans-serif-stack: Grotesk, sans-serif;
 $sans-serif-narrow-stack: GroteskNarrow, sans-serif;
-
+$helvetica-stack: Helvetica, sans-serif;
 
 /* Colors */
 
@@ -23,3 +23,7 @@ $wrapperMaxWidth: 600px;
 $sm: 768px;
 $md: 992px;
 $lg: 1180px;
+$min-sm: 320px;
+$max-sm: 480px;
+$min-md: 768px;
+$max-md: 1024px;

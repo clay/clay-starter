@@ -1,0 +1,7 @@
+_components:
+  content-feed:
+    showTimestamp: true
+    showByLine: true
+    feedColumn: ''
+    titleAlignment: ''
+    feedTitle: ''
