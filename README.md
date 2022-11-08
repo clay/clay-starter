@@ -29,6 +29,12 @@ Clone the repo and run the following commands:
 
 You should be able to navigate to http://localhost/_pages/sample-article.html to see an article page render!
 
+### Troubleshooting
+
+If you see the error `Error: Cannot find module '../../client-env.json'`, try running `docker exec -it clay-starter_clay_1 npm run postinstall` and restart your server.
+
+If you see the error `Unknown authenticationOk message typeMessage`, run `make add-access-key` and then `make rebuild`.
+
 ### Accessing The Edit UI
 
 The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own credentials or using the default one. Here's an example of what can be included in the `sample_users.yml` file:
