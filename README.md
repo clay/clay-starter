@@ -21,6 +21,7 @@ Documentation around Clay is being refined in cojunction with iteration on this 
 
 Clone the repo and run the following commands:
 
+- `cp app/.env.sample app/.env` (This will create a file with the required env variables)
 - `make` (This will download the containers, run an `npm install` and start the app)
 - `make add-access-key` ([Please read this doc for more information about your Clay access key](docs/clay-access-key.md))
 - `make bootstrap` (This command seeds some starting data)
@@ -30,9 +31,22 @@ You should be able to navigate to http://localhost/_pages/sample-article.html to
 
 ### Accessing The Edit UI
 
-The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own Gmail address.
+The edit interface of Clay is a component itself called [`Kiln`](https://github.com/clay/clay-kiln)! To begin editing with the UI you'll need to make sure you've run `make boostrap-user` after replacing the sample user with your own credentials or using the default one. Here's an example of what can be included in the `sample_users.yml` file:
 
-Once you're done that you can access edit mode from any page by adding `?edit=true` or by holding down `Shift` and typing `CLAY`. For example, navigating to http://localhost/_pages/sample-article.html?edit=true will grant you access to the edit interface.
+```yml
+_users:
+  -
+    username: admin
+    password: clay
+    provider: local
+    auth: admin
+  -
+    username: <your full email address> # i.e.: user@clay.com
+    provider: google # Can be either google, twitter, slack, ldap or cognito
+    auth: admin # Can be either admin or write
+```
+
+Once you've done that, you can access edit mode from any page by adding `?edit=true` or by holding down `Shift` and typing `CLAY`. For example, navigating to http://localhost/_pages/sample-article.html?edit=true will grant you access to the edit interface. In the login screen, you can gain access to edit mode by setting `Username: admin` and `Password: clay`, or the credentials you set in `sample_users.yml`.
 
 ### Stopping & Clearing Out Data
 

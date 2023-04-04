@@ -1,31 +1,28 @@
 start:
-	make start-services && make start-clay
+	docker-compose up
 
-start-services:
-	docker-compose up -d nginx postgres redis elasticsearch
+rebuild:
+	ssh-add -l > /dev/null 2>&1 || { eval "$$(ssh--agent)" && ssh-add; }
+	export DOCKER_BUILDKIT=1 \
+		&& docker build --progress=plain --ssh=default -t starter-internal . \
+		&& docker-compose up
 
-start-clay:
-	cd app && npm i && npm run start:dev
-
-stop-services:
-	docker-compose stop nginx postgres redis elasticsearch
-
-remove-containers:
-	@echo "Removing all stopped containers..."
-	docker-compose rm nginx postgres redis elasticsearch
+stop:
+	docker-compose stop
 
 burn:
 	@echo "Stopping and removing all containers..."
-	make stop-services && make remove-containers
+	docker-compose down
 
 clear-data:
-	rm -rf ./elasticsearch/data && rm -rf ./redis/data && rm -rf ./postgres/data
+	docker-compose down --volumes
 
 clear-public:
-	rm -rf ./app/public/* && rm -f ./app/browserify-cache.json
+	docker-compose exec clay rm -rf public/*
+	docker-compose exec clay rm -f browserify-cache.json
 
 build:
-	cd app && clay compile --inlined --linked --reporter pretty && cd ..
+	docker-compose exec clay npm run build
 
 bootstrap:
 	cat ./bootstrap-starter-data/* | clay import -k starter -y localhost

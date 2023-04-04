@@ -12,7 +12,9 @@ const pkg = require('../../package.json'),
   log = require('../universal/log').setup({ file: __filename });
 
 function createSessionStore() {
-  var sessionPrefix = process.env.REDIS_DB ? `${process.env.REDIS_DB}-clay-session:` : 'clay-session:',
+  var sessionPrefix = process.env.REDIS_DB
+      ? `${process.env.REDIS_DB}-clay-session:`
+      : 'clay-session:',
     redisStore = new RedisStore({
       url: process.env.REDIS_SESSION_HOST,
       prefix: sessionPrefix
@@ -35,33 +37,39 @@ function setupApp(app) {
   app.set('trust proxy', 1);
   app.set('strict routing', true);
   app.set('x-powered-by', false);
-  app.use(function (req, res, next) {
-    res.set('X-Powered-By', [
-      `clay v ${pkg.version}`,
-      `amphora v ${amphoraPkg.version}`,
-      `kiln v ${kilnPkg.versio}`
-    ].join('; '));
+  app.use(function(req, res, next) {
+    res.set(
+      'X-Powered-By',
+      [
+        `clay v ${pkg.version}`,
+        `amphora v ${amphoraPkg.version}`,
+        `kiln v ${kilnPkg.version}`
+      ].join('; ')
+    );
     next();
   });
 
   // nginx limit is also 1mb, so can't go higher without upping nginx
-  app.use(bodyParser.json({
-    limit: '5mb'
-  }));
+  app.use(
+    bodyParser.json({
+      limit: '5mb'
+    })
+  );
 
-  app.use(bodyParser.urlencoded({
-    limit: '5mb',
-    extended: true
-  }));
+  app.use(
+    bodyParser.urlencoded({
+      limit: '5mb',
+      extended: true
+    })
+  );
 
   sessionStore = createSessionStore();
 
-  return amphoraSearch()
-    .then(search => {
-      log('info', `Using ElasticSearch at ${process.env.ELASTIC_HOST}`);
+  return amphoraSearch().then(search => {
+    log('info', `Using ElasticSearch at ${process.env.ELASTIC_HOST}`);
 
-      return initCore(app, search, sessionStore);
-    });
+    return initCore(app, search, sessionStore);
+  });
 }
 
 module.exports = setupApp;

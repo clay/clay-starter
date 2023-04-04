@@ -22,11 +22,13 @@ function getPrettyMonthAbrev(month) {
   }
 }
 
-module.exports = (date) => {
+module.exports = date => {
   const mDate = moment(date),
     now = moment();
 
-  if (!mDate.isValid(date)) { return ''; }
+  if (!mDate.isValid(date)) {
+    return '';
+  }
 
   if (moment.duration(now.diff(mDate)).asDays() < 1) {
     return `${mDate.format('h:mm')} ${mDate.format('A')}`;

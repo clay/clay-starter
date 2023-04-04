@@ -40,7 +40,7 @@ function init(version, browser) {
  * @return {Function}
  */
 function setup(meta) {
-  meta = _defaults({}, meta, {file: 'File not specified! Please declare a file'});
+  meta = _defaults({}, meta, { file: 'File not specified! Please declare a file' });
 
   if (sitesLogInstance) {
     return clayLog.meta(meta, sitesLogInstance);
@@ -59,9 +59,9 @@ if (!(process.versions && process.versions.node)) {
 module.exports.init = init;
 module.exports.setup = setup;
 // For testing
-module.exports.assignNavigator = function (fakeNavigator) {
+module.exports.assignNavigator = function(fakeNavigator) {
   navigatorReference = fakeNavigator;
 };
-module.exports.assignLogInstance = function (fakeInstance) {
+module.exports.assignLogInstance = function(fakeInstance) {
   sitesLogInstance = fakeInstance;
 };
