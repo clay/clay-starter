@@ -1,0 +1,54 @@
+/* stylelint-disable declaration-no-important */
+
+$border-top: #eee;
+$border-right-left: #ddd;
+$border-bottom: #bbb;
+$blue: #1782a9;
+$font-family: 'Helvetica Neue', Roboto, 'Segoe UI', Calibri, sans-serif;
+$font-full-stack: 700 12px/16px $font-family;
+
+.tweet {
+    display: block;
+    margin: 0 0 20px;
+    width: 100%;
+
+    & blockquote.twitter-tweet {
+      border-color: $border-top $border-right-left $border-bottom;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+      display: inline-block;
+      font: $font-full-stack;
+      margin: 10px 5px;
+      max-width: 460px;
+      padding: 0 16px 16px;
+    }
+
+    & blockquote.twitter-tweet p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    & blockquote.twitter-tweet a {
+      color: $blue;
+      font-weight: 400;
+      outline: 0;
+      text-decoration: none;
+    }
+
+    & blockquote.twitter-tweet a:focus,
+    & blockquote.twitter-tweet a:hover {
+      text-decoration: underline;
+    }
+  }
+
+@media screen and (min-width: 768px) {
+    .tweet{
+      & iframe,
+      & .twitter-tweet {
+        width: 460px !important; /* twitter tries to force the width at the element level, need the important to override */
+    }
+  }
+}
